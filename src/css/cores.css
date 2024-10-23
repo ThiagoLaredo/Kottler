@@ -1,0 +1,52 @@
+:root {
+  --textwhite: #F8F8F8;
+  --text: #2D2D2D;
+  --bg-cinza: #f5f5fa;
+  /* --bg-cinza: rgba(240, 240, 255, 0.8); */
+  --bg-branco: #fff;
+  --roxo: #342840;
+  --verde-escuro: #405919;
+  --verde-claro: #537322;
+  --lilas-escuro: #734C56;
+  --lilas-claro: #A6727C;
+  --rosa: #F5DDD5;
+}
+
+.text {
+  color: var(--text);
+}
+
+.textwhite {
+  color:  var(--textwhite);
+}
+
+/* Background Color */
+.bg-cinza {
+  background-color: var(--bg-cinza);
+}
+
+/* roxo Color */
+.roxo {
+  color: var(--roxo);
+}
+
+.verde-escuro {
+  color: var(--verde-escuro);
+}
+
+.verde-claro {
+  color: var(--verde-claro);
+}
+
+.lilas-escuro {
+  color: var(--lilas-escuro);
+}
+
+.lilas-claro {
+  color: var(--lilas-claro);
+}
+
+.rosa {
+  color: var(--rosa);
+}
+

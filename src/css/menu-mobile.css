@@ -1,0 +1,189 @@
+.js [data-menu="list"]  {
+  visibility: visible; 
+  opacity: 1; 
+  display: flex;
+}
+
+.js [data-menu="list"].active  {
+  visibility: visible; 
+  opacity: 1; 
+  display: flex;
+}
+
+[data-menu="button"] {
+  display: none;
+}
+
+[data-menu="contato-mobile"] {
+ display: none;
+}
+
+[data-menu="linkedin"] {
+  display: none;
+}
+
+[data-menu="instagram"] {
+  display: none;
+}
+
+@media (max-width: 700px) {
+
+  .social-icons-header {
+    display: none;
+  }
+
+  .js [data-menu="logo"] {
+    z-index: 999;
+  }
+
+  .js [data-menu="button"] {
+    display: flex;
+    background: none;
+    border: none;
+    padding: 0.8rem; /* Aumenta a área de clique */
+    border-radius: 8px;
+    text-transform: uppercase;
+    font-family: 'OpenSans', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    margin: 4px 0;
+    align-items: center;
+    position: absolute; /* Alinha o botão à direita do contêiner */
+    right: 0; /* Garante que o botão esteja totalmente à direita */
+    z-index: 300;
+  }
+
+  #hamburguer {
+    width: 30px;
+    height: 2px;
+    background: var(--roxo);
+    border-radius: 1px;
+    position: relative;
+    transition: background 0.3s ease; /* Suaviza a transição da cor de fundo */
+  }
+
+  #hamburguer::before,
+  #hamburguer::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: var(--roxo);
+    border-radius: 1px;
+    position: absolute;
+    left: 0;
+    transition: transform 0.3s ease; /* Suaviza as transições de transformação */
+  }
+
+  #hamburguer::before {
+    top: -8px;
+  }
+
+  #hamburguer::after {
+    top: 8px;
+  }
+
+  /* Estilos quando o menu está ativo */
+  .js [data-menu="button"].active #hamburguer {
+    background: transparent; /* Torna a barra central transparente */
+  }
+
+  .js [data-menu="button"].active #hamburguer::before {
+    transform: rotate(45deg); /* Rotaciona para formar um "X" */
+    top: 0; /* Centraliza em relação à barra principal */
+  }
+
+  .js [data-menu="button"].active #hamburguer::after {
+    transform: rotate(-45deg); /* Rotaciona para formar um "X" */
+    top: 0; /* Centraliza em relação à barra principal */
+  }
+
+  .js [data-menu="list"]  {
+    visibility: hidden; 
+    opacity: 0; 
+    position: absolute;
+    width: 100vw;
+    top: 0;
+    right: 0px;
+    text-align: center;
+    z-index: 3;
+    height: 100vh;
+    background-color: var(--bg-cinza);
+  }
+
+  .js [data-menu="list"].active, .js [data-menu="list"].submenu.active {
+    display: flex;
+    visibility: visible; 
+    opacity: 1; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .js [data-menu="list"] a, .js [data-menu="list"] span, .js [data-menu="list"] .submenu a  {
+    font-size: 20px;
+    line-height: 1;
+    width: 100vw;
+  }
+
+  .js [data-menu="list"] li {
+    /* width: 100%; */
+    position: relative;
+  }
+
+  /* .js [data-menu="list"] li::after {
+    content: "";
+    display: block;
+    width: 100%;
+    top: 10px;
+    height: 1px;
+    border-radius: 5px;
+    background: rgba(52, 40, 64, 0.2);
+    position: relative;
+  } */
+
+  .js [data-menu="list"] li:last-child::after {
+    display: none;
+  }
+
+  [data-menu="contato-mobile"], [data-menu="linkedin"], [data-menu="instagram"] {
+    display: none;
+  }
+
+  [data-menu="contato-mobile"].active  {
+    position: fixed;
+    font: 500 1rem 'OpenSans', sans-serif;
+    color: var(--roxo);
+    display: block;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    padding: 1rem;
+    opacity: 0;
+  }
+
+  [data-menu="linkedin"].active {
+    position: fixed;
+    font: 500 1rem 'OpenSans', sans-serif;
+    color: var(--roxo);
+    display: block;
+    bottom: 0;
+    right: 0;
+    z-index: 999;
+    padding: 1rem;
+    opacity: 0;
+  }
+  [data-menu="instagram"].active {
+    position: fixed;
+    font: 500 1rem 'OpenSans', sans-serif;
+    color: var(--roxo);
+    display: block;
+    bottom: 0;
+    right: 40px;
+    z-index: 999;
+    padding: 1rem;
+    opacity: 0;
+  }
+}

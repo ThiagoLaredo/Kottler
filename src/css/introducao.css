@@ -1,0 +1,74 @@
+
+.introducao {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  background: url('../img/capa-index-1920w.webp') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* opacity: 0;   */
+  position: relative;
+}
+
+.introducao-texto {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 20px; 
+  gap: 20px;
+}
+
+.wave-text {
+  font-size: 4rem;
+  line-height: 5rem;
+  font-weight: normal;
+  font-family: 'OpenDyslexic';
+  color: var(--textwhite);
+  text-align: center;
+  max-width: 20ch;
+  z-index: 2;
+}
+
+
+.img-circulo {
+  position: absolute;
+  width: 30vw; /* 50% da largura da viewport */
+  height: 30vw; /* Mantém a proporção para formar um círculo perfeito */
+  background-color: var(--roxo);
+  opacity: 40%;
+  border-radius: 50%;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) { 
+
+  .introducao {
+    background: url('../img/index/capa-index-720w.webp') no-repeat center center;
+    background-attachment: scroll;
+  }
+
+  .img-circulo {
+    width: 90vw; /* 50% da largura da viewport */
+    height: 90vw; /* Mantém a proporção para formar um círculo perfeito */
+  }
+
+  .wave-text {
+    font-size: 2.4rem;
+    line-height: 3.4rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1919px) {
+  .introducao {
+    background: url('../img/index/capa-index-1024w.webp') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+  }
+}

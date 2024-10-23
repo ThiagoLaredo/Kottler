@@ -1,0 +1,174 @@
+footer {
+  background-color: var(--roxo);
+  padding: 80px 0;
+  position: relative;
+}
+
+.rodape {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.contatos-sociais {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+#logo-rodape {
+  display: block;
+  height: auto;
+  width: 30%;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.form h2 {
+  font: 500 1.2rem/1.2 'OpenDyslexic', sans-serif;
+  color: var(--rosa);
+}
+
+
+#contact-form {
+  width: 40vw;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+
+.form-field label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-field input[type="email"], .form-field input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  background-color: transparent;
+  color: var(--rosa);
+  /* placeholder: #F5DDD5; */
+  border: 0.5px solid var(--rosa);
+  border-radius: 6px;
+}
+
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #F5DDD5;
+}
+
+.half-width, .half-width-1 {
+  float: left;
+  width: calc(50% - 10px); /* Ajusta a largura considerando o espaçamento */
+  box-sizing: border-box;
+}
+
+.half-width-1 {
+  margin-right: 20px; /* Espaçamento entre os campos */
+}
+
+#send-button {
+  background-color: var(--rosa);
+  color: var(--roxo);
+  padding: 12px 22px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font: 800 1rem/0.8 'OpenSans', sans-serif;
+  opacity: 1;
+  text-transform: uppercase;
+  display: flex; /* Usa flexbox para centralizar o conteúdo */
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: center; /* Centraliza horizontalmente */
+}
+
+#send-button:hover {
+  opacity: 0.7; /* Reduz a opacidade quando o mouse está sobre o botão */
+}
+
+/* Clearfix */
+.form-field::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.grade-footer {
+  position: absolute;
+    top: -70px;  
+    right: 40px;  
+    width: 140px;  
+    height: 140px;  
+    z-index: 4;  
+}
+
+@media (max-width: 768px) { 
+
+  footer {
+    padding: 60px 0 120px 0;
+  }
+  
+  .rodape {
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+  }
+
+  .contatos-sociais {
+    width: 100%;
+    align-items: center;
+  }
+
+  #logo-rodape {
+    width: 50%;
+  }
+
+  #contact-form {
+    width: 90vw;
+  }
+
+  .form h2 {
+    text-align: center;
+  }
+
+  .form-field {
+    margin-bottom: 15px;
+  }
+
+  .half-width, .half-width-1 {
+    float: none;
+    width: 100%; /* Ajusta a largura considerando o espaçamento */
+    box-sizing: border-box;
+  }
+
+  .form-field input[type=email], .form-field input[type=text] {
+    text-align: center;
+  }
+
+  #send-button {
+    margin: 0 auto; /* Centraliza o botão horizontalmente */
+    width: calc(100% - 44px); /* Ajusta a largura para caber no contêiner, considerando o padding */
+  }
+
+  .grade-footer {
+    position: absolute;
+      top: -40px;  
+      right: 20px;  
+      width: 80px;  
+      height: 80px;  
+  }
+}

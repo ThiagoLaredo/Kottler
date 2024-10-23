@@ -1,0 +1,209 @@
+/* Geral */
+.header {
+  width: 100%;
+  z-index: 1000;
+  background-color: #fff;
+  border-bottom: 0.5px solid var(--bg);
+  position: fixed;
+  top: 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header_menu {
+  box-sizing: border-box;
+  height: 100%;
+  padding: .6rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+}
+
+.header-direita,
+.social-icons-header {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+nav.menu {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+ul[data-menu="list"] {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 1.4rem;
+  align-items: center;
+}
+
+.menu li {
+  align-self: center;
+  position: relative; /* Necessário para posicionar a seta */
+}
+
+.menu li a,
+.menu li span {
+  font: 400 1rem/1.4 'OpenSans', sans-serif;
+  color: var(--roxo);
+  font-weight: 600;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  padding: 10px 8px;
+  line-height: 1;
+  align-items: center;
+  position: relative;
+  cursor: pointer; /* Aplica o cursor de mãozinha em todos os links e spans */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Estilo para o submenu - Desktop */
+.submenu {
+  display: none; /* Esconde o submenu por padrão */
+  position: absolute; /* Usar absolute no desktop */
+  background-color: var(--bg-cinza);
+  list-style: none;
+  padding: 20px;
+  margin: 0;
+  z-index: 1; /* Garante que o submenu esteja acima dos itens adjacentes */
+  border-radius: 12px;
+  white-space: nowrap;
+  width: auto; /* Ajusta a largura conforme necessário */
+  transition: all 0.3s ease; /* Adiciona uma transição suave para a expansão */
+}
+
+.submenu li {
+  margin: 0;
+  padding: 0; /* Remove o padding da <li> */
+}
+
+.submenu li a {
+  color: var(--roxo);
+  text-decoration: none;
+  display: block;
+  padding: 10px 20px; /* Mova o padding para o <a> */
+}
+
+.submenu li a:hover {
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+
+.sub-menu-programas,
+.sub-menu-programas li,
+.sub-menu-programas ul {
+  padding: 0;
+  margin-left: 0;
+  gap: 4px;
+}
+
+.sub-menu-programas li a {
+  font: 600 0.8rem/1.4 'OpenSans', sans-serif;
+  margin: 0;
+}
+
+/* Estilo para o item de menu com submenu */
+.has-submenu > span {
+  cursor: pointer; /* Aplica o cursor de mãozinha no hover */
+  display: flex; /* Transforma o span em flex container */
+  justify-content: center; /* Centraliza o texto horizontalmente */
+  align-items: center; /* Centraliza o texto verticalmente */
+  width: 100%; /* Garante que o span ocupe 100% da largura do menu */
+  padding: 10px 0; /* Adiciona espaçamento vertical */
+  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
+}
+
+.has-submenu {
+  position: relative; /* Necessário para posicionar a seta */
+}
+
+/* Estilo para a seta do submenu */
+.submenu-arrow {
+  transition: transform 0.3s ease;
+  margin-left: 5px;
+  position: relative;
+}
+
+.submenu-arrow.open {
+  transform: rotate(180deg); /* Rotação da seta para cima */
+}
+
+/* Exibir o submenu no hover para desktop */
+@media (min-width: 769px) {
+  .has-submenu:hover .submenu {
+    display: flex !important; /* Mostra o submenu no hover */
+    gap: 4px;
+  }
+  
+  /* Rotaciona a seta no hover para o desktop */
+  .has-submenu:hover .submenu-arrow {
+    transform: rotate(180deg); /* Rotação da seta para cima */
+  }
+}
+
+/* Estilo adicional para o mobile */
+@media (max-width: 768px) {
+  .header {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    border-bottom: 1px solid var(--bg);
+    padding: 6px 0px;
+  }
+
+  [data-menu="logo"] {
+    width: 70%;
+  }
+
+  .header a > img {
+    width: 100%;
+  }
+
+  .header_menu {
+    padding: 0.5rem 0;
+  }
+
+  .menu-button {
+    display: none;
+  }
+
+  .submenu {
+    display: none; /* Esconde o submenu por padrão no mobile */
+    position: relative; /* Usar relative no mobile */
+    border-radius: 0px;
+    background-color: #fff;
+    padding: 5px 0;
+  }
+
+  .submenu li {
+    padding: 0;
+  }
+
+  .sub-menu-programas li a {
+    font-weight: 200;
+  }
+
+  .submenu.active {
+    display: flex !important; /* Mostra o submenu quando ativo no mobile */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .has-submenu, .sub-menu-programas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+}

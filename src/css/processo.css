@@ -1,0 +1,268 @@
+.processo {
+  padding: 120px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  position: relative;
+}
+
+
+.processo h2 {
+  font: 600 2rem/1.2 'OpenSans', sans-serif;
+  color: var(--roxo);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.servicos {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 200px 0px;
+}
+
+
+.servicos h3 {
+  font: 600 1.8rem/1.4 'OpenDyslexic', sans-serif;
+  color: var(--textwhite);
+  max-width: 30ch;
+  text-align: center;
+}
+
+.voce {
+  display: flex;
+  flex: 2;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  justify-content: center;
+}
+
+.circle-lilas-claro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  height: 700px;
+  background-color: var(--lilas-claro);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.circle-lilas-escuro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 500px;
+  background-color: var(--lilas-escuro);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+
+.voce-titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;  
+}
+
+
+.voce-badge, .empresa-badge {
+  font: 500 1rem/1 'Open Sans', sans-serif;
+  color: var(--textwhite);
+  background-color: var(--lilas-escuro);
+  border-radius: 100px;
+  padding: 8px 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+}
+
+.programas-voce {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 40px;
+}
+
+.programas-voce p, .empresas p {
+  font: normal 1rem/1.6 'OpenSans', sans-serif;
+  color: var(--textwhite);
+  max-width: 30ch;
+  align-self: flex-start;
+}
+
+.programa-voce {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1 1 auto; /* Isso faz cada item de programa ocupar espaço igual se necessário */
+}
+
+.programa-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.programa-icone {
+  width: 20%;
+  height: auto;
+}
+
+.programa-icone-times {
+  width: 12%;
+  height: auto;
+}
+
+.programa-titulo h4 {
+  font: 400 1rem 'OpenSans', sans-serif;
+  color: var(--textwhite);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-programa {
+  display: inline-flex;
+  align-items: center;
+  font: 500 0.8rem/1 'OpenSans', sans-serif;
+  color: var(--textwhite);
+  cursor: pointer;
+  transition: background-color 0.3s; 
+  align-self: flex-start;
+  position: relative; /* Necessário para o posicionamento correto do ::after */
+  padding: 0; /* Remove padding para que o sublinhado não cubra o espaço adicional */
+}
+
+.btn-programa::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: auto; /* Desativa o lado direito para evitar que o sublinhado se estenda */
+  bottom: 0;
+  height: 2px;
+  background-color: var(--textwhite);
+  transition: width 0.3s ease;
+  width: 0;
+}
+
+.btn-programa:hover::after {
+  width: 100%; /* Expande o sublinhado para a largura do texto */
+}
+
+.btn-programa span {
+  display: inline-block; /* Garante que o pseudo-elemento fique restrito ao texto */
+  position: relative; /* Para que o ::after seja aplicado corretamente */
+}
+
+.btn-programa svg {
+  margin-left: 2px;
+  fill: currentColor;
+}
+
+.empresas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  flex: 1;
+}
+
+.empresa-badge {
+  background-color: var(--lilas-claro);
+}
+
+@media (max-width: 768px) { 
+
+  .processo {
+    padding: 60px 20px;
+    gap: 40px;
+  }
+
+  .servicos {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0;
+  }
+
+  .servicos h3 {
+    max-width: none;
+  }
+
+  .voce {
+    flex: 1;
+  }
+
+  .programas-voce {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .programa-voce, .programa-action {
+    align-items: center;
+    text-align: center;
+  }
+
+  .programa-titulo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-programa {
+    align-self: center;
+  }
+
+  .empresas {
+    flex: 1;
+    width: 100%;
+  }
+
+  .programas-voce p, .empresas p {
+    max-width: none;
+    text-align: center;
+  }
+
+  .voce::before {
+    width: 100%;
+    height: 100%; 
+    border-radius: 0; 
+  }
+
+  .voce, .empresas {
+    padding: 20px;
+  }
+
+  .programa-icone {
+    width: 40%;
+  }
+
+  .programa-icone-times {
+    width: 12%;
+    height: auto;
+  }
+  
+
+  .circle-lilas-escuro,  .circle-lilas-claro {
+    width: 100%;
+    height: 100%; 
+    border-radius:10px; 
+  }
+
+  .grade {
+    position: absolute;
+      bottom: -6vh;  
+      right: 20vw;  
+      width: 100px;  
+      height: 100px;  
+      z-index: 2;  
+  } 
+}

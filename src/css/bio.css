@@ -1,0 +1,85 @@
+.bio-back {
+  padding: 120px 20px;
+  background-color: var(--bg-cinza);
+  display: flex;
+  flex-direction: row;
+  gap: 60px;
+  position: relative;
+}
+
+.bio {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.curriculo {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.curriculo h2 {
+  font: 600 2rem/1.2 'OpenSans', sans-serif;
+  color: var(--roxo);
+}
+
+.curriculo ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font: 300 1rem/1.4 'OpenSans', sans-serif;
+  color: var(--roxo);
+  max-width: 70ch;
+}
+
+.selos {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.selos img {
+  max-width: 140px;
+  height: auto;
+}
+
+.foto-marina {
+  position: absolute; 
+  right: 0; 
+  bottom: 0; 
+  width: 400px; 
+  height: auto; 
+  object-fit: cover;
+}
+
+@media (max-width: 768px) { 
+
+  .bio-back {
+    padding: 60px 10px;
+  }
+
+  .bio {
+    margin-bottom: 50vh;
+  }
+
+  .curriculo h2 {
+    text-align: center;
+  }
+
+  .curriculo ul {
+    align-items: center;
+    justify-content: center;
+    max-width: none;
+    text-align: center;
+  }
+
+  .selos {
+    justify-content: center;
+  }
+
+  .foto-marina {
+    width: 260px; 
+  }
+}
