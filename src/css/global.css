@@ -28,7 +28,7 @@ body {
 
 .container-background-svg {
   position: relative;
-  /* background-image: linear-gradient(to top, var(--bg-escuro) 24%, transparent 20%); */
+  background-image: linear-gradient(to top, var(--bg-escuro) 20%, transparent 20%);
   z-index: 1;
   overflow: hidden;
 
