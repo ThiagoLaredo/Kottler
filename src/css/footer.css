@@ -132,21 +132,31 @@ footer {
   opacity: 0.2; /* Define a opacidade do SVG */
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
 
   .footer {
     padding: 60px 20px;
 
   }
 
-  .footer-colunas {
+  .rodape {
    flex-direction: column;
-   text-align: center;
-   justify-content: center;
-  } 
+   align-items: center;
+  }
+
+  .footer-contatos h3 {
+    text-align: center;}
+
   .contato-item {
     flex-direction: column;
+    align-items: center;
   }
+
+  .contato-item a {
+    text-align: center;
+  }
+
+ 
   
    .footer-newsletter h3, .footer-redes-sobre p, .footer-redes-sobre h3 {
     text-align: center;

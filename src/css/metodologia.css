@@ -15,3 +15,20 @@
   color: var(--textwhite);
   max-width: 40%;
 }
+
+@media (max-width: 768px) {
+
+
+  .metodologia {
+    padding: 80px 20px;
+  }
+
+  .metodologia h2 {
+    text-align: center;
+  }
+
+  .metodologia p {
+    max-width: 100%;
+    text-align: center;
+  }
+}
