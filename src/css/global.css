@@ -12,7 +12,33 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: #212121;
 }
+
+
+
+.container-background-svg {
+  position: relative;
+  /* background-image: linear-gradient(to top, var(--bg-escuro) 24%, transparent 20%); */
+  z-index: 1;
+  overflow: hidden
+
+
+}
+
+.svg-canal-container {
+  position: absolute;
+  bottom: -6px;
+  z-index: -2;
+  width: 100%;
+}
+
+.svg-ponto-vista-container  {
+  position: absolute;
+  bottom: -30%;
+  left: -6%;
+}
+
 
 button {
   all: unset;
@@ -56,21 +82,6 @@ img {
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'OpenDyslexic';
-  src: url('../fonts/OpenDyslexic-Regular.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'OpenDyslexic';
-  src: url('../fonts/OpenDyslexic-Bold.otf') format('opentype');
-  font-weight: bold; /* ou use 700 se preferir */
-  font-style: normal;
-  font-display: swap;
-}
 
 .visually-hidden {
   position: absolute;
@@ -98,7 +109,7 @@ img {
   height: 60px;
   bottom: 20px;
   right: 20px;
-  background-color: var(--verde-claro);
+  background-color: var(--primary);
   border-radius: 50px;
   text-align: center;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4); /* Sombra mais suave */

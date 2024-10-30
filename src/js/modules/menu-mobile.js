@@ -69,18 +69,15 @@ export default class MenuMobile {
       if (!arrow) {
         const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         svg.setAttribute('class', 'submenu-arrow');
-        svg.setAttribute('width', '20');
-        svg.setAttribute('height', '20');
+        svg.setAttribute('width', '24');
+        svg.setAttribute('height', '24');
         svg.setAttribute('viewBox', '0 0 24 24');
         svg.setAttribute('fill', 'none');
         svg.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
   
         const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-        path.setAttribute('d', 'M8 10l4 4 4-4');
-        path.setAttribute('stroke', 'currentColor');
-        path.setAttribute('stroke-width', '2');
-        path.setAttribute('stroke-linecap', 'round');
-        path.setAttribute('stroke-linejoin', 'round');
+        path.setAttribute('d', 'M10 15 l-6 -6 h12 z'); // Coordenadas ajustadas para mover a seta para cima
+        path.setAttribute('fill', '#F80D8E'); // Define a cor de preenchimento do triângulo
         svg.appendChild(path);
   
         item.appendChild(svg);

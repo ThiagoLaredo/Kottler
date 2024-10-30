@@ -1,0 +1,17 @@
+.metodologia {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 100px 20px;
+}
+
+.metodologia h2 {
+    font: 300 2.4rem 'Raleway', sans-serif;
+    color: var(--textwhite);
+}
+
+.metodologia p {
+  font: 300 1rem/1.6 'Raleway', sans-serif;
+  color: var(--textwhite);
+  max-width: 40%;
+}

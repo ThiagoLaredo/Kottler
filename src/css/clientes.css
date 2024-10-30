@@ -1,0 +1,60 @@
+.clientes {
+  padding: 100px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+
+.logos-clientes {
+  display: flex;
+  white-space: nowrap;
+}
+
+.coluna-1, .coluna-2 {
+  display: flex; /* Altera para flex para garantir que os logos fiquem lado a lado */
+}
+
+/* .logos-clientes .coluna-1 {
+  margin-right: 50%;
+} */
+
+.logos-clientes img {
+  width: auto;
+  height: 160px;
+  margin: 0 20px;
+  background-color: var(--bg-escuro);
+  padding: 20px;
+  border-radius: 20px;
+  /* border: 1px solid var(--primary); */
+}
+
+.setas-up {
+  position: absolute;
+  top: 0px;
+  right: 60px;
+  width: 160px;
+  height: auto;
+  z-index: -1;
+}
+
+@media (max-width: 768px) {
+
+  .clientes {
+    padding: 80px 20px;
+    gap: 40px;
+  }
+
+  .setas-up {
+    width: 100px;
+    top: 20%; /* Posiciona a imagem no meio verticalmente */
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) scaleY(-1); /* Centraliza a imagem verticalmente */
+  }
+
+  .logos-clientes img {
+    height: 100px;
+  }
+
+
+}

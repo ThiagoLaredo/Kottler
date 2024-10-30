@@ -2,11 +2,43 @@
 .header {
   width: 100%;
   z-index: 1000;
-  background-color: #fff;
-  border-bottom: 0.5px solid var(--bg);
+  background-color: transparent;
+  /* border-bottom: 0.5px solid var(--bg); */
   position: fixed;
   top: 0;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); */
+}
+
+
+
+.logo-icon, .logo-full {
+  display: block;
+}
+
+.header.header-scrolled  {
+ 
+  background-color: var(--bg-escuro);
+ 
+}
+
+.header-scrolled .logo-full {
+  display: none;
+}
+
+.logo-svg {
+  display: block;
+  width: 100%; /* Valor inicial para quando não está no estado scrolled */
+  height: auto;
+  transition: width 0.3s ease-in-out; /* Adiciona transição na propriedade width */
+}
+
+.header-scrolled .logo-svg {
+  width: 50% !important; /* Valor após scroll, a transição será aplicada aqui */
+}
+
+
+.header-scrolled .header_menu {
+  padding: .2rem 0;
 }
 
 .header_menu {
@@ -48,8 +80,8 @@ ul[data-menu="list"] {
 
 .menu li a,
 .menu li span {
-  font: 400 1rem/1.4 'OpenSans', sans-serif;
-  color: var(--roxo);
+  font: 400 1rem/1 'Raleway', sans-serif;
+  color: var(--textwhite);
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
@@ -67,7 +99,7 @@ ul[data-menu="list"] {
 .submenu {
   display: none; /* Esconde o submenu por padrão */
   position: absolute; /* Usar absolute no desktop */
-  background-color: var(--bg-cinza);
+  background-color: var(--bg-escuro);
   list-style: none;
   padding: 20px;
   margin: 0;
@@ -78,42 +110,40 @@ ul[data-menu="list"] {
   transition: all 0.3s ease; /* Adiciona uma transição suave para a expansão */
 }
 
+.has-submenu:hover .submenu {
+  display: flex; /* Mostra o submenu no hover */
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 320px;
+}
+
+
+
+
 .submenu li {
   margin: 0;
   padding: 0; /* Remove o padding da <li> */
 }
 
 .submenu li a {
-  color: var(--roxo);
+  color: var(--textwhite);
   text-decoration: none;
   display: block;
   padding: 10px 20px; /* Mova o padding para o <a> */
 }
 
 .submenu li a:hover {
-  background-color: #fff;
+  background-color: var(--primary);
   border-radius: 12px;
 }
 
-
-.sub-menu-programas,
-.sub-menu-programas li,
-.sub-menu-programas ul {
-  padding: 0;
-  margin-left: 0;
-  gap: 4px;
-}
-
-.sub-menu-programas li a {
-  font: 600 0.8rem/1.4 'OpenSans', sans-serif;
-  margin: 0;
-}
 
 /* Estilo para o item de menu com submenu */
 .has-submenu > span {
   cursor: pointer; /* Aplica o cursor de mãozinha no hover */
   display: flex; /* Transforma o span em flex container */
-  justify-content: center; /* Centraliza o texto horizontalmente */
+  justify-content: space-between; /* Centraliza o texto horizontalmente */
   align-items: center; /* Centraliza o texto verticalmente */
   width: 100%; /* Garante que o span ocupe 100% da largura do menu */
   padding: 10px 0; /* Adiciona espaçamento vertical */
@@ -188,21 +218,11 @@ ul[data-menu="list"] {
     padding: 0;
   }
 
-  .sub-menu-programas li a {
-    font-weight: 200;
-  }
-
   .submenu.active {
     display: flex !important; /* Mostra o submenu quando ativo no mobile */
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-  }
-
-  .has-submenu, .sub-menu-programas {
-    display: flex;
-    flex-direction: column;
     gap: 10px;
   }
 
