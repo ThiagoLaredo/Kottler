@@ -128,3 +128,15 @@ img {
   width: 100%;
   height: 100%;
 }
+@media (max-width: 768px) {
+
+
+  .svg-ponto-vista-container  {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%) scaleY(-1); /* Centraliza a imagem verticalmente */
+
+  }
+
+}
