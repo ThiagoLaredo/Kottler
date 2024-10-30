@@ -108,7 +108,7 @@ gsap.fromTo(".coluna-1",
 
     
 gsap.to(".coluna-2", {
-    x: '-300%', // Aumentar a distância percorrida
+    x: '-100%', // Aumentar a distância percorrida
     modifiers: {
         x: gsap.utils.unitize(x => parseFloat(x) % (parseFloat(window.getComputedStyle(document.querySelector('.coluna-2')).width)))
     },
