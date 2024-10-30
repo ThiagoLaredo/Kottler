@@ -1,52 +1,32 @@
 :root {
-  --textwhite: #F8F8F8;
-  --text: #2D2D2D;
-  --bg-cinza: #f5f5fa;
-  /* --bg-cinza: rgba(240, 240, 255, 0.8); */
-  --bg-branco: #fff;
-  --roxo: #342840;
-  --verde-escuro: #405919;
-  --verde-claro: #537322;
-  --lilas-escuro: #734C56;
-  --lilas-claro: #A6727C;
-  --rosa: #F5DDD5;
-}
-
-.text {
-  color: var(--text);
+  --textwhite: #FAFAFA;
+  --bg: #212121;
+  --bg-escuro: #1A1A1A;
+  --primary: #F80D8E;
+  --primary-rgb: 248, 13, 142; /* Valores RGB da cor primária */
 }
 
 .textwhite {
-  color:  var(--textwhite);
+  color: var(--textwhite);
+}
+
+.bg {
+  background-color: var(--bg);
 }
 
 /* Background Color */
-.bg-cinza {
-  background-color: var(--bg-cinza);
+.bg-escuro {
+  background-color: var(--bg-escuro);
 }
 
-/* roxo Color */
-.roxo {
-  color: var(--roxo);
+.primary {
+  color: var(--primary);
 }
 
-.verde-escuro {
-  color: var(--verde-escuro);
+.swiper-pagination-bullet {
+  background-color: rgba(var(--primary-rgb)); /* Cor do indicador não ativo com 50% de opacidade */
 }
 
-.verde-claro {
-  color: var(--verde-claro);
+.swiper-pagination-bullet-active {
+  background-color: var(--primary); /* Cor do indicador ativo */
 }
-
-.lilas-escuro {
-  color: var(--lilas-escuro);
-}
-
-.lilas-claro {
-  color: var(--lilas-claro);
-}
-
-.rosa {
-  color: var(--rosa);
-}
-

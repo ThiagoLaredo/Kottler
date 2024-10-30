@@ -1,0 +1,145 @@
+.cases-background {
+  /* background-color: var(--bg-escuro); */
+  padding: 20px 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.cases-home {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.cases-home-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 20px;
+  gap: 20px;
+}
+
+.cases-home-texto h2 {
+  font: 300 2.4rem 'Raleway', sans-serif;
+  color: var(--textwhite);
+}
+
+.cases-home-texto p {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+  font-weight: normal;
+  color: var(--primary);
+  text-align: center;
+}
+
+
+.swiper-container.cases-slides {
+  position: relative;
+  flex: 0 0 100%; /* Define a largura como 60% */
+  max-width: 100%; /* Garante que a largura máxima seja 60% */
+  overflow: hidden;
+  z-index: 3; /* Maior z-index, o SVG precisa ser menor que este */
+  top: 0
+
+}
+
+.swiper-slide-prev, .swiper-slide-next {
+  margin-right: -20px; /* Ajuste conforme necessário */
+  z-index: 2
+}
+
+
+.slide-case-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--bg-escuro);
+  padding: 40px;
+  border-radius: 0 0 20px 0;
+  max-width: 60%; 
+  z-index: 3;
+  min-width: auto;
+}
+
+
+.slide-case-texto h3 {
+  font: 600 1.4rem/1 'Raleway', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+}
+
+.slide-case-texto p {
+  font: 300 1rem/1.6 'Raleway', sans-serif;
+  color: var(--textwhite);
+}
+
+.grade-rosa {
+  position: absolute;
+  top: 16%;
+  right: 6%;
+  z-index: 99;
+  max-width: 50%; /* Limita o crescimento ao contêiner sem exceder a largura original do SVG */
+  height: auto; /* Mantém a proporção */
+}
+
+.grade-rosa g {
+  opacity: 0;
+  transform: scale(0.8);
+  transform-origin: center;
+}
+
+
+.swiper-container .swiper-button-prev .slide-case, 
+.swiper-container .swiper-button-next .slide-case {
+  bottom: 0;
+  top: auto; /* Remover a posição do topo */
+}
+
+.swiper-container .swiper-button-prev.slide-case {
+  left: auto;
+  right: 46%; /* Distância do canto direito mais a largura de um botão */
+}
+
+.swiper-container .swiper-button-next.slide-case {
+  right: 42%; /* Distância do canto direito */
+}
+
+@media (max-width: 768px) {
+
+  .cases-background {
+    padding: 0px 0px;
+  }
+
+  .cases-home-texto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 20px;
+    gap: 20px;
+  }
+  
+  .cases-home-texto h2 {
+    text-align: center;
+  }
+  
+  .cases-home-texto p {
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    font-weight: normal;
+    color: var(--primary);
+    text-align: center;
+  }
+
+  .slide-case-texto {
+    max-width: 100%; 
+    align-items: center;
+  }
+
+  .slide-case-texto h3,  .slide-case-texto p{
+    text-align: center;
+    text-align: center;
+  }
+
+  
+}

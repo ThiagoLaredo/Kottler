@@ -9,13 +9,6 @@
   // Função para criar instâncias do HtmlWebpackPlugin
   const pages = [
     'index',
-    'programa-mulheres',
-    'programa-equipes',
-    'para-mulheres',
-    'para-equipes',
-    'manifesto',
-    'depoimentos',
-    'blog'
   ];
 
   const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({
@@ -89,8 +82,6 @@
       new CopyWebpackPlugin({
         patterns: [
           { from: 'src/img', to: 'img' },
-          { from: 'src/programaEquipes.json', to: 'programaEquipes.json' },
-          { from: 'src/programaMulheres.json', to: 'programaMulheres.json' }
 
         ]
       }),
