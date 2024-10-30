@@ -141,5 +141,12 @@
     text-align: center;
   }
 
+  .swiper-container .swiper-button-prev.slide-case {
+    left: auto;
+    right: 46%; /* Distância do canto direito mais a largura de um botão */
+  }
   
+  .swiper-container .swiper-button-next.slide-case {
+    right: 40%; /* Distância do canto direito */
+  }
 }

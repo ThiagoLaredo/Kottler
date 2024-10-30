@@ -16,13 +16,21 @@ html, body {
 }
 
 
+button {
+  all: unset;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+
 
 .container-background-svg {
   position: relative;
   /* background-image: linear-gradient(to top, var(--bg-escuro) 24%, transparent 20%); */
   z-index: 1;
-  overflow: hidden
-
+  overflow: hidden;
 
 }
 
@@ -37,19 +45,6 @@ html, body {
   position: absolute;
   bottom: -30%;
   left: -6%;
-}
-
-
-button {
-  all: unset;
-}
-
-body {
-  overflow-x: hidden;
-}
-
-#bg-cinza {
-  background-color: var(--bg-cinza);
 }
 
 * {
