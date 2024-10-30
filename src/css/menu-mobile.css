@@ -34,15 +34,14 @@
 
   .js [data-menu="logo"] {
     z-index: 999;
-    width: 20%;
   }
 
   .js [data-menu="button"] {
     display: flex;
-    background: none;
+    background-color: var(--primary); /* Define a cor de fundo como primary */
     border: none;
-    padding: 0.8rem; /* Aumenta a área de clique */
-    border-radius: 8px;
+    padding: 0.6rem; /* Aumenta a área de clique */
+    border-radius: 50%; /* Transforma o botão em um círculo */
     text-transform: uppercase;
     font-family: 'OpenSans', sans-serif;
     font-weight: bold;
@@ -50,15 +49,22 @@
     cursor: pointer;
     margin: 4px 0;
     align-items: center;
+    justify-content: center; /* Centraliza o conteúdo dentro do círculo */
     position: absolute; /* Alinha o botão à direita do contêiner */
-    right: 0; /* Garante que o botão esteja totalmente à direita */
     z-index: 300;
+    width: 2rem; /* Define a largura do círculo */
+    height: 2rem; /* Define a altura do círculo */
+  }
+
+  .header-scrolled button[data-menu='button'] {
+    background-color: transparent; /* Define a cor de fundo como primary */
+
   }
 
   #hamburguer {
     width: 30px;
     height: 2px;
-    background: var(--roxo);
+    background: var(--textwhite);
     border-radius: 1px;
     position: relative;
     transition: background 0.3s ease; /* Suaviza a transição da cor de fundo */
@@ -70,7 +76,7 @@
     display: block;
     width: 30px;
     height: 2px;
-    background: var(--roxo);
+    background: var(--textwhite);
     border-radius: 1px;
     position: absolute;
     left: 0;
@@ -121,6 +127,7 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    background-color: var(--bg);
   }
 
   .js [data-menu="list"] a, .js [data-menu="list"] span, .js [data-menu="list"] .submenu a  {
@@ -134,16 +141,6 @@
     position: relative;
   }
 
-  /* .js [data-menu="list"] li::after {
-    content: "";
-    display: block;
-    width: 100%;
-    top: 10px;
-    height: 1px;
-    border-radius: 5px;
-    background: rgba(52, 40, 64, 0.2);
-    position: relative;
-  } */
 
   .js [data-menu="list"] li:last-child::after {
     display: none;
@@ -155,8 +152,8 @@
 
   [data-menu="contato-mobile"].active  {
     position: fixed;
-    font: 500 1rem 'OpenSans', sans-serif;
-    color: var(--roxo);
+    font: 500 1rem 'Raleway', sans-serif;
+    color: var(--textwhite);
     display: block;
     bottom: 0;
     left: 0;

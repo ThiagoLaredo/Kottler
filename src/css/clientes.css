@@ -47,9 +47,9 @@
 
   .setas-up {
     width: 100px;
-    top: 20%; /* Posiciona a imagem no meio verticalmente */
     left: 50%;
-    transform: translateY(-50%) translateX(-50%) scaleY(-1); /* Centraliza a imagem verticalmente */
+    top: 30%;
+    /* transform: translateY(-50%) translateX(-50%) scaleY(-1);  */
   }
 
   .logos-clientes img {

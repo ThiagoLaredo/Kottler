@@ -186,7 +186,7 @@ ul[data-menu="list"] {
     z-index: 10;
     top: 0;
     left: 0;
-    border-bottom: 1px solid var(--bg);
+    /* border-bottom: 1px solid var(--textwhite); */
     padding: 6px 0px;
   }
 
