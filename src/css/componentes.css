@@ -11,6 +11,7 @@
   border-radius: 50px; /* Bordas arredondadas */
   transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves ao interagir */
   position: relative; /* Posição relativa para pseudo-elementos ou outros ajustes */
+  text-align: center;
 }
 
 .btn-vazado {
@@ -56,4 +57,15 @@
   bottom: 0; /* Posiciona o grifo na parte inferior do texto */
   left: 0; /* Alinha o grifo à esquerda */
   z-index: -1; /* Coloca o grifo atrás do texto */
+}
+
+@media (max-width: 768px) {
+
+  .texto-destaque {
+    font: 600 2rem/1.2 'Raleway', sans-serif;
+  }
+
+  .texto-destaque::before {
+    height: 0.5em; /* Altura do grifo */
+  }
 }

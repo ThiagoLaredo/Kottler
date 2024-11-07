@@ -145,6 +145,10 @@ footer {
    align-items: center;
   }
 
+  .footer-sobre h3 {
+    text-align: center;
+  }
+
   .footer-contatos h3 {
     text-align: center;}
 

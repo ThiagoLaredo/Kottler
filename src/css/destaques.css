@@ -1,5 +1,5 @@
 .destaques-background {
-  padding: 100px 20px 0 20px;
+  padding: 80px 20px 0 20px;
   position: relative;
 }
 
@@ -46,7 +46,7 @@
 @media (max-width: 768px) {
 
   .destaques-background {
-    padding: 60px 20px 0 20px;
+    padding: 60px 0px 60px 0px;
   }
 
   .destaques-lista {
@@ -63,6 +63,4 @@
   .destaque span {
     font: 800 2.4rem 'Raleway', sans-serif;
   }
-
-
 }

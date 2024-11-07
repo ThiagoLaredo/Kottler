@@ -140,9 +140,10 @@ img {
 
   .svg-ponto-vista-container  {
     position: absolute;
-    bottom: 50%;
+    bottom: -44%;
     left: 50%;
     transform: translateY(-50%) translateX(-50%) scaleY(-1); /* Centraliza a imagem verticalmente */
+    opacity: 0.3 !important;
 
   }
 
