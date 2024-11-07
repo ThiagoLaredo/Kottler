@@ -131,8 +131,30 @@ ul[data-menu="list"] {
 .submenu li a {
   color: var(--textwhite);
   text-decoration: none;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 10px 20px; /* Mova o padding para o <a> */
+  position: relative;
+  width: 320px;
+}
+
+.submenu li a::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0px; /* Ajuste conforme necessário */
+  right: 0px; /* Ajuste conforme necessário */
+  height: 2px;
+  border-radius: 2px;
+  display: block;
+  width: 100%;
+  background-color: rgba(var(--primary-rgb),.2); /* Cor do traço de divisão */
+}
+
+.submenu li:last-child a::before {
+  display: none;
 }
 
 .submenu li a:hover {
