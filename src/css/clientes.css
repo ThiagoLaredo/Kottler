@@ -53,6 +53,7 @@
     left: 50%;
     top: 30%;
     transform: translateY(-50%) translateX(-50%) scaleY(-1); 
+    display: none
   }
 
   .logos-clientes img {
