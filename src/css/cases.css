@@ -68,7 +68,6 @@
   min-width: auto;
 }
 
-
 .slide-case-texto h3 {
   font: 600 1.4rem/1 'Raleway', sans-serif;
   text-transform: uppercase;
@@ -126,8 +125,9 @@
     gap: 20px;
     max-width: 100%;
   }
-  
+
   .cases-home-texto h2 {
+    font: 300 2rem 'Raleway', sans-serif;
     text-align: center;
   }
   
@@ -138,10 +138,16 @@
     color: var(--primary);
     text-align: center;
   }
+  
+  .swiper-slide.slide-case img {
+    width: 100%;
+  }
 
   .slide-case-texto {
     max-width: 100%; 
     align-items: center;
+    min-height: 500px;
+    border-radius: 0 0 20px 20px;
   }
 
   .slide-case-texto h3,  .slide-case-texto p{
@@ -149,12 +155,18 @@
     text-align: center;
   }
 
+  .swiper-container .swiper-button-prev.slide-case, 
+.swiper-container .swiper-button-next.slide-case {
+  bottom: 1%;
+  top: auto; /* Remover a posição do topo */
+}
+
   .swiper-container .swiper-button-prev.slide-case {
     left: auto;
-    right: 46%; /* Distância do canto direito mais a largura de um botão */
+    right: 16%; /* Distância do canto direito mais a largura de um botão */
   }
   
   .swiper-container .swiper-button-next.slide-case {
-    right: 40%; /* Distância do canto direito */
+    right: 4%; /* Distância do canto direito */
   }
 }

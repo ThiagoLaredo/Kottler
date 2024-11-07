@@ -247,7 +247,6 @@ ul[data-menu="list"] {
     display: none; /* Esconde o submenu por padrão no mobile */
     position: relative; /* Usar relative no mobile */
     border-radius: 0px;
-    background-color: #fff;
     padding: 5px 0;
   }
 
@@ -262,5 +261,10 @@ ul[data-menu="list"] {
     justify-content: center;
     gap: 10px;
   }
+
+  .contato-link {
+    border: none
+  }
+
 
 }
