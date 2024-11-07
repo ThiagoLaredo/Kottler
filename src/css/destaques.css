@@ -11,9 +11,16 @@
 }
 
 .destaque {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   text-align: center;
   padding: 20px;
   min-width: 260px;
+  min-height: 160px;
+
   /* border: 1px solid var(--primary); */
   border-radius: 20px;
   background-color: var(--bg);
@@ -23,12 +30,16 @@
 
 .destaque span {
   font: 800 3rem 'Raleway', sans-serif;
+  line-height: 3rem;
   color: var(--primary);
 }
 
 .destaque p {
   font: 400 1rem/1.6 'Raleway', sans-serif;
   color: var(--textwhite);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  max-width: 25ch;
 }
 
 
