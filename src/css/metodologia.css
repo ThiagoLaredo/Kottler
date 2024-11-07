@@ -1,11 +1,13 @@
 .metodologia {
-    padding: 200px 20px;
+    padding: 120px 20px;
     position: relative;
 }
 
 .metodologia-texto {  
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
     gap: 20px;
   }
 
@@ -17,7 +19,7 @@
 .metodologia p {
   font: 300 1rem/1.6 'Raleway', sans-serif;
   color: var(--textwhite);
-  max-width: 40ch;
+  max-width: 44ch;
 }
 
 
@@ -26,11 +28,12 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%); /* Move a imagem 50% para cima, centralizando-a verticalmente */
-  /* flex: 1 1 50%;  */
   max-width: 800px; 
   height: auto;  
   border-radius: 20px 0 0 20px;
   object-fit: cover; 
+  flex: 0 0 40%; /* Define a largura como 40% */
+
 }
 
 

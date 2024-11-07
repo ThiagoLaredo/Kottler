@@ -67,8 +67,8 @@ export const initPageOpenAnimations = () => {
         button.addEventListener("mouseenter", () => {
             gsap.to(button, {
                 duration: 0.3,
-                backgroundColor: "var(--primary)", // Cor escurecida
-                color: "var(--textwhite)", // Cor do texto
+                backgroundColor: "var(--textwhite)", // Cor escurecida
+                color: "var(--primary)", // Cor do texto
                 scale: 1.05
             });
         });

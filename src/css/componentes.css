@@ -1,16 +1,16 @@
 .btn {
-  display: flex; /* Usar flexbox para alinhar itens dentro do link */
+  display: inline-flex; /* Altera de flex para inline-flex */
   align-items: center; /* Centraliza verticalmente o conteúdo do link */
-  justify-content: center;
+  justify-content: center; /* Centraliza horizontalmente o conteúdo dentro do botão */
   font: 600 1rem/1.6 'Raleway', sans-serif;
-  color: var(--bg-escuro);
+  color: var(--textwhite);
   text-transform: uppercase;
-  background-color: var(--textwhite);
+  background-color: var(--primary);
   text-decoration: none;
-  padding: 10px 20px;
-  border-radius: 50px;
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Adiciona transições suaves */
-  position: relative; /* Necessário para posicionar o pseudo-elemento */
+  padding: 10px 20px; /* Define um padding horizontal e vertical */
+  border-radius: 50px; /* Bordas arredondadas */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves ao interagir */
+  position: relative; /* Posição relativa para pseudo-elementos ou outros ajustes */
 }
 
 .btn-vazado {
