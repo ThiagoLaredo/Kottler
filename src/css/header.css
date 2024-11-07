@@ -9,16 +9,14 @@
   /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); */
 }
 
-
-
 .logo-icon, .logo-full {
   display: block;
 }
 
 .header.header-scrolled  {
- 
-  background-color: var(--bg-escuro);
- 
+  background-color: var(--bg-escuro); 
+  backdrop-filter: blur(10px); /* Ajuste o valor para o nível de desfoque */
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .header-scrolled .logo-full {
@@ -33,7 +31,7 @@
 }
 
 .header-scrolled .logo-svg {
-  width: 50% !important; /* Valor após scroll, a transição será aplicada aqui */
+  width: 70% !important; /* Valor após scroll, a transição será aplicada aqui */
 }
 
 
@@ -80,19 +78,25 @@ ul[data-menu="list"] {
 
 .menu li a,
 .menu li span {
-  font: 400 1rem/1 'Raleway', sans-serif;
+  font: 400 1rem 'Raleway', sans-serif;
   color: var(--textwhite);
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
   justify-content: center;
   text-decoration: none;
-  padding: 10px 8px;
-  line-height: 1;
+  padding: 0.5rem 1rem; /* Espaçamento interno para melhor aparência */
+  line-height: 1.2;
   align-items: center;
   position: relative;
   cursor: pointer; /* Aplica o cursor de mãozinha em todos os links e spans */
   transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.header-scrolled .menu li a,
+.header-scrolled .menu li span {
+  font: 400 0.8rem 'Raleway', sans-serif;
+
 }
 
 /* Estilo para o submenu - Desktop */
@@ -100,6 +104,7 @@ ul[data-menu="list"] {
   display: none; /* Esconde o submenu por padrão */
   position: absolute; /* Usar absolute no desktop */
   background-color: var(--bg-escuro);
+  border: 1px solid rgba(var(--primary-rgb),.5);
   list-style: none;
   padding: 20px;
   margin: 0;
@@ -118,9 +123,6 @@ ul[data-menu="list"] {
   min-width: 320px;
 }
 
-
-
-
 .submenu li {
   margin: 0;
   padding: 0; /* Remove o padding da <li> */
@@ -137,7 +139,6 @@ ul[data-menu="list"] {
   background-color: var(--primary);
   border-radius: 12px;
 }
-
 
 /* Estilo para o item de menu com submenu */
 .has-submenu > span {
@@ -163,6 +164,20 @@ ul[data-menu="list"] {
 
 .submenu-arrow.open {
   transform: rotate(180deg); /* Rotação da seta para cima */
+}
+
+.contato-link {
+  border: 1px solid #fff; /* Borda de 1px sólida e branca */
+  border-radius: 20px; /* Bordas arredondadas */
+  padding: 0.5rem 1rem; /* Espaçamento interno para melhor aparência */
+  text-decoration: none; /* Remove o sublinhado padrão */
+  color: #fff; /* Cor do texto branca */
+  transition: background-color 0.3s, color 0.3s; /* Transição suave para hover */
+}
+
+.contato-link:hover {
+  background-color: #fff; /* Cor de fundo branca ao passar o mouse */
+  color: var(--primary); /* Cor do texto primary ao passar o mouse */
 }
 
 /* Exibir o submenu no hover para desktop */

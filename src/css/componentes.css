@@ -1,6 +1,7 @@
 .btn {
-  display: inline-flex; /* Usar flexbox para alinhar itens dentro do link */
+  display: flex; /* Usar flexbox para alinhar itens dentro do link */
   align-items: center; /* Centraliza verticalmente o conteúdo do link */
+  justify-content: center;
   font: 600 1rem/1.6 'Raleway', sans-serif;
   color: var(--bg-escuro);
   text-transform: uppercase;
@@ -8,7 +9,7 @@
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 50px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Adiciona transições suaves */
   position: relative; /* Necessário para posicionar o pseudo-elemento */
 }
 

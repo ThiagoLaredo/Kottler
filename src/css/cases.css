@@ -41,14 +41,19 @@
   overflow: hidden;
   z-index: 3; /* Maior z-index, o SVG precisa ser menor que este */
   top: 0
+}
 
+.swiper-slide.slide-case img {
+  width: 70%;
+  height: 380px;
+  object-fit: cover;
+  z-index: 1;
 }
 
 .swiper-slide-prev, .swiper-slide-next {
   margin-right: -20px; /* Ajuste conforme necessário */
   z-index: 2
 }
-
 
 .slide-case-texto {
   display: flex;
@@ -58,6 +63,7 @@
   padding: 40px;
   border-radius: 0 0 20px 0;
   max-width: 60%; 
+  min-height: 300px;
   z-index: 3;
   min-width: auto;
 }
@@ -78,7 +84,7 @@
 .grade-rosa {
   position: absolute;
   top: 16%;
-  right: 6%;
+  right: 0;
   z-index: 99;
   max-width: 50%; /* Limita o crescimento ao contêiner sem exceder a largura original do SVG */
   height: auto; /* Mantém a proporção */
@@ -91,9 +97,9 @@
 }
 
 
-.swiper-container .swiper-button-prev .slide-case, 
-.swiper-container .swiper-button-next .slide-case {
-  bottom: 0;
+.swiper-container .swiper-button-prev.slide-case, 
+.swiper-container .swiper-button-next.slide-case {
+  bottom: 2%;
   top: auto; /* Remover a posição do topo */
 }
 

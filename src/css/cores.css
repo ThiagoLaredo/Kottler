@@ -4,6 +4,7 @@
   --bg-escuro: #1A1A1A;
   --primary: #F80D8E;
   --primary-rgb: 248, 13, 142; /* Valores RGB da cor primária */
+  --textwhite-rgb: 250, 250, 250; /* Exemplo de valores RGB para branco */
 }
 
 .textwhite {
