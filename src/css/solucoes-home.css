@@ -149,14 +149,14 @@
     left: 0;
     right: auto; /* Distância do canto direito mais a largura de um botão */
     bottom: auto;
-    top: 86%;
+    top: 50%;
   }
   
   #swiper1 .swiper-button-next {
     right: 0; /* Distância do canto direito */
     left: auto;
     bottom: auto;
-    top: 86%;
+    top: 50%;
   }
 
 

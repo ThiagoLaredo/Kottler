@@ -40,6 +40,8 @@ export default class MenuMobile {
         this.whatsappIcon.classList.add('hidden'); // Adiciona a classe 'hidden' ao ícone do WhatsApp
         this.animateMenuItems();
         this.toggleMenuAnimation(true);
+        // Desabilita o scroll
+        document.body.classList.add('no-scroll');
       }
     }
   }
@@ -55,6 +57,8 @@ export default class MenuMobile {
       this.instagramMobile.classList.remove(this.activeClass);
       this.whatsappIcon.classList.remove('hidden'); // Remove a classe 'hidden' do ícone do WhatsApp
       this.toggleMenuAnimation(false);
+      // Reativa o scroll
+      document.body.classList.remove('no-scroll');
     }
   }
 

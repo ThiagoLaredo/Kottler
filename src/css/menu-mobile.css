@@ -56,10 +56,9 @@
     height: 2rem; /* Define a altura do círculo */
   }
 
-  .header-scrolled button[data-menu='button'] {
-    background-color: transparent; /* Define a cor de fundo como primary */
-
-  }
+  /* .header-scrolled button[data-menu='button'] {
+    background-color: transparent; 
+  } */
 
   #hamburguer {
     width: 30px;

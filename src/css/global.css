@@ -15,7 +15,6 @@ html, body {
   background-color: #212121;
 }
 
-
 button {
   all: unset;
 }
@@ -135,8 +134,13 @@ img {
   width: 100%;
   height: 100%;
 }
-@media (max-width: 768px) {
 
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
 
   .svg-ponto-vista-container  {
     position: absolute;
