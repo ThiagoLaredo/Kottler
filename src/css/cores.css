@@ -23,11 +23,3 @@
 .primary {
   color: var(--primary);
 }
-
-.swiper-pagination-bullet {
-  background-color: rgba(var(--primary-rgb)); /* Cor do indicador não ativo com 50% de opacidade */
-}
-
-.swiper-pagination-bullet-active {
-  background-color: var(--primary); /* Cor do indicador ativo */
-}

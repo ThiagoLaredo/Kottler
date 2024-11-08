@@ -50,9 +50,22 @@
   z-index: 1;
 }
 
-.swiper-slide-prev, .swiper-slide-next {
-  margin-right: -20px; /* Ajuste conforme necessário */
-  z-index: 2
+.swiper-button-prev, #prev2 {
+  left: 50%; /* Ajuste conforme necessário */
+  right: auto;
+  z-index: 2;
+  top: 63%;
+}
+
+.swiper-button-next, #next2 {
+  right: 42%; /* Ajuste conforme necessário */
+  left: auto;
+  z-index: 2;
+  top: 63%;
+}
+
+.swiper-pagination, #pagination2 {
+  width: 60%;
 }
 
 .slide-case-texto {
@@ -82,10 +95,10 @@
 
 .grade-rosa {
   position: absolute;
-  top: 16%;
+  top: 10%;
   right: 0;
   z-index: 99;
-  max-width: 50%; /* Limita o crescimento ao contêiner sem exceder a largura original do SVG */
+  max-width: 50%; 
   height: auto; /* Mantém a proporção */
 }
 
@@ -95,21 +108,6 @@
   transform-origin: center;
 }
 
-
-.swiper-container .swiper-button-prev.slide-case, 
-.swiper-container .swiper-button-next.slide-case {
-  bottom: 2%;
-  top: auto; /* Remover a posição do topo */
-}
-
-.swiper-container .swiper-button-prev.slide-case {
-  left: auto;
-  right: 46%; /* Distância do canto direito mais a largura de um botão */
-}
-
-.swiper-container .swiper-button-next.slide-case {
-  right: 42%; /* Distância do canto direito */
-}
 
 @media (max-width: 768px) {
 
@@ -141,13 +139,15 @@
   
   .swiper-slide.slide-case img {
     width: 100%;
+    height: auto;
   }
 
   .slide-case-texto {
     max-width: 100%; 
     align-items: center;
-    min-height: 500px;
+    min-height: 460px;
     border-radius: 0 0 20px 20px;
+    padding: 40px 20px;
   }
 
   .slide-case-texto h3,  .slide-case-texto p{
@@ -161,12 +161,19 @@
   top: auto; /* Remover a posição do topo */
 }
 
-  .swiper-container .swiper-button-prev.slide-case {
-    left: auto;
-    right: 16%; /* Distância do canto direito mais a largura de um botão */
+.swiper-button-prev, #prev2  {
+    left: 0;
+    right: auto; /* Distância do canto direito mais a largura de um botão */
+    top: 37%;
   }
   
-  .swiper-container .swiper-button-next.slide-case {
-    right: 4%; /* Distância do canto direito */
+  .swiper-button-next, #next2 {
+    right: 0; 
+    left: auto; 
+    top: 37%;
+  }
+
+  .swiper-pagination, #pagination2 {
+    width: 100%;
   }
 }

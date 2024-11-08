@@ -59,6 +59,19 @@
   z-index: -1; /* Coloca o grifo atrás do texto */
 }
 
+.swiper-button-prev::after, .swiper-button-next::after {
+  color: var(--primary); 
+  font-size: 20px; 
+}
+
+.swiper-pagination-bullet {
+  background-color: rgba(var(--primary-rgb), 0.5);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: var(--primary); 
+}
+
 @media (max-width: 768px) {
 
   .texto-destaque {
