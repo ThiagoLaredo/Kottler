@@ -44,6 +44,10 @@
 
 @media (max-width: 768px) {
 
+  .clientes-background {
+    padding: 60px 20px;
+  }
+
   .clientes {
     gap: 40px;
   }

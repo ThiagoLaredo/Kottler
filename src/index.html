@@ -252,43 +252,40 @@
       
 
        
-      <section class="solucoes-home">
-        <div class="container">
-          <div class="solucoes-home-texto animate-me">
-            <h2 class="animate-me">Seja um ponto<br> <span class="texto-destaque">fora da curva</span></h2>
-            <p class="animate-me">Nossas soluções são projetadas para transformar a forma como você se comunica com seu público, aumenta suas vendas e se destaca no mercado.</p>
-            <a class="btn" href="#sobre-2">Conheça nossas soluções</a>
-          </div>
+      <section class="solucoes-home container">
+        <div class="solucoes-home-texto animate-me">
+          <h2 class="animate-me">Seja um ponto<br> <span class="texto-destaque">fora da curva</span></h2>
+          <p class="animate-me">Nossas soluções são projetadas para transformar a forma como você se comunica com seu público, aumenta suas vendas e se destaca no mercado.</p>
+          <a class="btn" href="#sobre-2">Conheça nossas soluções</a>
         </div>
-  
-           <!-- Swiper container -->
-      <div class="swiper-container solucoes-slides animate-me">
-        <!-- Wrapper para os slides -->
-        <div class="swiper-wrapper animate-me">
-          <!-- Slides -->
-          <div class="swiper-slide slide-solucoes">
-            <h3>Para vender mais</h3>
-            <p>Oferecemos um conjunto completo de soluções que ajudam sua empresa a atrair mais clientes, converter leads em vendas e fidelizar sua base de clientes.</p>
-            <img src="./img/index/globo-rosa.webp" alt="Desenho de um globo" loading="lazy">
+        <!-- Swiper container -->
+        <div class="swiper-container solucoes-slides animate-me" id="swiper1">
+          <!-- Wrapper para os slides -->
+          <div class="swiper-wrapper animate-me">
+            <!-- Slides -->
+            <div class="swiper-slide slide-solucoes">
+              <h3>Para vender mais</h3>
+              <p>Oferecemos um conjunto completo de soluções que ajudam sua empresa a atrair mais clientes, converter leads em vendas e fidelizar sua base de clientes.</p>
+              <img src="./img/index/globo-rosa.webp" alt="Desenho de um globo" loading="lazy">
+            </div>
+            <div class="swiper-slide slide-solucoes">
+              <h3>Para se posicionar</h3>
+              <p>O posicionamento eficaz comunica claramente quem você é, o que você representa e por que os clientes devem escolher você.</p>
+              <img src="./img/index/triangulo-rosa.webp" alt="Desenho de um triangulo" loading="lazy">
+            </div>
+            <div class="swiper-slide slide-solucoes">
+              <h3>Para gerar conteúdo</h3>
+              <p>Transforme a sua visão em conteúdos que não só chamem a atenção, mas que também entreguem valor real ao seu público-alvo.</p>
+              <img src="./img/index/4-circulos-rosa.webp" alt="Desenho de 4 circulos" loading="lazy">
+
+            </div>        
           </div>
-          <div class="swiper-slide slide-solucoes">
-            <h3>Para se posicionar</h3>
-            <p>O posicionamento eficaz comunica claramente quem você é, o que você representa e por que os clientes devem escolher você.</p>
-            <img src="./img/index/triangulo-rosa.webp" alt="Desenho de um triangulo" loading="lazy">
-          </div>
-          <div class="swiper-slide slide-solucoes">
-            <h3>Para gerar conteúdo</h3>
-            <p>Transforme a sua visão em conteúdos que não só chamem a atenção, mas que também entreguem valor real ao seu público-alvo.</p>
-            <img src="./img/index/4-circulos-rosa.webp" alt="Desenho de 4 circulos" loading="lazy">
-  
-          </div>        
-        </div>
-        <!-- Se necessário, adicione controle de navegação -->
-        <div class="swiper-pagination"></div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-      </div>  
-       
+          <!-- Paginação -->
+          <div class="swiper-pagination" id="pagination1"></div>
+          <!-- Navegação -->
+          <div class="swiper-button-next" id="next1"></div>
+          <div class="swiper-button-prev" id="prev1"></div>
+        </div> 
       </section>
 
       <section class="clientes-background">
@@ -333,7 +330,7 @@
             </div>
       
                     <!-- Swiper container -->
-          <div class="swiper-container cases-slides animate-me">
+          <div class="swiper-container cases-slides animate-me" id="swiper2" >
             <!-- Wrapper para os slides -->
             <div class="swiper-wrapper">
               <!-- Slides -->
@@ -369,10 +366,11 @@
           
                     
             </div>
-            <!-- Se necessário, adicione controle de navegação -->
-            <!-- <div class="swiper-pagination slide-case animate-me"></div> -->
-            <div class="swiper-button-prev slide-case"></div>
-            <div class="swiper-button-next slide-case"></div>
+            <!-- Paginação -->
+            <div class="swiper-pagination" id="pagination2"></div>
+            <!-- Navegação -->
+            <div class="swiper-button-next" id="next2"></div>
+            <div class="swiper-button-prev" id="prev2"></div>
           </div>  
         </div>
             
@@ -468,21 +466,39 @@
    <!-- Seu script de inicialização -->
    <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const swiper = new Swiper('.swiper-container', {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 30,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true, // Permite que os bullets sejam clicáveis
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
+    // Inicializa o primeiro Swiper
+    const swiper1 = new Swiper('#swiper1', {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+            el: '#pagination1',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '#next1',
+            prevEl: '#prev1',
+        },
     });
+
+    // Inicializa o segundo Swiper
+    const swiper2 = new Swiper('#swiper2', {
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+            el: '#pagination2',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '#next2',
+            prevEl: '#prev2',
+        },
+    });
+});
+
   </script>
+  
  
   
 
