@@ -136,8 +136,12 @@ footer {
 
 @media (max-width: 768px) {
 
+  footer {
+    background-color: #141414; 
+  }
+
   .rodape {
-    padding: 60px 20px;
+    padding: 80px 20px;
   }
 
   .rodape {
@@ -173,7 +177,7 @@ footer {
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: rgba(var(--primary-rgb),.3); /* Cor do traço de divisão */
+    background-color: rgba(var(--primary-rgb),.2); /* Cor do traço de divisão */
   }
 
   .footer-contatos h3 {
