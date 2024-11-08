@@ -19,10 +19,12 @@ export default class HeaderScroll {
     }
   }
 
+
   init() {
-    // Checa se a largura da janela é maior que 768px (ajuste conforme necessário)
-    if (window.innerWidth > 768) {
-      window.addEventListener('scroll', this.handleScroll.bind(this));
-    }
+    window.addEventListener('scroll', this.handleScroll.bind(this));
   }
 }
+
+
+
+

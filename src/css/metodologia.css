@@ -28,7 +28,7 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%); /* Move a imagem 50% para cima, centralizando-a verticalmente */
-  max-width: 800px; 
+  max-width: 55%; 
   height: auto;  
   border-radius: 20px 0 0 20px;
   object-fit: cover; 

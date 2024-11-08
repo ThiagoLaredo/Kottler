@@ -54,14 +54,14 @@
   left: 50%; /* Ajuste conforme necessário */
   right: auto;
   z-index: 2;
-  top: 63%;
+  top: 64%;
 }
 
 .swiper-button-next, #next2 {
   right: 42%; /* Ajuste conforme necessário */
   left: auto;
   z-index: 2;
-  top: 63%;
+  top: 64%;
 }
 
 .swiper-pagination, #pagination2 {
