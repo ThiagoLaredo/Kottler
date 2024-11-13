@@ -38,21 +38,4 @@
 }
 
 
-@media (max-width: 768px) { 
 
-
-
-  .img-circulo {
-    width: 90vw; /* 50% da largura da viewport */
-    height: 90vw; /* Mantém a proporção para formar um círculo perfeito */
-  }
-
-  .wave-text {
-    font-size: 2.4rem;
-    line-height: 3.4rem;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1919px) {
-
-}

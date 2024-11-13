@@ -47,6 +47,17 @@
   top: auto;
 }
 
+#pagination1 {
+  bottom: var(--swiper-pagination-bottom, 8px);
+  top: var(--swiper-pagination-top, auto);
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto; /* Remover o width 100% */
+  display: flex;
+  justify-content: center;
+  gap: 2px; /* Espaçamento entre os bullets */
+}
+
 .swiper-slide.slide-solucoes {
   padding: 100px 40px;
   /* background-color: var(--bg-escuro);           */
