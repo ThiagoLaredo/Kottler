@@ -1,0 +1,218 @@
+
+/* Estilos para a seção de introdução do case */
+.case-introducao {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.case-introducao img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para garantir que a imagem cubra todo o espaço */
+}
+
+/* Overlay com pseudo-elemento ::after */
+.case-introducao::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(var(--text-rgb), 0.5);
+  z-index: 1; /* Overlay acima da imagem */
+}
+
+.case-titulo {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background-color: var(--primary);
+  padding: 40px 20px;
+  border-radius: 20px 0 0 20px;
+  color: #fff;
+  z-index: 2; /* Coloca o título acima da imagem */
+}
+
+.case-titulo h1 {
+  font: 700 2rem 'Raleway', sans-serif;
+  max-width: 30ch;
+  text-align: right;
+}
+
+/* Container principal que divide o conteúdo em duas partes */
+.case-container {
+  display: flex;
+  gap: 60px;
+  height: auto;
+  padding: 80px 20px
+}
+
+/* Seção de Texto à Esquerda */
+.case-content-esquerda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Seção da Galeria à Direita */
+.case-content-direita {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  overflow-y: auto;
+}
+
+.galeria-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.galeria-imagem {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.case-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+.case-content h2 {
+  font: 900 1.4rem 'Raleway', sans-serif;
+  color: var(--primary);
+}
+
+.case-content h3 {
+  font: 700 1rem 'Raleway', sans-serif;
+  color: var(--textwhite);
+  margin-bottom: 10px;
+}
+
+.case-content p {
+  font: 300 1rem/1.6 'Raleway', sans-serif;
+  color: var(--textwhite);
+}
+
+.case-content a {
+  font: 600 1rem/1.6 'Raleway', sans-serif;
+  color: var(--textwhite);
+}
+
+.case-content a {
+  font: 600 1rem/1.6 'Raleway', sans-serif;
+  color: var(--textwhite);
+  text-decoration: none; /* Remove o sublinhado */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px; /* Espaço entre o texto e o triângulo */
+}
+
+.case-content a::after {
+  content: '';
+  display: inline-block;
+  border-style: solid;
+  border-width: 6px 0 6px 10px; /* Triângulo apontando para a esquerda */
+  border-color: transparent transparent transparent var(--primary);
+}
+
+.case-content li {
+  font: 300 1rem/1.6 'Raleway', sans-serif;
+  color: var(--textwhite);
+  position: relative;
+  margin-bottom: 10px;
+  padding-left: 20px; /* Adiciona espaço à esquerda para a bolinha */
+  list-style: none; /* Remove o marcador padrão da lista */
+}
+
+.case-content li::before {
+  content: '';
+  position: absolute;
+  left: 0; /* Posiciona a bolinha à esquerda */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px; /* Aumentei o tamanho para melhor visibilidade */
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--primary);
+}
+/* Estilos para o modal */
+.modal {
+  display: none; /* Inicialmente escondido */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Esconde o excesso de conteúdo */
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 60%; /* Ajusta a largura máxima para vídeos verticais */
+  max-height: 90%;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#video-player {
+  width: auto; /* Ajusta automaticamente para manter a proporção */
+  height: 100%;
+  max-height: 90vh; /* Limita a altura máxima */
+  object-fit: contain; /* Garante que o vídeo não será cortado */
+  border-radius: 10px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+
+  .case-titulo {
+    border-radius: 20px;
+    right: 20px;
+    left: 20px;
+  }
+  
+  .case-titulo h1 {
+    text-align: center;
+  }
+
+  .case-container {
+    flex-direction: column;
+  }
+
+}

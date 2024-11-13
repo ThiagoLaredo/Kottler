@@ -1,0 +1,141 @@
+{
+  "cases": [
+    {
+      "id": "comunidade_bisturi",
+      "titulo": "Campanha de Lançamento Comunidade do Bisturi – Vendas Esgotadas em Menos de 1 Hora",
+      "subtitulo": "Campanha de Lançamento – Vendas Esgotadas",
+      "cliente": "Comunidade do Bisturi",
+      "descricao_cliente": "A Comunidade do Bisturi, gerida por cirurgiões gerais, oferece um espaço exclusivo de aprendizado para residentes e cirurgiões em busca de atualizações e novidades na área da saúde.",
+      "imagem": "./img/cases/mania-de-cirurgia/podcast-mania-de-cirurgia.webp",
+      "galeria": [
+        "./img/cases/mania-de-cirurgia/case-mania-de-cirurgia.webp",
+        "./img/cases/mania-de-cirurgia/case-podcast-mania-de-cirurgia.webp",
+        "../img/cases/mania-de-cirurgia/podcast-mania-de-cirurgia.webp"
+      ],
+      "desafio": "Realizar uma campanha de lançamento para vender as 75 vagas disponíveis, cada uma avaliada em R$ 5.000,00, criando um ambiente de alto engajamento e exclusividade.",
+      "estrategia": [
+        {
+          "fase": "Fase de Preparação",
+          "descricao": "Estudamos o perfil dos cirurgiões e residentes de cirurgia, identificando interesses e dores dos potenciais alunos. Realizamos testes A/B para descobrir as mensagens que mais geravam engajamento e conversão."
+        },
+        {
+          "fase": "Coleta de Pré-inscrições e Aquecimento de Leads",
+          "descricao": "Coletamos pré-inscrições através de formulários digitais e nutrimos os leads com e-mails marketing ao longo das semanas para criar expectativa antes do lançamento."
+        },
+        {
+          "fase": "Lançamento Exclusivo",
+          "descricao": "Realizamos uma live exclusiva para leads pré-cadastrados, oferecendo um conteúdo de valor e condições especiais de inscrição."
+        }
+      ],
+      "resultados": {
+        "descricao": "75 vagas vendidas em menos de 1 hora, gerando R$ 375.000,00 em faturamento.",
+        "detalhes": [
+          "ROI de 18.650%.",
+          "Criação de uma lista de espera para a próxima turma.",
+          "Engajamento elevado com a audiência."
+        ]
+      },
+      "conclusao": "A campanha demonstrou o poder de uma estratégia bem planejada e focada em exclusividade.",
+      "video": "https://www.instagram.com/p/C51YqNsLywE/"
+    },
+    {
+      "id": "ra_fisio",
+      "titulo": "Case de Sucesso: Redesign de Identidade Visual para RA Fisio",
+      "subtitulo": "Redesign de Identidade Visual",
+      "cliente": "Rodrigo Armond – RA Fisio",
+      "descricao_cliente": "A RA Fisio é uma clínica de fisioterapia de alto padrão, especializada em reabilitação pós-operatória com foco em joelho, quadril, tornozelo e ombro.",
+      "imagem": "./img/cases/rafisio/rafisio-principal.webp",
+      "galeria": [
+        "./img/cases/rafisio/instagram.webp",
+        "./img/cases/rafisio/mockup.webp",
+        "./img/cases/rafisio/mockup-2.webp",
+        "./img/cases/rafisio/jaleco.webp"
+      ],
+      "desafio": "Modernizar a identidade visual da RA Fisio para refletir o crescimento da clínica e as inovações nos serviços, mantendo o vínculo emocional com os pacientes.",
+      "estrategia": [
+        {
+          "fase": "Fase de Preparação",
+          "descricao": "Realizamos uma profunda imersão no universo da RA Fisio, utilizando insights obtidos diretamente de Rodrigo Armond."
+        },
+        {
+          "fase": "Estudo de Público e Marca",
+          "descricao": "Trabalhamos em uma identidade visual que refletisse a fase atual da clínica, comunicando exclusividade e confiança."
+        },
+        {
+          "fase": "Redesign da Logomarca",
+          "descricao": "A nova logo foi desenvolvida para ser mais fluída e moderna, mantendo as cores originais e introduzindo uma tipografia contemporânea."
+        }
+      ],
+      "resultados": {
+        "descrição": "A nova identidade visual consolidou a RA Fisio como referência em reabilitação pós-operatória.",
+        "detalhes": [
+          "Manutenção da essência afetiva da marca.",
+          "Atração de novos pacientes de alto poder aquisitivo.",
+          "Modernização da marca para refletir a fase madura e inovadora da clínica."
+        ]
+      },
+      "conclusao": "O redesign equilibrou modernidade e tradição, mantendo a conexão emocional com os pacientes.",
+      "video": "./img/cases/rafisio/rafisio.mp4"
+    },
+    {
+      "id": "bwa_global",
+      "titulo": "Case de Sucesso: Gestão de Mídias – BWA Global",
+      "subtitulo": "Gestão de Mídias",
+      "cliente": "BWA Global",
+      "descricao_cliente": "A BWA Global é uma empresa especializada em serviços de contabilidade e performance tributária para empresas de médio e grande porte.",
+      "imagem": "./img/cases/case-bwa-global.webp",
+      "galeria": [
+        "./img/cases/bwa-global/instagram-bwa-antes.webp",
+        "./img/cases/bwa-global/instagram-bwa-depois.webp"
+      ],
+      "desafio": "Reposicionar a BWA nas mídias sociais, humanizando sua presença digital e criando uma comunicação mais envolvente.",
+      "estrategia": [
+        {
+          "fase": "Fase de Diagnóstico e Preparação",
+          "descricao": "Entender profundamente a essência da BWA Global e seus pilares: humanização, autoridade, singularidade e networking."
+        },
+        {
+          "fase": "Redefinição de Canais",
+          "descricao": "A estratégia foi centrada em Instagram, LinkedIn e Newsletter.",
+          "detalhes": [
+            {
+              "canal": "Instagram",
+              "conteudo": "Criamos conteúdos autorais e alinhamos o tom de voz para refletir a essência da marca."
+            },
+            {
+              "canal": "LinkedIn",
+              "conteudo": "Aumentamos a frequência de postagens, focando em conteúdos humanizados."
+            },
+            {
+              "canal": "Newsletter",
+              "conteudo": "Reformulamos o design para maior engajamento."
+            }
+          ]
+        },
+        {
+          "fase": "Testes e Ajustes",
+          "descricao": "Realizamos testes com diferentes formatos e estilos de conteúdo, especialmente no Instagram e LinkedIn."
+        }
+      ],
+      "resultados": {
+        "instagram": [
+          "Aumento de 53,1% no engajamento com o público.",
+          "Vídeos Reels aumentaram as interações em +299%."
+        ],
+        "linkedin": [
+          "Crescimento de 403,4% nas reações.",
+          "600% de aumento nos compartilhamentos e 410 novos seguidores orgânicos."
+        ],
+        "newsletter": [
+          "Taxas de abertura de e-mails entre 22,5% e 28,35%.",
+          "Maior número de cliques nos botões."
+        ],
+        "endomarketing": [
+          "Criação de campanhas internas como 'Novembro Azul'."
+        ]
+      },
+      "conclusao": "Reposicionamos a BWA como referência no mercado contábil, humanizando sua presença digital.",
+      "video": ""
+    }
+  ]
+}

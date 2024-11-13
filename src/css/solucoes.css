@@ -1,0 +1,37 @@
+.introducao.solucoes-back {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/index/metodologia.webp'); /* Substitua pelo caminho da sua imagem */
+  background-size: cover; /* Garante que a imagem cubra toda a área */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  display: flex;
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente o conteúdo */
+}
+
+.solucoes {
+  position: absolute;
+  right: 0;
+  top: 50%; /* Posiciona o contêiner 50% a partir do topo */
+  transform: translateY(-50%); 
+  z-index: 1;
+  background: var(--primary); /* Adiciona um fundo semitransparente para melhor legibilidade */
+  padding: 40px;
+  border-radius: 20px 0px 0px 20px;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.solucoes h1 {
+  color: var(--textwhite);
+  font: 700 2.5rem 'Raleway', sans-serif;
+}
+
+.solucoes p {
+  color: var(--textwhite);
+  font: 300 1rem/1.6 'Raleway', sans-serif;
+}

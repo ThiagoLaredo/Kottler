@@ -1,179 +1,129 @@
-.cases-background {
-  /* background-color: var(--bg-escuro); */
-  padding: 80px 20px;
+.introducao.cases-back {
   position: relative;
-  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/index/metodologia.webp'); /* Substitua pelo caminho da sua imagem */
+  background-size: cover; /* Garante que a imagem cubra toda a área */
+  background-position: center; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  display: flex;
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente o conteúdo */
 }
 
-.cases-home {
+.cases {
+  position: absolute;
+  right: 0;
+  top: 50%; /* Posiciona o contêiner 50% a partir do topo */
+  transform: translateY(-50%); 
+  z-index: 1;
+  background: var(--primary); /* Adiciona um fundo semitransparente para melhor legibilidade */
+  padding: 40px;
+  border-radius: 20px 0px 0px 20px;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 20px;
 }
 
-.cases-home-texto {
+.cases h1 {
+  color: var(--textwhite);
+  font: 700 2.5rem 'Raleway', sans-serif;
+}
+
+.cases p {
+  color: var(--textwhite);
+  font: 300 1rem/1.6 'Raleway', sans-serif;
+}
+
+.cases-lista {
+  padding: 80px 20px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 0 20px;
-  gap: 20px;
-  max-width: 40%;
+  gap: 60px;
 }
 
-.cases-home-texto h2 {
-  font: 300 2.4rem 'Raleway', sans-serif;
+.case h2 {
   color: var(--textwhite);
+  font: 700 2rem 'Raleway', sans-serif;
+  max-width: 25ch;
+  margin-bottom: 10px;
 }
 
-.cases-home-texto p {
-  font-size: 1.6rem;
-  line-height: 2.6rem;
-  font-weight: normal;
-  color: var(--primary);
-  text-align: center;
+.case a {
+  font: 600 1rem/1.6 'Raleway', sans-serif;
+  color: var(--textwhite);
+  text-decoration: none; /* Remove o sublinhado */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre o texto e o triângulo */
+  transition: transform 0.3s ease; /* Adiciona uma transição suave para o efeito de escala */
+}
+
+.case a:hover {
+  transform: scale(1.1); /* Aumenta o tamanho do link ao passar o mouse */
+}
+
+.case a::after {
+  content: '';
+  display: inline-block;
+  border-style: solid;
+  border-width: 6px 0 6px 10px; /* Triângulo apontando para a esquerda */
+  border-color: transparent transparent transparent var(--primary);
 }
 
 
-.swiper-container.cases-slides {
+
+.case {
   position: relative;
-  flex: 0 0 100%; /* Define a largura como 60% */
-  max-width: 100%; /* Garante que a largura máxima seja 60% */
+  width: 100vw;
+  max-width: 100%; /* Ajuste conforme necessário */
+  height: 600px; /* Ajuste conforme necessário */
   overflow: hidden;
-  z-index: 3; /* Maior z-index, o SVG precisa ser menor que este */
-  top: 0
-}
-
-.swiper-slide.slide-case img {
-  width: 70%;
-  height: 380px;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.swiper-button-prev, #prev2 {
-  left: 50%; /* Ajuste conforme necessário */
-  right: auto;
-  z-index: 2;
-  top: 64%;
-}
-
-.swiper-button-next, #next2 {
-  right: 42%; /* Ajuste conforme necessário */
-  left: auto;
-  z-index: 2;
-  top: 64%;
-}
-
-.swiper-pagination, #pagination2 {
-  width: 60%;
-}
-
-.slide-case-texto {
+  border-radius: 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  background-color: var(--bg-escuro);
-  padding: 40px;
-  border-radius: 0 0 20px 0;
-  max-width: 60%; 
-  min-height: 300px;
-  z-index: 3;
-  min-width: auto;
+  justify-content: center;
+  align-items: flex-start;
+  color: #fff; /* Define a cor do texto como branca */
+  padding: 20px;
+  background-color: #000 /* Fundo semitransparente para melhor legibilidade */
 }
 
-.slide-case-texto h3 {
-  font: 600 1.4rem/1 'Raleway', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--primary);
-}
-
-.slide-case-texto p {
-  font: 300 1rem/1.6 'Raleway', sans-serif;
-  color: var(--textwhite);
-}
-
-.grade-rosa {
+.case img {
   position: absolute;
-  top: 10%;
-  right: 0;
-  z-index: 99;
-  max-width: 50%; 
-  height: auto; /* Mantém a proporção */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.3; /* Ajuste a opacidade conforme necessário */
 }
 
-.grade-rosa g {
-  opacity: 0;
-  transform: scale(0.8);
-  transform-origin: center;
+.case h2, .case p {
+  position: relative;
+  z-index: 1;
+  text-align: left;
 }
-
 
 @media (max-width: 768px) {
 
-  .cases-background {
-    padding: 0px 0px;
-  }
-
-  .cases-home-texto {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 0 20px;
-    gap: 20px;
-    max-width: 100%;
-  }
-
-  .cases-home-texto h2 {
-    font: 300 2rem 'Raleway', sans-serif;
-    text-align: center;
-  }
-  
-  .cases-home-texto p {
-    font-size: 1.6rem;
-    line-height: 2.6rem;
-    font-weight: normal;
-    color: var(--primary);
-    text-align: center;
-  }
-  
-  .swiper-slide.slide-case img {
-    width: 100%;
-    height: auto;
-  }
-
-  .slide-case-texto {
-    max-width: 100%; 
-    align-items: center;
-    min-height: 460px;
-    border-radius: 0 0 20px 20px;
-    padding: 40px 20px;
-  }
-
-  .slide-case-texto h3,  .slide-case-texto p{
-    text-align: center;
-    text-align: center;
-  }
-
-  .swiper-container .swiper-button-prev.slide-case, 
-.swiper-container .swiper-button-next.slide-case {
-  bottom: 1%;
-  top: auto; /* Remover a posição do topo */
-}
-
-.swiper-button-prev, #prev2  {
-    left: 0;
-    right: auto; /* Distância do canto direito mais a largura de um botão */
-    top: 37%;
-  }
-  
-  .swiper-button-next, #next2 {
-    right: 0; 
-    left: auto; 
-    top: 37%;
-  }
-
-  .swiper-pagination, #pagination2 {
+  .cases {
+    border-radius: 20px;
+    right: 20px;
+    left: 20px;
     width: 100%;
   }
+
+  .case {
+    width: 100%;
+    height: 300px;  
+  }
+
+  .case h2 {
+    font-size: 1.5rem;
+  }
+
 }

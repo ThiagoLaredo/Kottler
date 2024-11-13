@@ -9,6 +9,9 @@
   // Função para criar instâncias do HtmlWebpackPlugin
   const pages = [
     'index',
+    'solucoes',
+    'cases',
+    'case',
   ];
 
   const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({
@@ -82,7 +85,7 @@
       new CopyWebpackPlugin({
         patterns: [
           { from: 'src/img', to: 'img' },
-
+          { from: 'src/cases.json', to: 'cases.json' },
         ]
       }),
     ],

@@ -25,12 +25,6 @@ export const initPageOpenAnimations = () => {
         ease: "power1.out" 
     });
 
-    const h1 = document.querySelector('.wave-text');
-    if (h1) {
-        h1.innerHTML = h1.textContent.split('').map(letter => `<span>${letter}</span>`).join('');
-        gsap.set(h1, { opacity: 1 });
-    }
-
     const introducao = document.querySelector(".introducao");
     if (introducao) {
         gsap.fromTo(introducao, {
@@ -45,22 +39,6 @@ export const initPageOpenAnimations = () => {
         });
     }
 
-    const waveTextSpans = document.querySelectorAll(".introducao-texto h1 span");
-    if (waveTextSpans.length > 0) {
-        gsap.from(waveTextSpans, {
-            duration: 0.5,
-            opacity: 0,
-            ease: "power1.inOut",
-            y: -20,
-            stagger: {
-                each: 0.025,
-                from: "start",
-                yoyo: true,
-                repeat: 0
-            },
-            delay: 0.8
-        });
-    }
         // Animação para o botão com a classe 'btn'
     const btn = document.querySelectorAll(".btn");
     btn.forEach(button => {
@@ -83,44 +61,44 @@ export const initPageOpenAnimations = () => {
         });
     });
 
-      // Animação de letreiro rodando em loop
-  // Calculando a largura do contêiner para começar fora da tela
-// Obtém a largura da tela para começar a animação parcialmente dentro da tela
-const screenWidth = window.innerWidth;
-
-// Calculando a largura do contêiner
-const fullWidth = document.querySelector('.coluna-1').scrollWidth;
-
-// Configurando a animação para iniciar parcialmente na tela e mover para a direita
-gsap.fromTo(".coluna-1", 
-    { x: `-${fullWidth - screenWidth / 2}px` }, // Inicia com metade da tela visível
-    {
-        x: '0%', // Mover até a borda esquerda da tela
-        ease: "none",
-        repeat: -1,
-        duration: 20, // Ajuste a duração conforme necessário para controle de velocidade
-        modifiers: {
-            x: gsap.utils.unitize(x => parseFloat(x) % fullWidth) // Garante um loop contínuo
+        // Verifique se está na página `index.html`
+        if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/') {
+          const coluna1 = document.querySelector('.coluna-1');
+          const coluna2 = document.querySelector('.coluna-2');
+      
+          if (coluna1 && coluna2) {
+            const screenWidth = window.innerWidth;
+            const fullWidth = coluna1.scrollWidth;
+      
+            gsap.fromTo(
+              coluna1,
+              { x: `-${fullWidth - screenWidth / 2}px` },
+              {
+                x: '0%',
+                ease: 'none',
+                repeat: -1,
+                duration: 20,
+                modifiers: {
+                  x: gsap.utils.unitize(x => parseFloat(x) % fullWidth)
+                }
+              }
+            );
+      
+            gsap.to(coluna2, {
+              x: '-100%',
+              modifiers: {
+                x: gsap.utils.unitize(x =>
+                  parseFloat(x) %
+                  parseFloat(window.getComputedStyle(coluna2).width)
+                )
+              },
+              repeat: -1,
+              duration: 20,
+              ease: 'none'
+            });
+          }
         }
-    }
-);
-
-
-    
-gsap.to(".coluna-2", {
-    x: '-100%', // Aumentar a distância percorrida
-    modifiers: {
-        x: gsap.utils.unitize(x => parseFloat(x) % (parseFloat(window.getComputedStyle(document.querySelector('.coluna-2')).width)))
-    },
-    repeat: -1,
-    duration: 20, // Manter a mesma duração para alinhar as velocidades
-    ease: "none"
-});
-
-
-
-
-    
+ 
 };
 
 
