@@ -129,8 +129,8 @@
 }
 
 .slide-svg-gerar img {
-  width: 200px; /* Define a largura fixa */
-  height: 200px; /* Define a altura fixa */
+  width: 400px; /* Define a largura fixa */
+  height: 400px; /* Define a altura fixa */
   object-fit: contain; /* Ajusta o SVG sem distorcer */
   pointer-events: none; /* Não interfere com o clique ou interação */
   display: block;
