@@ -147,7 +147,6 @@
   font-size: 2em;
   color: #fff;
   z-index: 4; /* Fica acima de todas as outras camadas */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Para melhorar a legibilidade */
 }
 
 
