@@ -106,8 +106,8 @@ img {
 /* Estilo para o ícone flutuante do WhatsApp */
 .whatsapp-float {
   position: fixed;
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
   bottom: 20px;
   right: 20px;
   background-color: #25D366;

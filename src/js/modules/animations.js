@@ -98,7 +98,14 @@ export const initPageOpenAnimations = () => {
             });
           }
         }
- 
+
+        gsap.to('.whatsapp-float', {
+            scale: 1.1, // aumenta o tamanho do ícone
+            duration: 0.6, // duração da animação
+            repeat: -1, // repete infinitamente
+            yoyo: true, // volta ao estado inicial para um efeito suave de pulsar
+            ease: 'power1.inOut' // suaviza a entrada e saída da animação
+          });          
 };
 
 

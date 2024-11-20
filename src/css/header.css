@@ -190,18 +190,19 @@ ul[data-menu="list"] {
   transform: rotate(180deg); /* Rotação da seta para cima */
 }
 
-.contato-link {
-  border: 1px solid #fff; /* Borda de 1px sólida e branca */
+#contato-link {
+  /* border: 1px solid #fff;  */
   border-radius: 20px; /* Bordas arredondadas */
   padding: 0.5rem 1rem; /* Espaçamento interno para melhor aparência */
   text-decoration: none; /* Remove o sublinhado padrão */
-  color: #fff; /* Cor do texto branca */
+  background-color: #fff; /* Cor de fundo branca ao passar o mouse */
+  color: var(--primary); /* Cor do texto primary ao passar o mouse */  
   transition: background-color 0.3s, color 0.3s; /* Transição suave para hover */
 }
 
-.contato-link:hover {
-  background-color: #fff; /* Cor de fundo branca ao passar o mouse */
-  color: var(--primary); /* Cor do texto primary ao passar o mouse */
+#contato-link:hover {
+  background-color:var(--primary); /* Cor de fundo branca ao passar o mouse */
+  color: #fff; /* Cor do texto primary ao passar o mouse */
 }
 
 /* Exibir o submenu no hover para desktop */

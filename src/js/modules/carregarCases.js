@@ -39,7 +39,7 @@ export default class CarregarCases {
         <img src="${caseItem.imagem}" alt="${caseItem.titulo}" loading="lazy">
         <div class="slide-case-texto">
           <h3>${caseItem.cliente}</h3>
-          <p>${caseItem.descricao_cliente}</p>
+          <p>${caseItem.descricao_home}</p>
           <a class="btn-vazado" href="./case.html?id=${caseItem.id}">Ver case completo</a>
         </div>
       </div>
