@@ -141,42 +141,36 @@
 .texto-vender {
   font: 600 2rem/1.2 'Raleway', sans-serif;
   color: var(--textwhite);
+  text-transform: uppercase;
+  text-align: right;
   z-index: 4;
   position: absolute;
   top: 60px;  
   right: 40px; 
   transform: translateX(0); 
+  display: flex; /* Permite o uso de posicionamento absoluto para o :before */
+  flex-direction: column;
+  gap: 10px;
 }
 
 .palavra {
   position: relative; /* Necessário para posicionar o :before corretamente */
-  display: flex; /* Permite o uso de posicionamento absoluto para o :before */
-  flex-direction: column;
+  display: block;
+  width: fit-content;
+  
 }
 
 .palavra:before {
   background-color: var(--primary);
   bottom: 0;
   content: "";
-  height: .6em;
-  right: 0;
+  height: 70%;
+  left: -5px;
   position: absolute;
   width: 100%;
   z-index: -1;
   display: inline-flex;
   }
-
-
-
-/* .slide-solucoes img {
-  position: absolute;
-  opacity: 0.5;
-  width: auto;
-  height: 250px;
-  top: 50%; 
-  left: -15%;
-  transform: translateY(-50%); 
-} */
 
 @media (max-width: 768px) {
 
