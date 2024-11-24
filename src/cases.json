@@ -7,7 +7,7 @@
       "cliente": "Comunidade do Bisturi",
       "descricao_cliente": "A Comunidade do Bisturi, gerida por cirurgiões gerais, oferece um espaço exclusivo de aprendizado para residentes e cirurgiões em busca de atualizações e novidades na área da saúde.",
       "descricao_home": "Com 75 vagas esgotadas em menos de 1 hora e ROI de 18.650%, o lançamento da Comunidade do Bisturi transformou exclusividade e estratégia em resultados excepcionais. Confira como alcançamos esse sucesso!",
-      "imagem": "./img/cases/mania-de-cirurgia/podcast-mania-de-cirurgia.webp",
+      "imagem": "./img/cases/mania-de-cirurgia/capa-case-mania-de-cirurgia.webp",
       "galeria": [
         "./img/cases/mania-de-cirurgia/case-mania-de-cirurgia.webp",
         "./img/cases/mania-de-cirurgia/case-podcast-mania-de-cirurgia.webp",
@@ -29,7 +29,7 @@
         }
       ],
       "resultados": {
-        "descricao": "75 vagas vendidas em menos de 1 hora, gerando R$ 375.000,00 em faturamento.",
+        "descrição": "75 vagas vendidas em menos de 1 hora, gerando R$ 375.000,00 em faturamento.",
         "detalhes": [
           "ROI de 18.650%.",
           "Criação de uma lista de espera para a próxima turma.",

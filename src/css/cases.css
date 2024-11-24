@@ -11,27 +11,35 @@
   justify-content: center; /* Centraliza horizontalmente o conteúdo */
 }
 
-.cases {
+.cases-container {
+ position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.intro-cases {
   position: absolute;
-  right: 0;
-  top: 50%; /* Posiciona o contêiner 50% a partir do topo */
-  transform: translateY(-50%); 
+  right: 20px;
+  top: 80%;
+  transform: translateY(-80%); 
   z-index: 1;
   background: var(--primary); /* Adiciona um fundo semitransparente para melhor legibilidade */
   padding: 40px;
-  border-radius: 20px 0px 0px 20px;
+  border-radius: 20px;
   width: 50%;
   display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
   flex-direction: column;
   gap: 20px;
 }
 
-.cases h1 {
+.intro-cases h1 {
   color: var(--textwhite);
   font: 700 2.5rem 'Raleway', sans-serif;
 }
 
-.cases p {
+.intro-cases p {
   color: var(--textwhite);
   font: 300 1rem/1.6 'Raleway', sans-serif;
 }

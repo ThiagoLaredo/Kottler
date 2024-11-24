@@ -1,11 +1,11 @@
 .destaques-background {
-  padding: 80px 20px 0 20px;
+  padding: 100px 20px 20px 20px;
   position: relative;
 }
 
 .destaques-lista {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 40px;
   align-items: center;
 }
