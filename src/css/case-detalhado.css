@@ -7,6 +7,12 @@
   overflow: hidden;
 }
 
+.case-introducao-container {
+  position: relative;
+   width: 100vw;
+   height: 100vh;
+ }
+
 .case-introducao img {
   position: absolute;
   top: 0;
@@ -30,18 +36,18 @@
 
 .case-titulo {
   position: absolute;
-  top: 50%;
   right: 0;
-  transform: translateY(-50%);
+  top: 80%;
+  transform: translateY(-80%); 
   background-color: var(--primary);
-  padding: 40px 20px;
-  border-radius: 20px 0 0 20px;
+  padding: 40px 40px;
+  border-radius: 20px;
   color: #fff;
   z-index: 2; /* Coloca o título acima da imagem */
 }
 
 .case-titulo h1 {
-  font: 700 2rem 'Raleway', sans-serif;
+  font: 700 2rem/1.4 'Raleway', sans-serif;
   max-width: 30ch;
   text-align: right;
 }
@@ -131,26 +137,46 @@
   border-color: transparent transparent transparent var(--primary);
 }
 
-.case-content li {
+/* .case-content li {
   font: 300 1rem/1.6 'Raleway', sans-serif;
   color: var(--textwhite);
   position: relative;
   margin-bottom: 10px;
-  padding-left: 20px; /* Adiciona espaço à esquerda para a bolinha */
-  list-style: none; /* Remove o marcador padrão da lista */
+  padding-left: 20px; 
+  list-style: none; 
 }
 
 .case-content li::before {
   content: '';
   position: absolute;
-  left: 0; /* Posiciona a bolinha à esquerda */
+  left: 0; 
   top: 50%;
   transform: translateY(-50%);
-  width: 6px; /* Aumentei o tamanho para melhor visibilidade */
+  width: 6px; 
   height: 6px;
   border-radius: 50%;
   background-color: var(--primary);
+} */
+
+
+.case-content {
+  /* Garantir que a lista tenha espaço à esquerda para os marcadores */
+  padding-left: 20px;
 }
+
+.case-content li {
+  font: 300 1rem/1.6 'Raleway', sans-serif;
+  color: var(--textwhite);
+  margin-bottom: 10px;
+  list-style: circle inside var(--primary) !important; /* Altera o marcador padrão */
+}
+
+.case-content ul {
+  /* Remover padding padrão do navegador para UL */
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
 /* Estilos para o modal */
 .modal {
   display: none; /* Inicialmente escondido */

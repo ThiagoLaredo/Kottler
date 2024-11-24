@@ -65,9 +65,9 @@ body {
   box-sizing: border-box; /* Inclui padding na largura total */
 }
 
-ul {
+/* ul {
   list-style: none;
-}
+} */
 
 a {
   text-decoration: none;

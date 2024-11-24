@@ -117,8 +117,10 @@ renderizarCaseDetalhado(selector) {
   container.innerHTML = `
     <!-- Introdução do Case -->
     <section class="case-introducao">
-      <div class="case-titulo">
-        <h1>${caseItem.titulo}</h1>
+      <div class="container case-introducao-container">
+        <div class="case-titulo">
+          <h1>${caseItem.titulo}</h1>
+        </div>
       </div>
       <img src="${caseItem.imagem}" alt="${caseItem.titulo}" width="800" height="600">
     </section>
