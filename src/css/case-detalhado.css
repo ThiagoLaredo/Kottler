@@ -36,7 +36,7 @@
 
 .case-titulo {
   position: absolute;
-  right: 0;
+  right: 20px;
   top: 80%;
   transform: translateY(-80%); 
   background-color: var(--primary);
