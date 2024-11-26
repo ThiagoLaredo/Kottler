@@ -137,15 +137,6 @@
   border-color: transparent transparent transparent var(--primary);
 }
 
-/* .case-content li {
-  font: 300 1rem/1.6 'Raleway', sans-serif;
-  color: var(--textwhite);
-  position: relative;
-  margin-bottom: 10px;
-  padding-left: 20px; 
-  list-style: none; 
-}
-
 .case-content li::before {
   content: '';
   position: absolute;
