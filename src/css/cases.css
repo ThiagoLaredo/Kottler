@@ -2,9 +2,9 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background-image: url('../img/index/metodologia.webp'); /* Substitua pelo caminho da sua imagem */
+  background-image: url('../img/cases/cases.webp'); /* Substitua pelo caminho da sua imagem */
   background-size: cover; /* Garante que a imagem cubra toda a área */
-  background-position: center; /* Centraliza a imagem */
+  background-position: 80%; /* Centraliza a imagem */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
   display: flex;
   align-items: center; /* Centraliza verticalmente o conteúdo */
