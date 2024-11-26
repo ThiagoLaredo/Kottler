@@ -136,24 +136,30 @@ renderizarCaseDetalhado(selector) {
         
         <!-- Desafio -->
         <div class="case-content">
-          <h2>Desafio</h2>
-          <p>${caseItem.desafio}</p>
+        <h2>Desafio</h2>
+        ${Array.isArray(caseItem.desafio) 
+          ? caseItem.desafio.map(paragrafo => `<p>${paragrafo}</p>`).join('')
+          : `<p>${caseItem.desafio}</p>`}
         </div>
 
-        <!-- Estratégia Implementada -->
-        <div class="case-content">
-          <h2>Estratégia Implementada</h2>
-          ${caseItem.estrategia.map(estr => `
-            <div>
-              <h3>${estr.fase}</h3>
-              <p>${estr.descricao}</p>
-              ${estr.detalhes ? `
-                <ul>
-                  ${estr.detalhes.map(det => `<li><strong>${det.canal}:</strong> ${det.conteudo}</li>`).join('')}
-                </ul>` : ''}
-            </div>
-          `).join('')}
-        </div>
+
+      <!-- Estratégia Implementada -->
+      <div class="case-content">
+        <h2>Estratégia Implementada</h2>
+        ${caseItem.estrategia.map(estr => `
+          <div>
+            <h3>${estr.fase}</h3>
+            ${Array.isArray(estr.descricao)
+              ? estr.descricao.map(desc => `<p>${desc}</p>`).join('')
+              : `<p>${estr.descricao}</p>`}
+            ${estr.detalhes ? `
+              <ul>
+                ${estr.detalhes.map(det => `<li><strong>${det.canal}:</strong> ${det.conteudo}</li>`).join('')}
+              </ul>` : ''}
+          </div>
+        `).join('')}
+      </div>
+
 
         <!-- Resultados -->
         <div class="case-content">
@@ -187,7 +193,9 @@ renderizarCaseDetalhado(selector) {
         <!-- Conclusão -->
         <div class="case-content">
           <h2>Conclusão</h2>
-          <p>${caseItem.conclusao}</p>
+          ${Array.isArray(caseItem.conclusao)
+            ? caseItem.conclusao.map(paragrafo => `<p>${paragrafo}</p>`).join('')
+            : `<p>${caseItem.conclusao}</p>`}
           ${caseItem.video ? `<a href="#" class="video-link">Assista o vídeo</a>` : ''}
         </div>
       </div>
