@@ -25,12 +25,11 @@
           "descricao": "A partir dos dados dos testes A/B, começamos a coletar pré-inscrições através de formulários digitais. Os leads gerados foram nutridos ao longo das semanas por uma série de e-mails marketing com conteúdos exclusivos e materiais ricos, construindo uma expectativa crescente para o grande lançamento."
         },
         {
-          "fase": "Lançamento Exclusivo: Live para Cadastrados",
+          "fase": "3. Lançamento Exclusivo: Live para Cadastrados",
           "descricao": "Para a fase final, criamos uma live exclusiva para os leads pré-cadastrados, oferecendo um conteúdo de valor e condições especiais de inscrição. O senso de urgência e exclusividade foi fundamental para a estratégia, culminando no esgotamento das 75 vagas em menos de 1 hora de live. Cada vaga vendida por R$ 5.000,00 gerou um total de R$ 375.000,00 em vendas imediatas, além de uma lista de espera para a próxima turma."
         }
       ],
       "resultados": {
-        "descrição": "75 vagas vendidas em menos de 1 hora, gerando R$ 375.000,00 em faturamento.",
         "detalhes": [
           "75 vagas vendidas em menos de 1 hora.",
           "R$ 375.000,00 em faturamento gerado.",
@@ -101,7 +100,7 @@
       "estrategia": [
         {
           "fase": "1. Fase de Diagnóstico e Preparação",
-          "descricao": "Nosso primeiro passo foi entender profundamente a essência da BWA Global, seus principais stakeholders e os pilares que sustentam sua marca: humanização, autoridade, singularidade e networking. Com base nesse diagnóstico, traçamos um plano de ação para resgatar a pessoalidade e aumentar a interação nas mídias sociais, promovendo a marca de forma humanizada e ao mesmo tempo técnica."
+          "descricao": "Nosso primeiro passo foi entender profundamente a essência da BWA Global, seus principais stakeholders e os pilares que sustentam sua marca: <strong>humanização, autoridade, singularidade e networking</strong>. Com base nesse diagnóstico, traçamos um plano de ação para resgatar a pessoalidade e aumentar a interação nas mídias sociais, promovendo a marca de forma humanizada e ao mesmo tempo técnica."
         },
         {
           "fase": "2. Redefinição de Canais",
@@ -127,18 +126,18 @@
         }
       ],
       "resultados": {
-        
+        "": "Os resultados do projeto de gestão de mídias foram impressionantes, transformando a presença digital da BWA Global em apenas 4 meses:",   
         "instagram": [
-          "Aumento de 53,1% no engajamento com o público.",
-          "Vídeos Reels aumentaram as interações em +299%."
+          "<strong>Aumento de 53,1% no engajamento</strong> com o público.",
+          "Destaque para os <strong>vídeos Reels</strong>, que aumentaram as interações em +299%."
         ],
         "linkedin": [
-          "Crescimento de 403,4% nas reações.",
-          "600% de aumento nos compartilhamentos e 410 novos seguidores orgânicos.",
+          "<strong>Crescimento de 403,4%</strong> nas reações às postagens",
+          "<strong>600% de aumento nos compartilhamentos</strong>, com um crescimento expressivo de <strong>410 novos seguidores orgânicos.</strong>",
           "Publicações dos sócios ampliaram o alcance para uma rede diversificada de CEOs, advogados e contadores."        
         ],
         "newsletter": [
-          "Taxas de abertura de e-mails variando entre 22,5% e 28,35%, mostrando um aumento de interesse nos conteúdos enviados.",
+          "Taxas de abertura de e-mails variando entre <strong>22,5% e 28,35%</strong>, mostrando um aumento de interesse nos conteúdos enviados.",
           "O design renovado e as novas chamadas para ação resultaram em um maior número de cliques nos botões, impulsionando o tráfego para as redes sociais e blog."
         ],
         "endomarketing": [
