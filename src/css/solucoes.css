@@ -6,6 +6,7 @@
   background-size: cover; /* Garante que a imagem cubra toda a área */
   background-position: center; /* Centraliza a imagem */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
+  background-attachment: fixed;
   display: flex;
   align-items: center; /* Centraliza verticalmente o conteúdo */
   justify-content: center; /* Centraliza horizontalmente o conteúdo */
