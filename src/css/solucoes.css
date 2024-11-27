@@ -20,8 +20,7 @@
 .solucoes-intro {
   position: absolute;
   right: 20px;
-  top: 70%; /* Posiciona o contêiner 50% a partir do topo */
-  transform: translateY(-50%); 
+  bottom: 80px; /* Posiciona o contêiner 50% a partir do topo */
   z-index: 1;
   background: var(--primary); /* Adiciona um fundo semitransparente para melhor legibilidade */
   padding: 40px;
@@ -63,6 +62,7 @@
   min-height: min-content;
   padding: 40px;
   border: 1px solid var(--primary);
+  border-top: none;
   border-radius: 0 0 20px 20px;
   display: flex;
   flex-direction: column;
@@ -71,11 +71,14 @@
 }
 
 .solucao-grupo h2 {
-  color: var(--textwhite);
-  font: 700 1.4rem/1 'Raleway', sans-serif;
+  color: var(--primary);
+  font: 600 1.4rem/1 'Raleway', sans-serif;
   text-align: center;
+  border: 1px solid var(--primary);
+  /* border-bottom: none; */
+  border-radius: 0 0 20px 20px;
   padding: 10px;
-  background-color: var(--primary);
+  background-color: var(--textwhite);
   border-radius: 20px 20px 0 0;
   width: 100%;
   text-align: center;
@@ -98,7 +101,7 @@
 
 .solucao p {
   color: var(--textwhite);
-  font: 300 1rem/1.4 'Raleway', sans-serif;
+  font: 300 1rem/1.6 'Raleway', sans-serif;
 }
 
 .solucao ul {

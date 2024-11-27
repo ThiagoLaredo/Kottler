@@ -20,8 +20,7 @@
 .intro-cases {
   position: absolute;
   right: 20px;
-  top: 80%;
-  transform: translateY(-80%); 
+  bottom: 80px; /* Posiciona o contêiner 50% a partir do topo */
   z-index: 1;
   background: var(--primary); /* Adiciona um fundo semitransparente para melhor legibilidade */
   padding: 40px;

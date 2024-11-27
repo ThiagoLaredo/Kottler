@@ -37,8 +37,7 @@
 .case-titulo {
   position: absolute;
   right: 20px;
-  top: 80%;
-  transform: translateY(-80%); 
+  bottom: 80px; /* Posiciona o contêiner 50% a partir do topo */
   background-color: var(--primary);
   padding: 40px 40px;
   border-radius: 20px;
