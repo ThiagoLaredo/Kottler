@@ -20,8 +20,7 @@
 .solucoes-intro {
   position: absolute;
   right: 20px;
-  top: 70%; /* Posiciona o contêiner 50% a partir do topo */
-  transform: translateY(-50%); 
+  bottom: 80px; /* Posiciona o contêiner 50% a partir do topo */
   z-index: 1;
   background: var(--primary); /* Adiciona um fundo semitransparente para melhor legibilidade */
   padding: 40px;
@@ -72,7 +71,7 @@
 
 .solucao-grupo h2 {
   color: var(--textwhite);
-  font: 700 1.4rem/1 'Raleway', sans-serif;
+  font: 600 1.4rem/1 'Raleway', sans-serif;
   text-align: center;
   padding: 10px;
   background-color: var(--primary);
