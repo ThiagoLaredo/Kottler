@@ -73,7 +73,7 @@
 
 .solucao-grupo h2 {
   color: var(--primary);
-  font: 600 1.4rem/1 'Raleway', sans-serif;
+  font: 700 1.4rem/1 'Raleway', sans-serif;
   text-align: center;
   border: 1px solid var(--primary);
   /* border-bottom: none; */
@@ -85,7 +85,7 @@
   text-align: center;
   display: block;
   text-transform: uppercase;
-  letter-spacing: 0.1rem;
+  /* letter-spacing: 0.1rem; */
   margin: 0;
 }
 
