@@ -15,6 +15,7 @@ import "../css/cores.css";
 import "../css/componentes.css";
 import "../css/fontes.css";
 import "../css/solucoes.css";
+import "../css/vender.css";
 
 
 import MenuMobile from './modules/menu-mobile.js';

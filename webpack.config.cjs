@@ -12,6 +12,7 @@
     'solucoes',
     'cases',
     'case',
+    'vender-mais',
   ];
 
   const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({
