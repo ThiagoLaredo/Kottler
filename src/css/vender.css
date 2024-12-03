@@ -117,3 +117,31 @@
   color: var(--primary);
   font: 600 1rem/1.6 'Raleway', sans-serif;
 }
+
+@media (max-width: 768px) { /* Tablets e smartphones */
+
+  .solucao-intro {
+    width: 100%; 
+  }
+
+  .vender-lista {
+    grid-template-columns: repeat(2, 1fr); /* Reduz para 2 colunas */
+    gap: 20px 30px; /* Ajusta o espaçamento */
+  }
+
+  .solucoes-como {
+    border: none;
+    padding: 0;
+  }
+}
+
+@media (max-width: 480px) { /* Smartphones menores */
+  .vender-lista {
+    grid-template-columns: 1fr; /* Uma única coluna */
+    gap: 40px; /* Espaçamento menor */
+  }
+
+  .vender-item {
+    gap: 15px; /* Ajusta o espaçamento entre os elementos */
+  }
+}
