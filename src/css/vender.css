@@ -1,9 +1,46 @@
+.introducao.vender-back {
+  position: relative;
+  width: 100vw;
+  height: 60vh;
+  background-image: url('../img/solucoes/solucoes-kottler.webp'); /* Substitua pelo caminho da sua imagem */
+  background-size: cover; /* Garante que a imagem cubra toda a área */
+  background-position: top; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  background-attachment: fixed;
+  display: flex;
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente o conteúdo */
+}
+
+
+.solucao-intro {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente a partir do topo */
+  right: 20px; /* Mantém 20px da borda direita */
+  transform: translateY(-30%); /* Ajusta para centralizar o próprio tamanho do elemento */
+  z-index: 1;
+  background: var(--primary); /* Adiciona um fundo semitransparente para melhor legibilidade */
+  padding: 40px;
+  border-radius: 20px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+
+.solucao-intro h1 {
+  color: var(--textwhite);
+  font: 700 2.5rem 'Raleway', sans-serif;
+  text-align: center;
+}
+
 .vender-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 80px;
   padding: 80px 20px;
 }
 
@@ -30,6 +67,10 @@
   position: relative;
 }
 
+.vender-item img {
+  width: 20%;
+  height: auto;}
+
 .vender-item h3 { 
   color: var(--primary);
   font: 600 1.2rem/1.4 'Raleway', sans-serif;
@@ -48,8 +89,10 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  border-top: 1px solid var(--primary);
-  padding: 80px 20px;
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  padding: 40px;
+  /* padding: 80px 20px; */
 
 }
 
@@ -61,7 +104,7 @@
 .solucoes-como ul {
  display: flex;
  flex-direction: column;
- gap: 10px;
+ gap: 20px;
 }
 
 .solucoes-como li {

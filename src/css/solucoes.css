@@ -4,7 +4,7 @@
   height: 100vh;
   background-image: url('../img/solucoes/solucoes-kottler.webp'); /* Substitua pelo caminho da sua imagem */
   background-size: cover; /* Garante que a imagem cubra toda a área */
-  background-position: center; /* Centraliza a imagem */
+  background-position: top; /* Centraliza a imagem */
   background-repeat: no-repeat; /* Evita que a imagem se repita */
   background-attachment: fixed;
   display: flex;
