@@ -13,6 +13,9 @@
     'cases',
     'case',
     'vender-mais',
+    'se-posicionar',
+    'gerar-conteudo',
+
   ];
 
   const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({
