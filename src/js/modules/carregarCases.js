@@ -133,13 +133,13 @@ renderizarCaseDetalhado(selector) {
     <section class="case-container container">
       <div class="case-content-esquerda">
         <!-- Cliente -->
-        <div class="case-content">
+        <div class="case-content animate-me">
           <h2>Cliente: ${caseItem.cliente}</h2>
           <p>${caseItem.descricao_cliente}</p>
         </div>
         
         <!-- Desafio -->
-        <div class="case-content">
+        <div class="case-content animate-me">
         <h2>Desafio</h2>
         ${Array.isArray(caseItem.desafio) 
           ? caseItem.desafio.map(paragrafo => `<p>${paragrafo}</p>`).join('')
@@ -148,7 +148,7 @@ renderizarCaseDetalhado(selector) {
 
 
       <!-- Estratégia Implementada -->
-      <div class="case-content">
+      <div class="case-content animate-me">
         <h2>Estratégia Implementada</h2>
         ${caseItem.estrategia.map(estr => `
           <div>
@@ -209,26 +209,40 @@ renderizarCaseDetalhado(selector) {
       <div class="case-content-direita case-galeria">
         <div class="galeria-container">
           ${caseItem.galeria.map(imagem => `
-            <img src="${imagem}" alt="${caseItem.titulo}" class="galeria-imagem">
+            <img src="${imagem}" alt="${caseItem.titulo}" class="galeria-imagem animate-me">
           `).join('')}
         </div>
       </div>` : ''}
     </section>
   `;
 
-// Seleciona todos os elementos dentro do container para animar em sequência
-const elementosParaAnimar = container.querySelector('.case-container');
-
-// Aplica a animação com GSAP
+// Aplicar animação após renderizar o conteúdo
+const elementosParaAnimar = container.querySelectorAll('.animate-me');
 gsap.from(elementosParaAnimar, {
   opacity: 0,
-  y: 50, // Move para baixo inicialmente
-  duration: 3, // Duração de cada animação
-  ease: "power1.out", // Suavização
-  stagger: 0.2, // Intervalo entre cada elemento
+  y: 50,
+  duration: 3,
+  ease: "power1.out",
+  stagger: 0.6, // Opção para animação em sequência
 });
 
-  
+const introducao = document.querySelector(".case-introducao");
+if (introducao) {
+    gsap.fromTo(introducao, {
+        clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
+        opacity: 0
+    }, {
+        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+        opacity: 1,
+        duration: 1.5,
+        ease: "power2.out",
+        onComplete: () => introducao.style.clipPath = 'none'
+    });
+}
+
+gsap.set([".case-titulo"], { opacity: 0 });
+
+    gsap.to([".case-titulo"], { duration: 0.5, delay: 2, opacity: 1, ease: "power1.inOut" });
 
 
    // Adicionar evento de clique dinamicamente para abrir o modal
