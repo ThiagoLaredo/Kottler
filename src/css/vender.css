@@ -53,7 +53,7 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* Define 3 colunas com tamanhos iguais */
   grid-template-rows: auto auto; /* Duas linhas automáticas */
-  gap: 40px 60px; /* 10px de gap vertical, 20px de gap horizontal */
+  gap: 80px 60px; /* 10px de gap vertical, 20px de gap horizontal */
 }
 
 
@@ -76,6 +76,11 @@
   font: 600 1.2rem/1.4 'Raleway', sans-serif;
 }
 
+.vender-item h3 span { 
+  color: var(--primary);
+  font: 300 1.2rem/1.4 'Raleway', sans-serif;
+}
+
 .vender-item p {
   color: var(--textwhite);
   font: 300 1rem/1.6 'Raleway', sans-serif;
@@ -93,7 +98,6 @@
   border-radius: 20px;
   padding: 40px;
   /* padding: 80px 20px; */
-
 }
 
 .solucoes-como h2 {
@@ -111,6 +115,11 @@
   color: var(--textwhite);
   font: 300 1rem/1.6 'Raleway', sans-serif;
   margin-left: 20px;
+}
+
+.solucoes-como p {
+  color: var(--textwhite);
+  font: 300 1rem/1.6 'Raleway', sans-serif;
 }
 
 .solucoes-como strong {
