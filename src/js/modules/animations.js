@@ -194,10 +194,6 @@ export const initScrollAnimations = () => {
       });
       
 
-
-    
-  
-
     const numeros = document.querySelectorAll('.numero');
     numeros.forEach(numero => {
         const originalText = numero.innerText; // Captura o texto original

@@ -15,7 +15,8 @@
     'vender-mais',
     'se-posicionar',
     'gerar-conteudo',
-
+    'metodologia',
+    'contato',
   ];
 
   const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({

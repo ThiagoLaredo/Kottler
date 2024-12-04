@@ -162,7 +162,8 @@
             </g>
           </g>
           </svg>
-          
+
+
           <span class="visually-hidden">Voltar para a página inicial</span>
         </a>
           <nav class="menu" data-menu="suave">
@@ -175,9 +176,9 @@
                 <span><a href="./solucoes.html">Soluções</a></span>
                 <ul class="submenu">
                   <li><a href="./solucoes.html">Todas</a></li>
-                  <li><a href="./solucoes.html#paravendermais">Para vender mais</a></li>
-                  <li><a href="./solucoes.html#paraseposicionar">Para se posicionar</a></li>
-                  <li><a href="./solucoes.html#paragerarconteudo">Para gerar conteúdo</a></li>
+                <li><a href="./vender-mais.html">Para vender mais</a></li>
+<li><a href="./se-posicionar.html">Para se posicionar</a></li>
+<li><a href="./gerar-conteudo.html">Para gerar conteúdo</a></li>
                 </ul>
               </li>
               <li class="has-submenu">
@@ -202,23 +203,71 @@
       <img src="./img/instagram.svg" width="30" height="30">
       <span class="visually-hidden">Ir para o Instagram</span>
     </a>
-   
 
-    <section class="case-detalhado" id="case-detalhado"></section>
-  
-    <div id="video-modal" class="modal">
-      <div class="modal-content">
-        <button class="close-modal">✖</button>
-        <video id="video-player" controls autoplay>
-          <source id="video-source" src="" type="video/mp4">
-          Seu navegador não suporta a tag de vídeo.
-        </video>
+    <section class="introducao solucoes-back">
+     <div class="solucoes-container container">
+      <div class="solucoes-intro">
+        <h1>Soluções Personalizadas para Impulsionar Seu Negócio</h1>
+        <p>Na Agência Kottler, entendemos que cada negócio é único e tem seus próprios desafios e objetivos. Por isso, oferecemos uma ampla variedade de soluções de marketing, posicionamento e vendas, todas estrategicamente pensadas para se alinharem com os objetivos da sua empresa.
+        </p> 
       </div>
-    </div>
-    
-    
+     </div> 
+    </section>
 
-
+    <section class="lista-solucoes container">
+      <div class="solucao-grupo animate-me">
+        <h2>Vender mais</h2>
+        <div class="solucao solucao-vender">
+          <h3>Quer aumentar suas vendas e levar seu negócio para o próximo nível?</h3>
+          <p>Na Agência Kottler, oferecemos um conjunto completo de soluções que ajudam sua empresa a atrair mais clientes, converter leads em vendas e fidelizar sua base de clientes.</p>
+          <h4>-> Soluções para Vender Mais</h4>
+          <ul>
+            <li>Criação de Campanhas Publicitárias</li>
+            <li>Tráfego Pago</li>
+            <li>Otimização de Funil de Vendas Criação e Otimização de Landing Pages</li>
+            <li>Materiais de Apoio para a Equipe Comercial</li>
+            <li>Design para Peças Offline</li>
+          </ul>
+          <a class="btn" href="./vender-mais.html">Ver mais</a>
+        </div>
+       </div> 
+      
+       <div class="solucao-grupo animate-me">
+        <h2>Se Posicionar</h2>
+        <div class="solucao solucao-posicionar">
+          <h3>Posicionar sua empresa de maneira eficaz no mercado é fundamental para construir uma marca forte e duradoura.</h3>
+          <p>Na Agência Kottler, temos uma variedade de soluções para a sua marca conquistar o próprio espaço em um mercado competitivo e acelerado, mas sabemos que isso só é possível por meio de um trabalho que converse com os valores e metas da sua empresa, agregando valor ao negócio.</p>
+          <h4>-> Soluções para se Posicionar</h4>
+          <ul>
+            <li>Identidade Visual</li>
+            <li>Naming</li>
+            <li>SEO</li>
+            <li>Sites</li>
+            <li>Vídeo e Apresentação Institucional</li>
+            <li>Ativação de Marca em Eventos</li>
+          </ul>
+          <a class="btn btn-solucoes" href="./se-posicionar.html">Ver mais</a>
+        </div>
+       </div>
+       
+      <div class="solucao-grupo animate-me">
+        <h2>Gerar mais conteúdo</h2>
+        <div class="solucao solucao-gerar">
+          <h3>Quer se destacar no mundo digital e criar conexões verdadeiras com seu público?</h3>
+          <p>Na Agência Kottler, oferecemos uma gama completa de soluções de criação de conteúdo que ajudam sua empresa a engajar, informar e converter. Nosso objetivo é transformar sua visão em conteúdos que não só chamem a atenção, mas que também entreguem valor real ao seu público-alvo.</p>
+          <h4>-> Soluções para Gerar Conteúdo</h4>
+          <ul>
+            <li>Gestão de Redes Sociais</li>
+            <li>Tráfego Pago</li>
+            <li>Gestão de Comunidades</li>
+            <li>Produção Audiovisual</li>
+            <li>Réguas de Relacionamento</li>
+            <li>Planos de Comunicação</li>
+          </ul>
+          <a class="btn btn-solucoes" href="./gerar-conteudo.html">Ver mais</a>
+        </div>
+      </div>
+    </section>
   
     <footer>
       <div class="rodape container">
@@ -267,47 +316,6 @@
       <a href="https://wa.me/551181998720962" class="whatsapp-float" target="_blank">
         <img src="./img/whatsapp-icon2.svg" alt="WhatsApp" class="whatsapp-icon">
       </a>
-
-      <!-- Swiper JS -->
-   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-   <!-- Seu script de inicialização -->
-   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    // Inicializa o primeiro Swiper
-    const swiper1 = new Swiper('#swiper1', {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-            el: '#pagination1',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '#next1',
-            prevEl: '#prev1',
-        },
-    });
-
-    // Inicializa o segundo Swiper
-    const swiper2 = new Swiper('#swiper2', {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-            el: '#pagination2',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '#next2',
-            prevEl: '#prev2',
-        },
-    });
-});
-
-  </script>
-  
- 
-  
 
   </body>
 </html>
