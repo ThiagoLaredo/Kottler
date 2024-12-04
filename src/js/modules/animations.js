@@ -4,17 +4,26 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
 gsap.registerPlugin(ScrollTrigger);
 
 export const initPageOpenAnimations = () => {
-    gsap.set([".contact-info", ".social-instagram a", ".header", "[data-menu='logo']", "[data-menu='button']", "#menu > li > a", "#menu > li > span", ".introducao-texto h1", ".introducao-texto p", ".introducao-texto a", ".svg-decorativo"], { opacity: 0 });
-    
-    gsap.to(".header", { duration: 1, opacity: 1, ease: "power1.inOut" });
-    gsap.to(".contact-info", { duration: 1, delay: 0.2, opacity: 1, ease: "power1.inOut" });
-    gsap.to(".social-instagram a", { duration: 1, delay: 0.4, opacity: 1, ease: "power1.inOut" });
-    gsap.to("[data-menu='logo']", { duration: 1, delay: 0.6, opacity: 1, ease: "power1.inOut" });
-    gsap.to("[data-menu='button']", { duration: 1, delay: 0.7, opacity: 1, ease: "power1.inOut" });
-    gsap.to(".introducao-texto p", { duration: 1, delay: 2, opacity: 1, ease: "power1.inOut" });
-    gsap.to(".introducao-texto a", { duration: 1, delay: 2.2, opacity: 1, ease: "power1.inOut" });
-    gsap.to(".svg-decorativo", { duration: 1, delay: 2.4, opacity: 1, ease: "power1.inOut" });
 
+    // Define os elementos que terão animações de abertura com a classe 'page-open-animate'
+    const pageOpenElements = document.querySelectorAll(".page-open-animate");
+    gsap.set(pageOpenElements, { opacity: 0 });
+
+    gsap.to(pageOpenElements, {
+        opacity: 1,
+        duration: 1,
+        stagger: 0.2, // Animação com um pequeno atraso entre os elementos
+        ease: "power1.inOut",
+    });
+
+    gsap.set([".contact-info", ".social-instagram a", ".header", "[data-menu='logo']", "[data-menu='button']", "#menu > li > a", "#menu > li > span", ".solucoes-intro", ".solucao-intro", ".intro-cases", ".case-titulo"], { opacity: 0 });
+
+    gsap.to(".header", { duration: 0.5, opacity: 1, ease: "power1.inOut" });
+    gsap.to(".contact-info", { duration: 0.5, delay: 0.1, opacity: 1, ease: "power1.inOut" });
+    gsap.to(".social-instagram a", { duration: 0.5, delay: 0.2, opacity: 1, ease: "power1.inOut" });
+    gsap.to("[data-menu='logo']", { duration: 0.5, delay: 0.3, opacity: 1, ease: "power1.inOut" });
+    gsap.to("[data-menu='button']", { duration: 0.5, delay: 0.4, opacity: 1, ease: "power1.inOut" });
+    gsap.to([".solucao-intro", ".solucoes-intro", ".intro-cases", ".case-titulo"], { duration: 0.5, delay: 2, opacity: 1, ease: "power1.inOut" });
 
     // Anima apenas os links e spans de primeiro nível, incluindo o <span>Serviços</span>
     gsap.to("#menu > li > a, #menu > li > span", { 
@@ -226,3 +235,4 @@ export const initScrollAnimations = () => {
     });
    
 };
+

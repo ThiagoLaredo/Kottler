@@ -1,3 +1,7 @@
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default class CarregarCases {
   constructor(url) {
@@ -179,7 +183,7 @@ renderizarCaseDetalhado(selector) {
               `;
             } else {
               return `
-                <div class="resultado-item">
+                <div class="resultado-item animate-me">
                   <h3>${canal.charAt(0).toUpperCase() + canal.slice(1)}</h3>
                   <div class="resultado-detalhes">
                     <p>${resultado}</p>
@@ -211,6 +215,21 @@ renderizarCaseDetalhado(selector) {
       </div>` : ''}
     </section>
   `;
+
+// Seleciona todos os elementos dentro do container para animar em sequência
+const elementosParaAnimar = container.querySelector('.case-container');
+
+// Aplica a animação com GSAP
+gsap.from(elementosParaAnimar, {
+  opacity: 0,
+  y: 50, // Move para baixo inicialmente
+  duration: 3, // Duração de cada animação
+  ease: "power1.out", // Suavização
+  stagger: 0.2, // Intervalo entre cada elemento
+});
+
+  
+
 
    // Adicionar evento de clique dinamicamente para abrir o modal
    const videoLink = container.querySelector('.video-link');
