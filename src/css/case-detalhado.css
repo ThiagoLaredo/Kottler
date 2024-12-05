@@ -149,10 +149,9 @@
 }  */
 
 
-.case-content {
-  /* Garantir que a lista tenha espaço à esquerda para os marcadores */
+/* .case-content {
   padding-left: 20px;
-}
+} */
 
 .case-content li {
   font: 300 1rem/1.6 'Raleway', sans-serif;
@@ -218,6 +217,7 @@
 @media (max-width: 768px) {
 
   .case-titulo {
+    background-color: rgba(248, 13, 142, 0.8); 
     border-radius: 20px;
     right: 20px;
     left: 20px;
