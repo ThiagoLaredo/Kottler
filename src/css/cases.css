@@ -26,6 +26,7 @@
   padding: 40px;
   border-radius: 20px;
   width: 50%;
+  height: fit-content;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
@@ -116,6 +117,14 @@
 }
 
 @media (max-width: 768px) {
+
+  .intro-cases {
+    background-color: rgba(248, 13, 142, 0.8);
+    top: 50%; /* Centraliza verticalmente a partir do topo */
+    left: 50%; /* Centraliza horizontalmente a partir da esquerda */
+    transform: translate(-50%, -50%); /* Ajusta para centralizar o próprio tamanho do elemento */
+    width: 90%;
+  }
 
   .cases {
     border-radius: 20px;

@@ -132,9 +132,13 @@
 @media (max-width: 768px) { /* Tablets e smartphones */
 
   .solucao-intro {
-    width: 100%; 
+    background-color: rgba(248, 13, 142, 0.8);
+    top: 50%; /* Centraliza verticalmente a partir do topo */
+    left: 50%; /* Centraliza horizontalmente a partir da esquerda */
+    transform: translate(-50%, -50%); /* Ajusta para centralizar o próprio tamanho do elemento */
+    width: 90%;
   }
-
+  
   .vender-lista {
     grid-template-columns: repeat(2, 1fr); /* Reduz para 2 colunas */
     gap: 20px 30px; /* Ajusta o espaçamento */

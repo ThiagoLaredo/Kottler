@@ -27,6 +27,7 @@
   padding: 40px;
   border-radius: 20px;
   width: 60%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -114,4 +115,20 @@
   color: var(--textwhite);
   font: 300 1rem/1.4 'Raleway', sans-serif;
   margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+
+  .solucoes-intro {
+    background-color: rgba(248, 13, 142, 0.8);
+    top: 50%; /* Centraliza verticalmente a partir do topo */
+    left: 50%; /* Centraliza horizontalmente a partir da esquerda */
+    transform: translate(-50%, -50%); /* Ajusta para centralizar o próprio tamanho do elemento */
+    width: 90%;
+  }
+
+  .lista-solucoes {
+  flex-direction: column;
+  }
+
 }
