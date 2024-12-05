@@ -6,7 +6,6 @@
   gap: 60px;
 }
 
-
 .solucoes-home-texto {
   display: flex;  
   flex-direction: column;
@@ -24,7 +23,6 @@
   font: 400 1rem/1.6 'Raleway', sans-serif;
   color: var(--textwhite);
 }
-
 
 /* Posicionamento e estilo das setas */
 .swiper-container {
@@ -237,8 +235,6 @@
     max-width: 100%; /* Garante que a largura máxima seja 60% */
   }
 
-
-
   .slide-solucoes h3 {
     font: 600 1.8rem/1.2 'Raleway', sans-serif;
     max-width: none;
@@ -248,7 +244,6 @@
   .slide-solucoes p {
     text-align: center;
   }
-
 
   #swiper1 .swiper-button-prev {
     left: 0;
@@ -264,5 +259,22 @@
     top: 50%;
   }
 
+  .slide-svg-gerar img {
+    width: 260px; /* Define a largura fixa */
+    height: 260px; /* Define a altura fixa */
+  }
 
+  .slide-svg-posicionar img {
+    width: 220px; /* Define a largura fixa */
+    height: 220px; /* Define a altura fixa */
+  }
+
+  .slide-svg-posicionar {
+    left: -50px;
+  }
+
+  .slide-svg-vender {
+    left: -40px;
+  }
+ 
 }
