@@ -33,7 +33,6 @@
   text-align: center;
 }
 
-
 .swiper-container.cases-slides {
   position: relative;
   flex: 0 0 100%; /* Define a largura como 60% */
@@ -111,7 +110,7 @@
 
 @media (max-width: 768px) {
 
-  .cases-background {
+  .cases-home-background {
     padding: 0px 0px;
   }
 
@@ -145,7 +144,7 @@
   .slide-case-texto {
     max-width: 100%; 
     align-items: center;
-    min-height: 460px;
+    min-height: 350px;
     border-radius: 0 0 20px 20px;
     padding: 40px 20px;
   }
@@ -164,13 +163,13 @@
 .swiper-button-prev, #prev2  {
     left: 0;
     right: auto; /* Distância do canto direito mais a largura de um botão */
-    top: 37%;
+    top: 40%;
   }
   
   .swiper-button-next, #next2 {
     right: 0; 
     left: auto; 
-    top: 37%;
+    top: 40%;
   }
 
   .swiper-pagination, #pagination2 {
