@@ -11,14 +11,15 @@ export const initPageOpenAnimations = () => {
 
     gsap.to(pageOpenElements, {
         opacity: 1,
-        duration: 1,
+        duration: 0.5,
+        delay: 2,
         stagger: 0.2, // Animação com um pequeno atraso entre os elementos
         ease: "power1.inOut",
     });
 
     gsap.set([".contact-info", ".social-instagram a", ".header", "[data-menu='logo']", "[data-menu='button']", "#menu > li > a", "#menu > li > span", ".solucoes-intro", ".solucao-intro", ".intro-cases", ".case-titulo"], { opacity: 0 });
 
-    gsap.to(".header", { duration: 0.5, opacity: 1, ease: "power1.inOut" });
+    gsap.to(".header", { duration: 0.1, opacity: 1, ease: "power1.inOut" });
     gsap.to(".contact-info", { duration: 0.5, delay: 0.1, opacity: 1, ease: "power1.inOut" });
     gsap.to(".social-instagram a", { duration: 0.5, delay: 0.2, opacity: 1, ease: "power1.inOut" });
     gsap.to("[data-menu='logo']", { duration: 0.5, delay: 0.3, opacity: 1, ease: "power1.inOut" });
@@ -123,25 +124,31 @@ export const initScrollAnimations = () => {
     // Seleciona todas as sections e o footer, exceto a introdução
     const sections = document.querySelectorAll('section:not(.introducao), footer');
     sections.forEach(section => {
-        // Aqui você pode escolher ser mais específico com os seletores dentro de cada section
         const elements = section.querySelectorAll('.animate-me');
         elements.forEach(element => {
-            gsap.from(element, {
-                scrollTrigger: {
-                    trigger: element,
-                    start: "top 80%",
-                    end: "bottom 20%",
-                    toggleActions: "play none none none"
+            gsap.fromTo(
+                element,
+                {
+                    opacity: 0,
+                    y: 50,
                 },
-                opacity: 0,
-                y: 50,
-                duration: 1,
-                ease: "power1.out"
-            });
+                {
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 80%",
+                        end: "bottom 20%",
+                        toggleActions: "play none none none",
+                    },
+                    opacity: 1,
+                    y: 0,
+                    duration: 1,
+                    ease: "power1.out",
+                }
+            );
         });
     });
 
-        // Animação para o círculo que se move para a esquerda
+    // Animação para o círculo que se move para a esquerda
     gsap.to("#circuloEsquerda", {
         scrollTrigger: {
         trigger: "#circuloEsquerda",
