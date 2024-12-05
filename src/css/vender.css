@@ -142,6 +142,11 @@
   .vender-lista {
     grid-template-columns: repeat(2, 1fr); /* Reduz para 2 colunas */
     gap: 20px 30px; /* Ajusta o espaçamento */
+    align-items: center;
+  }
+
+  .vender-item h3, .vender-item p {
+    text-align: center;
   }
 
   .solucoes-como {
@@ -157,6 +162,11 @@
   }
 
   .vender-item {
+    align-items: center;
     gap: 15px; /* Ajusta o espaçamento entre os elementos */
+  }
+
+  .vender-item h3, .vender-item p {
+    text-align: center;
   }
 }
