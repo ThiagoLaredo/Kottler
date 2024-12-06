@@ -10,6 +10,7 @@
   display: flex;
   align-items: center; /* Centraliza verticalmente o conteúdo */
   justify-content: center; /* Centraliza horizontalmente o conteúdo */
+  opacity: 0;
 }
 
 .solucoes-container {
@@ -125,6 +126,7 @@
     left: 50%; /* Centraliza horizontalmente a partir da esquerda */
     transform: translate(-50%, -50%); /* Ajusta para centralizar o próprio tamanho do elemento */
     width: 90%;
+    padding: 20px;
   }
 
   .lista-solucoes {

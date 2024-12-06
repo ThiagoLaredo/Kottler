@@ -84,6 +84,22 @@
     top: 8px;
   }
 
+   /* Estilos quando o menu está ativo */
+   .js [data-menu="button"].active #hamburguer {
+    background: transparent; /* Torna a barra central transparente */
+  }
+
+  .js [data-menu="button"].active #hamburguer::before {
+    transform: rotate(45deg); /* Rotaciona para formar um "X" */
+    top: 0; /* Centraliza em relação à barra principal */
+  }
+
+  .js [data-menu="button"].active #hamburguer::after {
+    transform: rotate(-45deg); /* Rotaciona para formar um "X" */
+    top: 0; /* Centraliza em relação à barra principal */
+  }
+
+
   /* Menu oculto no mobile até .active ser adicionada */
   .js [data-menu="list"]  {
     display: none; 
