@@ -11,6 +11,7 @@ import "../css/case-detalhado.css";
 import "../css/metodologia.css";
 import "../css/footer.css";
 import "../css/menu-mobile.css";
+import "../css/submenu.css";
 import "../css/cores.css";
 import "../css/componentes.css";
 import "../css/fontes.css";

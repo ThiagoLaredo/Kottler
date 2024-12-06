@@ -35,7 +35,6 @@
   width: 70% !important; /* Valor após scroll, a transição será aplicada aqui */
 }
 
-
 .header-scrolled .header_menu {
   padding: .2rem 0;
 }
@@ -103,94 +102,6 @@ ul[data-menu="list"] {
   font: 500 0.8rem 'Raleway', sans-serif;
 }
 
-/* Estilo para o submenu - Desktop */
-.submenu {
-  display: none; /* Esconde o submenu por padrão */
-  position: absolute; /* Usar absolute no desktop */
-  background-color: var(--bg-escuro);
-  border: 1px solid rgba(var(--primary-rgb),.5);
-  list-style: none;
-  padding: 20px;
-  margin: 0;
-  z-index: 1; /* Garante que o submenu esteja acima dos itens adjacentes */
-  border-radius: 12px;
-  white-space: nowrap;
-  width: auto; /* Ajusta a largura conforme necessário */
-  transition: all 0.3s ease; /* Adiciona uma transição suave para a expansão */
-}
-
-.has-submenu:hover .submenu {
-  display: flex; /* Mostra o submenu no hover */
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  min-width: 320px;
-}
-
-.submenu li {
-  margin: 0;
-  padding: 0; /* Remove o padding da <li> */
-}
-
-.submenu li a {
-  color: var(--textwhite);
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px 20px; /* Mova o padding para o <a> */
-  position: relative;
-  width: 320px;
-}
-
-.submenu li a::before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0px; /* Ajuste conforme necessário */
-  right: 0px; /* Ajuste conforme necessário */
-  height: 1px;
-  border-radius: 2px;
-  display: block;
-  width: 100%;
-  background-color: rgba(var(--primary-rgb),.2); /* Cor do traço de divisão */
-}
-
-.submenu li:last-child a::before {
-  display: none;
-}
-
-.submenu li a:hover {
-  color: var(--primary);
-}
-
-/* Estilo para o item de menu com submenu */
-.has-submenu > span {
-  cursor: pointer; /* Aplica o cursor de mãozinha no hover */
-  display: flex; /* Transforma o span em flex container */
-  justify-content: space-between; /* Centraliza o texto horizontalmente */
-  align-items: center; /* Centraliza o texto verticalmente */
-  width: 100%; /* Garante que o span ocupe 100% da largura do menu */
-  padding: 10px 0; /* Adiciona espaçamento vertical */
-  box-sizing: border-box; /* Inclui padding e border no cálculo da largura */
-}
-
-.has-submenu {
-  position: relative; /* Necessário para posicionar a seta */
-}
-
-/* Estilo para a seta do submenu */
-.submenu-arrow {
-  transition: transform 0.3s ease;
-  /* margin-left: 5px; */
-  position: relative;
-}
-
-.submenu-arrow.open {
-  transform: rotate(180deg); /* Rotação da seta para cima */
-}
-
 #contato-link {
   /* border: 1px solid #fff;  */
   border-radius: 20px; /* Bordas arredondadas */
@@ -206,18 +117,6 @@ ul[data-menu="list"] {
   color: #fff; /* Cor do texto primary ao passar o mouse */
 }
 
-/* Exibir o submenu no hover para desktop */
-@media (min-width: 769px) {
-  .has-submenu:hover .submenu {
-    display: flex !important; /* Mostra o submenu no hover */
-    gap: 4px;
-  }
-  
-  /* Rotaciona a seta no hover para o desktop */
-  .has-submenu:hover .submenu-arrow {
-    transform: rotate(180deg); /* Rotação da seta para cima */
-  }
-}
 
 /* Estilo adicional para o mobile */
 @media (max-width: 768px) {
@@ -256,24 +155,6 @@ ul[data-menu="list"] {
     display: none;
   }
 
-  .submenu {
-    display: none; /* Esconde o submenu por padrão no mobile */
-    position: relative; /* Usar relative no mobile */
-    border-radius: 0px;
-    padding: 5px 0;
-  }
-
-  .submenu li {
-    padding: 0;
-  }
-
-  .submenu.active {
-    display: flex !important; /* Mostra o submenu quando ativo no mobile */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-  }
 
   .contato-link {
     border: none
