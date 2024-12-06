@@ -3,10 +3,8 @@
   width: 100%;
   z-index: 1000;
   background-color: transparent;
-  /* border-bottom: 0.5px solid var(--bg); */
   position: fixed;
   top: 0;
-  /* box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); */
   opacity: 0;
 }
 
@@ -16,7 +14,7 @@
 
 .header.header-scrolled  {
   background-color: var(--bg-escuro); 
-  backdrop-filter: blur(10px); /* Ajuste o valor para o nível de desfoque */
+  backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
 
@@ -26,13 +24,13 @@
 
 .logo-svg {
   display: block;
-  width: 100%; /* Valor inicial para quando não está no estado scrolled */
+  width: 100%; 
   height: auto;
-  transition: width 0.3s ease-in-out; /* Adiciona transição na propriedade width */
+  transition: width 0.3s ease-in-out;
 }
 
 .header-scrolled .logo-svg {
-  width: 70% !important; /* Valor após scroll, a transição será aplicada aqui */
+  width: 70% !important;
 }
 
 .header-scrolled .header_menu {
@@ -73,7 +71,7 @@ ul[data-menu="list"] {
 
 .menu li {
   align-self: center;
-  position: relative; /* Necessário para posicionar a seta */
+  position: relative;
 }
 
 .menu li a,
@@ -83,18 +81,19 @@ ul[data-menu="list"] {
   font-weight: 600;
   text-transform: uppercase;
   display: flex;
+  gap: 4px;
   justify-content: center;
   text-decoration: none;
-  padding: 0.5rem 1rem; /* Espaçamento interno para melhor aparência */
+  padding: 0.5rem 1rem; 
   line-height: 1.2;
   align-items: center;
   position: relative;
-  cursor: pointer; /* Aplica o cursor de mãozinha em todos os links e spans */
+  cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .menu li span > a {
-  padding: 0.5rem; /* Espaçamento interno para melhor aparência */
+  padding: 0.5rem; 
 }
 
 .header-scrolled .menu li a,
@@ -103,20 +102,18 @@ ul[data-menu="list"] {
 }
 
 #contato-link {
-  /* border: 1px solid #fff;  */
-  border-radius: 20px; /* Bordas arredondadas */
-  padding: 0.5rem 1rem; /* Espaçamento interno para melhor aparência */
-  text-decoration: none; /* Remove o sublinhado padrão */
-  background-color: #fff; /* Cor de fundo branca ao passar o mouse */
-  color: var(--primary); /* Cor do texto primary ao passar o mouse */  
-  transition: background-color 0.3s, color 0.3s; /* Transição suave para hover */
+  border-radius: 20px; 
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  background-color: #fff; 
+  color: var(--primary);  
+  transition: background-color 0.3s, color 0.3s;
 }
 
 #contato-link:hover {
-  background-color:var(--primary); /* Cor de fundo branca ao passar o mouse */
-  color: #fff; /* Cor do texto primary ao passar o mouse */
+  background-color: var(--primary); 
+  color: #fff;
 }
-
 
 /* Estilo adicional para o mobile */
 @media (max-width: 768px) {
@@ -140,7 +137,7 @@ ul[data-menu="list"] {
   }
 
   .header-scrolled .logo-svg {
-    width: 100% !important; /* Valor após scroll, a transição será aplicada aqui */
+    width: 100% !important; 
   }
 
   .header a > img {
@@ -155,8 +152,7 @@ ul[data-menu="list"] {
     display: none;
   }
 
-
   .contato-link {
-    border: none
+    border: none;
   }
 }
