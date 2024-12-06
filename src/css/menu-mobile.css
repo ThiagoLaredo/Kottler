@@ -1,13 +1,13 @@
+/* Menu principal no mobile e ajustes específicos */
 .js [data-menu="list"]  {
-
   display: flex;
 }
 
 .js [data-menu="list"].active  {
- 
   display: flex;
 }
 
+/* Elementos ocultos por padrão */
 [data-menu="button"] {
   display: none;
 }
@@ -36,10 +36,10 @@
 
   .js [data-menu="button"] {
     display: flex;
-    background-color: var(--primary); /* Define a cor de fundo como primary */
+    background-color: var(--primary); 
     border: none;
-    padding: 0.6rem; /* Aumenta a área de clique */
-    border-radius: 50%; /* Transforma o botão em um círculo */
+    padding: 0.6rem; 
+    border-radius: 50%; 
     text-transform: uppercase;
     font-family: 'OpenSans', sans-serif;
     font-weight: bold;
@@ -47,16 +47,12 @@
     cursor: pointer;
     margin: 4px 0;
     align-items: center;
-    justify-content: center; /* Centraliza o conteúdo dentro do círculo */
-    position: absolute; /* Alinha o botão à direita do contêiner */
+    justify-content: center; 
+    position: absolute; 
     z-index: 300;
-    width: 2rem; /* Define a largura do círculo */
-    height: 2rem; /* Define a altura do círculo */
+    width: 2rem; 
+    height: 2rem; 
   }
-
-  /* .header-scrolled button[data-menu='button'] {
-    background-color: transparent; 
-  } */
 
   #hamburguer {
     width: 30px;
@@ -64,7 +60,7 @@
     background: var(--textwhite);
     border-radius: 1px;
     position: relative;
-    transition: background 0.3s ease; /* Suaviza a transição da cor de fundo */
+    transition: background 0.3s ease; 
   }
 
   #hamburguer::before,
@@ -77,7 +73,7 @@
     border-radius: 1px;
     position: absolute;
     left: 0;
-    transition: transform 0.3s ease; /* Suaviza as transições de transformação */
+    transition: transform 0.3s ease;
   }
 
   #hamburguer::before {
@@ -88,23 +84,9 @@
     top: 8px;
   }
 
-  /* Estilos quando o menu está ativo */
-  .js [data-menu="button"].active #hamburguer {
-    background: transparent; /* Torna a barra central transparente */
-  }
-
-  .js [data-menu="button"].active #hamburguer::before {
-    transform: rotate(45deg); /* Rotaciona para formar um "X" */
-    top: 0; /* Centraliza em relação à barra principal */
-  }
-
-  .js [data-menu="button"].active #hamburguer::after {
-    transform: rotate(-45deg); /* Rotaciona para formar um "X" */
-    top: 0; /* Centraliza em relação à barra principal */
-  }
-
+  /* Menu oculto no mobile até .active ser adicionada */
   .js [data-menu="list"]  {
-    display: none; /* Menu oculto por padrão */
+    display: none; 
     position: absolute;
     width: 100vw;
     top: 0;
@@ -124,17 +106,14 @@
     background-color: var(--bg);
   }
 
-  .js [data-menu="list"] a, .js [data-menu="list"] span, .js [data-menu="list"] .submenu a  {
+  .js [data-menu="list"] a, .js [data-menu="list"] span, .js [data-menu="list"] .submenu a {
     font-size: 20px;
     line-height: 1;
-    width: 100%;
   }
 
   .js [data-menu="list"] li {
-    /* width: 100%; */
     position: relative;
   }
-
 
   .js [data-menu="list"] li:last-child::after {
     display: none;
@@ -167,6 +146,7 @@
     padding: 1rem;
     opacity: 0;
   }
+
   [data-menu="instagram"].active {
     position: fixed;
     font: 500 1rem 'OpenSans', sans-serif;
