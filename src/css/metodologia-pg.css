@@ -1,0 +1,84 @@
+
+
+.metodologia-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
+  padding: 80px 20px;
+}
+
+.metodologia-container h2 {
+  color: var(--textwhite);
+  font: 600 1.6rem/1.6 'Raleway', sans-serif;
+}
+
+.metodologia-lista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Define 3 colunas com tamanhos iguais */
+  grid-template-rows: auto auto; /* Duas linhas automáticas */
+  gap: 80px 60px; /* 10px de gap vertical, 20px de gap horizontal */
+}
+
+
+.metodologia-item {
+  flex: 1 1 30%; /* Ajusta para que cada item tente ocupar cerca de um terço da largura do contêiner */
+  min-height: min-content;
+  /* padding: 40px; */
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  opacity: 0;
+}
+
+/* .metodologia-item img {
+  width: 20%;
+  height: auto;} */
+
+.metodologia-item h3 { 
+  color: var(--primary);
+  font: 600 1.2rem/1.4 'Raleway', sans-serif;
+}
+
+.metodologia-item h3 span { 
+  color: var(--primary);
+  font: 300 1.2rem/1.4 'Raleway', sans-serif;
+}
+
+.metodologia-item p {
+  color: var(--textwhite);
+  font: 300 1rem/1.6 'Raleway', sans-serif;
+}
+
+
+@media (max-width: 768px) { /* Tablets e smartphones */
+
+
+  .metodologia-lista {
+    grid-template-columns: repeat(2, 1fr); /* Reduz para 2 colunas */
+    gap: 20px 30px; /* Ajusta o espaçamento */
+    align-items: center;
+  }
+
+  .metodologia-item h3, .metodologia-item p {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) { /* Smartphones menores */
+  .metodologia-lista {
+    grid-template-columns: 1fr; /* Uma única coluna */
+    gap: 40px; /* Espaçamento menor */
+  }
+
+  .metodologia-item {
+    align-items: center;
+    gap: 15px; /* Ajusta o espaçamento entre os elementos */
+  }
+
+  .metodologia-item h3, .metodologia-item p {
+    text-align: center;
+  }
+}
