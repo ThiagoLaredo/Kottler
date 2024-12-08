@@ -18,6 +18,7 @@ import "../css/fontes.css";
 import "../css/solucoes.css";
 import "../css/vender.css";
 import "../css/metodologia-pg.css";
+import "../css/contato.css";
 
 import MenuMobile from './modules/menu-mobile.js';
 import HeaderScroll from './modules/header-scroll.js';

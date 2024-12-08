@@ -10,7 +10,6 @@
   display: flex;
   align-items: center; /* Centraliza verticalmente o conteúdo */
   justify-content: center; /* Centraliza horizontalmente o conteúdo */
-  opacity: 0;
 }
 
 
