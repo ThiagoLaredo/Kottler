@@ -144,6 +144,11 @@ ul[data-menu="list"] {
     width: 100%;
   }
 
+.header-scrolled .menu li a,
+.header-scrolled .menu li span {
+  font: 600 1rem 'Raleway', sans-serif;
+}
+
   .header_menu {
     padding: 0.5rem 0;
   }

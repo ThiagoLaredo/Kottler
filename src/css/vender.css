@@ -131,9 +131,13 @@
 
 @media (max-width: 768px) { /* Tablets e smartphones */
 
+  .introducao.vender-back {
+    height: 50vh;
+  }
+
   .solucao-intro {
     background-color: rgba(248, 13, 142, 0.8);
-    top: 50%; /* Centraliza verticalmente a partir do topo */
+    top: 53%; /* Centraliza verticalmente a partir do topo */
     left: 50%; /* Centraliza horizontalmente a partir da esquerda */
     transform: translate(-50%, -50%); /* Ajusta para centralizar o próprio tamanho do elemento */
     width: 90%;
