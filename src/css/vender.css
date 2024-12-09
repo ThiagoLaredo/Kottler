@@ -157,6 +157,10 @@
     border: none;
     padding: 0;
   }
+
+  .solucoes-como h2 {
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) { /* Smartphones menores */
