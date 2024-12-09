@@ -43,7 +43,7 @@
   border-radius: 20px;
   color: #fff;
   z-index: 2; /* Coloca o título acima da imagem */
-  height: fit-content(100%);
+  height: fit-content;
 }
 
 .case-titulo h1 {
@@ -225,6 +225,7 @@
     left: 20px;
     top: 50%; /* Centraliza verticalmente a partir do topo */
     transform: translateY(-50%); /* Ajusta para centralizar o próprio tamanho do elemento */
+    width: 90%;
   }
   
   .case-titulo h1 {
