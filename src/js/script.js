@@ -19,6 +19,7 @@ import "../css/solucoes.css";
 import "../css/vender.css";
 import "../css/metodologia-pg.css";
 import "../css/contato.css";
+import "../css/social-sidebar.css";
 
 import MenuMobile from './modules/menu-mobile.js';
 import HeaderScroll from './modules/header-scroll.js';
