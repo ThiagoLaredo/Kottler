@@ -65,6 +65,10 @@
   .metodologia-item h3, .metodologia-item p {
     text-align: center;
   }
+
+  .metodologia-container h2 {
+   text-align: center;
+  }
 }
 
 @media (max-width: 480px) { /* Smartphones menores */
