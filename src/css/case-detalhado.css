@@ -43,6 +43,7 @@
   border-radius: 20px;
   color: #fff;
   z-index: 2; /* Coloca o título acima da imagem */
+  height: auto;
 }
 
 .case-titulo h1 {
@@ -82,6 +83,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  overflow-y: hidden;
 }
 
 .galeria-imagem {
