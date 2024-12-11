@@ -199,7 +199,72 @@ export const initScrollAnimations = () => {
        duration: 1, // Duração da animação
        ease: "power1.out" // Efeito de suavização
       });
-      
+
+
+
+    // Seleciona a linha SVG
+    const line = document.querySelector(".timeline-line line");
+    const lineLength = line.getTotalLength();
+    
+    // Configura a linha para a animação
+    gsap.set(line, {
+      strokeDasharray: lineLength,
+      strokeDashoffset: lineLength,
+    });
+    
+    // Anima a linha e sincroniza os marcadores
+    gsap.to(line, {
+      strokeDashoffset: 0,
+      duration: 2, // Duração da animação da linha
+      ease: "power1.inOut",
+      scrollTrigger: {
+        trigger: ".timeline",
+        start: "top 80%",
+        toggleActions: "play none none none",
+      },
+    });
+    
+    // Animação de marcadores e texto sincronizados
+    gsap.utils.toArray(".timeline-item").forEach((item, i) => {
+      const marker = item.querySelector(".timeline-marker");
+      const content = item.querySelector(".timeline-content");
+    
+      // Calcula o tempo de cada marcador com base na proporção da linha animada
+      const markerDelay = (i / document.querySelectorAll(".timeline-item").length) * 2;
+    
+      // Anima o marcador
+      gsap.fromTo(
+        marker,
+        { scale: 0 },
+        {
+          scale: 1,
+          duration: 0.5,
+          ease: "back.out(1.7)",
+          delay: markerDelay, // Marca o momento certo para cada marcador
+          scrollTrigger: {
+            trigger: item,
+            start: "top 80%",
+          },
+        }
+      );
+    
+      // Anima o conteúdo logo após o marcador
+      gsap.fromTo(
+        content,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          delay: markerDelay + 0.3, // Um pequeno atraso após o marcador
+          scrollTrigger: {
+            trigger: item,
+            start: "top 80%",
+          },
+        }
+      );
+    });
+    
 
     const numeros = document.querySelectorAll('.numero');
     numeros.forEach(numero => {
