@@ -199,7 +199,96 @@ export const initScrollAnimations = () => {
        duration: 1, // Duração da animação
        ease: "power1.out" // Efeito de suavização
       });
+
+
+
+        // Seleciona a linha SVG
+        const line = document.querySelector(".timeline-line line");
+        if (!line) {
+          console.warn("A linha SVG da timeline não foi encontrada. A animação não será executada.");
+          return;
+        }
       
+        const lineLength = line.getTotalLength();
+      
+        // Configura a linha para a animação
+        gsap.set(line, {
+          strokeDasharray: lineLength,
+          strokeDashoffset: lineLength,
+        });
+      
+        // Anima a linha
+        gsap.to(line, {
+          strokeDashoffset: 0,
+          duration: 2, // Duração da animação da linha
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: ".timeline",
+            start: "top 80%",
+            toggleActions: "play none none none",
+          },
+        });
+      
+        // Seleciona os itens da timeline
+        const timelineItems = gsap.utils.toArray(".timeline-item");
+        if (timelineItems.length === 0) {
+          console.warn("Nenhum item de timeline foi encontrado. A animação dos marcadores e conteúdos não será executada.");
+          return;
+        }
+      
+        timelineItems.forEach((item, i) => {
+          const marker = item.querySelector(".timeline-marker");
+          const content = item.querySelector(".timeline-content");
+      
+          if (!marker || !content) {
+            console.warn(`O marcador ou conteúdo está ausente no item de índice ${i}.`);
+            return;
+          }
+      
+          // Calcula o tempo de atraso para cada item com base no índice
+          const markerDelay = (i / timelineItems.length) * 2;
+      
+          // Anima o marcador
+          gsap.fromTo(
+            marker,
+            { scale: 0 },
+            {
+              scale: 1,
+              duration: 0.5,
+              ease: "back.out(1.7)",
+              scrollTrigger: {
+                trigger: item,
+                start: "top 80%",
+                toggleActions: "play none none none",
+              },
+            }
+          );
+      
+          // Anima o conteúdo da timeline
+          gsap.fromTo(
+            content,
+            { opacity: 0, y: 30 }, // Ponto inicial
+            {
+              opacity: 1,
+              y: 0, // Ponto final
+              duration: 1,
+              ease: "power2.out",
+              scrollTrigger: {
+                trigger: item,
+                start: "top 80%", // Quando o item entra na tela
+                toggleActions: "play none none none",
+              },
+            }
+          );
+        });
+      
+      
+     
+      
+      
+     
+      
+    
 
     const numeros = document.querySelectorAll('.numero');
     numeros.forEach(numero => {
