@@ -121,210 +121,221 @@ export const initPageOpenAnimations = () => {
 
 
 export const initScrollAnimations = () => {
-    // Seleciona todas as sections e o footer, exceto a introdução
-    const sections = document.querySelectorAll('section:not(.introducao), footer');
-    sections.forEach(section => {
-        const elements = section.querySelectorAll('.animate-me');
-        elements.forEach(element => {
-            gsap.fromTo(
-                element,
-                {
-                    opacity: 0,
-                    y: 50,
-                },
-                {
-                    scrollTrigger: {
-                        trigger: element,
-                        start: "top 80%",
-                        end: "bottom 20%",
-                        toggleActions: "play none none none",
-                    },
-                    opacity: 1,
-                    y: 0,
-                    duration: 1,
-                    ease: "power1.out",
-                }
-            );
-        });
-    });
+  // Seleciona todas as sections e o footer, exceto a introdução
+  const sections = document.querySelectorAll('section:not(.introducao), footer');
+  if (sections.length > 0) {
+      sections.forEach(section => {
+          const elements = section.querySelectorAll('.animate-me');
+          if (elements.length > 0) {
+              elements.forEach(element => {
+                  gsap.fromTo(
+                      element,
+                      { opacity: 0, y: 50 },
+                      {
+                          scrollTrigger: {
+                              trigger: element,
+                              start: "top 80%",
+                              end: "bottom 20%",
+                              toggleActions: "play none none none",
+                          },
+                          opacity: 1,
+                          y: 0,
+                          duration: 1,
+                          ease: "power1.out",
+                      }
+                  );
+              });
+          } else {
+              console.warn("Nenhum elemento .animate-me encontrado dentro de uma section ou footer.");
+          }
+      });
+  } else {
+      console.warn("Nenhuma section ou footer (exceto .introducao) foi encontrada.");
+  }
 
-    // Animação para o círculo que se move para a esquerda
-    gsap.to("#circuloEsquerda", {
-        scrollTrigger: {
-        trigger: "#circuloEsquerda",
-        start: "top center", // Ajuste conforme necessário
-        end: "bottom top",
-        scrub: true,
-        },
-        x: -100, // Mova 100px para a esquerda
-    });
+  // Animação para o círculo que se move para a esquerda
+  const circuloEsquerda = document.querySelector("#circuloEsquerda");
+  if (circuloEsquerda) {
+      gsap.to(circuloEsquerda, {
+          scrollTrigger: {
+              trigger: circuloEsquerda,
+              start: "top center", 
+              end: "bottom top",
+              scrub: true,
+          },
+          x: -100, 
+      });
+  } else {
+      console.warn("#circuloEsquerda não encontrado.");
+  }
+
+  // Animação para o círculo que se move para a direita
+  const circuloDireita = document.querySelector("#circuloDireita");
+  if (circuloDireita) {
+      gsap.to(circuloDireita, {
+          scrollTrigger: {
+              trigger: circuloDireita,
+              start: "top center",
+              end: "bottom top",
+              scrub: true,
+          },
+          x: 100, 
+      });
+  } else {
+      console.warn("#circuloDireita não encontrado.");
+  }
+
+  // Animação do grade-rosa g
+  const gradeRosaElement = document.querySelector(".grade-rosa g");
+  if (gradeRosaElement) {
+      gsap.to(".grade-rosa g", {
+          opacity: 1,
+          scale: 1,
+          duration: 2,
+          ease: "power1.inOut",
+          scrollTrigger: {
+            trigger: ".grade-rosa",
+            start: "top 80%", 
+            end: "top 30%",
+            scrub: true
+          }
+      });
+  } else {
+      console.warn("Nenhum elemento '.grade-rosa g' encontrado.");
+  }
+
+  // Animação svg-canal-container
+  const svgCanal = document.querySelector(".svg-canal-container svg");
+  if (svgCanal) {
+      gsap.set(svgCanal, { opacity: 0, y: -50 });
+
+      gsap.to(svgCanal, {
+          scrollTrigger: {
+            trigger: ".svg-canal-container",
+            start: "top+=300px",
+            end: "bottom top",
+            toggleActions: "play none none none",
+            markers: false
+          },
+          opacity: 0.3,
+          y: 0,
+          duration: 1,
+          ease: "power1.out"
+      });
+  } else {
+      console.warn("Nenhum SVG encontrado dentro de '.svg-canal-container'.");
+  }
+
+  // Linha da timeline
+  const line = document.querySelector(".timeline-line line");
+  if (line) {
+      const lineLength = line.getTotalLength();
+      
+      gsap.set(line, {
+        strokeDasharray: lineLength,
+        strokeDashoffset: lineLength,
+      });
     
-    // Animação para o círculo que se move para a direita
-    gsap.to("#circuloDireita", {
-        scrollTrigger: {
-        trigger: "#circuloDireita",
-        start: "top center",
-        end: "bottom top",
-        scrub: true,
-        },
-        x: 100, // Mova 100px para a direita
-    });
-
-
-    gsap.to(".grade-rosa g", {
-        opacity: 1,
-        scale: 1,
+      gsap.to(line, {
+        strokeDashoffset: 0,
         duration: 2,
         ease: "power1.inOut",
         scrollTrigger: {
-          trigger: ".grade-rosa",
-          start: "top 80%", // Inicia quando o topo do SVG chega a 80% da altura da viewport
-          end: "top 30%", // Termina quando o topo do SVG chega a 30% da altura da viewport
-          scrub: true
-        }
+          trigger: ".timeline",
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
       });
+  } else {
+      console.warn("A linha SVG da timeline não foi encontrada. A animação da linha não será executada.");
+  }
 
-      gsap.set(".svg-canal-container svg", { opacity: 0, y: -50 }); // Esconde e move para cima
-
-      gsap.to(".svg-canal-container svg", {
-       scrollTrigger: {
-         trigger: ".svg-canal-container",
-         start: "top+=300px",  // Inicia a animação quando o topo do elemento chega ao final da janela
-         end: "bottom top",    // Conclui a animação quando a parte inferior do elemento passa pelo topo da janela
-         toggleActions: "play none none none",
-         markers: false  // Para visualização dos gatilhos
-       },
-       opacity: 0.3, // Torna visível
-       y: 0, // Move para a posição original
-       duration: 1, // Duração da animação
-       ease: "power1.out" // Efeito de suavização
-      });
-
-
-
-        // Seleciona a linha SVG
-        const line = document.querySelector(".timeline-line line");
-        if (!line) {
-          console.warn("A linha SVG da timeline não foi encontrada. A animação não será executada.");
-          return;
-        }
-      
-        const lineLength = line.getTotalLength();
-      
-        // Configura a linha para a animação
-        gsap.set(line, {
-          strokeDasharray: lineLength,
-          strokeDashoffset: lineLength,
-        });
-      
-        // Anima a linha
-        gsap.to(line, {
-          strokeDashoffset: 0,
-          duration: 2, // Duração da animação da linha
-          ease: "power1.inOut",
-          scrollTrigger: {
-            trigger: ".timeline",
-            start: "top 80%",
-            toggleActions: "play none none none",
-          },
-        });
-      
-        // Seleciona os itens da timeline
-        const timelineItems = gsap.utils.toArray(".timeline-item");
-        if (timelineItems.length === 0) {
-          console.warn("Nenhum item de timeline foi encontrado. A animação dos marcadores e conteúdos não será executada.");
-          return;
-        }
-      
-        timelineItems.forEach((item, i) => {
-          const marker = item.querySelector(".timeline-marker");
-          const content = item.querySelector(".timeline-content");
-      
-          if (!marker || !content) {
-            console.warn(`O marcador ou conteúdo está ausente no item de índice ${i}.`);
-            return;
-          }
-      
-          // Calcula o tempo de atraso para cada item com base no índice
-          const markerDelay = (i / timelineItems.length) * 2;
-      
-          // Anima o marcador
-          gsap.fromTo(
-            marker,
-            { scale: 0 },
-            {
-              scale: 1,
-              duration: 0.5,
-              ease: "back.out(1.7)",
-              scrollTrigger: {
-                trigger: item,
-                start: "top 80%",
-                toggleActions: "play none none none",
-              },
-            }
-          );
-      
-          // Anima o conteúdo da timeline
-          gsap.fromTo(
-            content,
-            { opacity: 0, y: 30 }, // Ponto inicial
-            {
-              opacity: 1,
-              y: 0, // Ponto final
-              duration: 1,
-              ease: "power2.out",
-              scrollTrigger: {
-                trigger: item,
-                start: "top 80%", // Quando o item entra na tela
-                toggleActions: "play none none none",
-              },
-            }
-          );
-        });
-      
-      
-     
-      
-      
-     
-      
+  // Itens da timeline
+  const timelineItems = gsap.utils.toArray(".timeline-item");
+  if (timelineItems.length > 0) {
+      timelineItems.forEach((item, i) => {
+        const marker = item.querySelector(".timeline-marker");
+        const content = item.querySelector(".timeline-content");
     
-
-    const numeros = document.querySelectorAll('.numero');
+        if (!marker || !content) {
+          console.warn(`O marcador ou conteúdo está ausente no item de índice ${i}.`);
+          return;
+        }
+    
+        gsap.fromTo(
+          marker,
+          { scale: 0 },
+          {
+            scale: 1,
+            duration: 0.5,
+            ease: "back.out(1.7)",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+    
+        gsap.fromTo(
+          content,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: item,
+              start: "top 80%",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      });
+  } else {
+      console.warn("Nenhum item de timeline foi encontrado. A animação dos marcadores e conteúdos não será executada.");
+  }
+    
+  // Animação dos números
+  const numeros = document.querySelectorAll('.numero');
+  if (numeros.length > 0) {
     numeros.forEach(numero => {
-        const originalText = numero.innerText; // Captura o texto original
-        const hasPlus = originalText.startsWith('+'); // Verifica se começa com '+'
+        const originalText = numero.innerText; 
+        const hasPlus = originalText.startsWith('+');
         const endValue = parseInt(numero.getAttribute('data-end-value'), 10);
-        const duration = 1; // Definir a duração total da contagem
-        const incrementTime = (duration * 1000) / endValue; // Tempo entre os incrementos
+
+        if (isNaN(endValue)) {
+            console.warn(`O elemento .numero não possui um data-end-value válido:`, numero);
+            return;
+        }
+
+        const duration = 1; 
+        const incrementTime = (duration * 1000) / endValue;
         
         let currentValue = 0;
-    
         const updateNumber = () => {
             if (currentValue <= endValue) {
-                numero.innerText = (hasPlus ? '+' : '') + currentValue; // Adiciona '+' se necessário
+                numero.innerText = (hasPlus ? '+' : '') + currentValue;
                 currentValue++;
                 setTimeout(updateNumber, incrementTime);
             }
         };
-    
-        // Usar GSAP para animar a contagem no scroll
-        gsap.fromTo(numero, 
-            { innerText: 0 }, 
-            { 
-                innerText: endValue,
-                duration: duration,
-                ease: 'none',
-                scrollTrigger: {
-                    trigger: numero,
-                    start: 'top 80%',
-                    end: 'bottom 20%',
-                    toggleActions: 'play none none none',
-                    onEnter: updateNumber
-                }
+        
+        gsap.from(numero, {
+          opacity: 0,
+          y: 20,
+          scrollTrigger: {
+            trigger: numero,
+            start: 'top 80%',
+            onEnter: () => {
+              updateNumber();
             }
-        );
+          }
+        });
     });
-   
+  } else {
+    console.warn("Nenhum elemento com a classe .numero foi encontrado. A animação de contagem não será executada.");
+  }
 };
 

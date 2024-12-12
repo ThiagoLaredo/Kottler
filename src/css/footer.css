@@ -85,7 +85,7 @@ footer {
   color: var(--textwhite); /* Cor do texto do título */
 }
 
-.newsletter-form {
+#newsletterForm {
   display: flex;
   flex-direction: column;
   gap: 15px; /* Espaçamento entre os elementos do formulário */
@@ -103,7 +103,7 @@ footer {
   border: 0;
 }
 
-.newsletter-form input {
+#newsletterForm input {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -112,7 +112,7 @@ footer {
   margin-top: 2px; /* Espaçamento entre o texto do rótulo e o campo de entrada */
 }
 
-.newsletter-form button {
+#newsletterForm button {
   display: inline-block;
   background-color: var(--primary); 
   color: #FFFFFF; 
@@ -127,7 +127,7 @@ footer {
   transition: background-color 0.3s ease, transform 0.3s ease; /* Adiciona transições suaves */
 }
 
-.newsletter-form button:hover {
+#newsletterForm button:hover {
   background-color: var(--textwhite); /* Tom mais claro de var(--primary) */
   color: var(--primary);  
   transform: scale(1.05); /* Aumenta a escala */

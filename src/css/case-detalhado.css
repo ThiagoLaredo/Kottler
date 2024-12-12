@@ -71,19 +71,19 @@
 /* Seção da Galeria à Direita */
 .case-content-direita {
   flex: 1;
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  gap: 20px;
-  overflow-y: auto;
+  gap: 20px; */
 }
 
 .galeria-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   gap: 40px;
-  overflow-y: hidden;
 }
 
 .galeria-imagem {
@@ -92,6 +92,7 @@
   object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease;
+  display: block;
 }
 
 .case-content {

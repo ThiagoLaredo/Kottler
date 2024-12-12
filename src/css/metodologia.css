@@ -1,5 +1,5 @@
 .metodologia {
-    padding: 120px 20px;
+    padding: 50px 20px 100px 20px;
     position: relative;
 }
 
@@ -32,6 +32,13 @@
   height: auto;  
   border-radius: 20px 0 0 20px;
   object-fit: cover; 
+}
+
+/* Em telas abaixo de 1024px, diminua a largura da imagem */
+@media (max-width: 1024px) {
+  .metodologia img {
+    width: 40%;
+  }
 }
 
 
