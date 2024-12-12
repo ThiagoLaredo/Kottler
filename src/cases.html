@@ -20,10 +20,11 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-   <!-- Preload and asynchronously load Google Fonts to avoid render-blocking -->
-   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" as="style">
-   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-   <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"></noscript>
+<!-- Preload and asynchronously load Google Fonts to avoid render-blocking -->
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..800;1,300..800&display=swap" as="style">
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"></noscript>
+
 
     <link rel="preload" href="/img/index/capa-index-720w.webp" as="image" media="(max-width: 720px)">
     <link rel="preload" href="/img/index/capa-index-1024w.webp" as="image" media="(min-width: 721px) and (max-width: 1024px)">
@@ -258,17 +259,17 @@
         </div>
         <div class="footer-newsletter animate-me">
           <h3>Assine nossa Newsletter</h3>
-          <form class="newsletter-form">
-            <label for="nome-newsletter" class="visually-hidden">Nome</label>
-            <input type="text" id="nome-newsletter" name="nome-newsletter" placeholder="Nome" required>
-            <label for="email-newsletter" class="visually-hidden">E-mail</label>
-            <input type="email" id="email-newsletter" name="email-newsletter" placeholder="E-mail" required>
-            <button type="submit">Assinar</button>
-          </form>
-        </div>
-        
-      </div>
-    
+            <form id="newsletterForm" action="/newsletter.php" method="POST">
+              <label for="nome-newsletter" class="visually-hidden">Nome</label>
+              <input type="text" id="nome-newsletter" name="nome-newsletter" placeholder="Nome" required>
+              
+              <label for="email-newsletter" class="visually-hidden">E-mail</label>
+              <input type="email" id="email-newsletter" name="email-newsletter" placeholder="E-mail" required>
+              
+              <button type="submit">Assinar</button>
+            </form>
+        </div>       
+      </div> 
     </footer>
          
       <!-- Ícone flutuante do WhatsApp -->

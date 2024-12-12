@@ -17,6 +17,7 @@
     'gerar-conteudo',
     'metodologia',
     'contato',
+    'blog',
   ];
 
   const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({

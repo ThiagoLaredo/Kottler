@@ -11,7 +11,7 @@
     max-width: 500px;
     padding: 20px;
 }
-.contact-form {
+#contactForm {
     border: 1px solid var(--primary);
     border-radius: 20px;
     padding: 20px;
@@ -21,14 +21,14 @@
     gap: 15px;
 }
 
-.contact-form h2 {
+#contactForm h2 {
     font: 600 1.4rem 'Raleway', sans-serif;
     margin: 0 0 10px 0;
     text-align: center;
     color: var(--textwhite);
 }
 
-.contact-form p {
+#contactForm p {
     font: 300 1rem 'Raleway', sans-serif;
     color: var(--textwhite);
 }
@@ -44,14 +44,14 @@
     border: 0;
 }
 
-.contact-form label {
+#contactForm label {
     /* Labels ficam invisíveis, servem apenas para acessibilidade */
     font: 300 1rem 'Raleway', sans-serif;
     color: var(--textwhite);
 }
 
-.contact-form input,
-.contact-form textarea {
+#contactForm input,
+#contactForm textarea {
     width: 100%;
     padding: 10px;
     border: none;
@@ -62,12 +62,12 @@
     box-sizing: border-box;
 }
 
-.contact-form input::placeholder,
-.contact-form textarea::placeholder {
+#contactForm input::placeholder,
+#contactForm textarea::placeholder {
     color: #e0e0e0;
 }
 
-.contact-form button {
+#contactForm button {
     cursor: pointer;
 }
 

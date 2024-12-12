@@ -20,16 +20,25 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-   <!-- Preload and asynchronously load Google Fonts to avoid render-blocking -->
-   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" as="style">
-   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-   <noscript><link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"></noscript>
+  <!-- Preload and asynchronously load Google Fonts to avoid render-blocking -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..800;1,300..800&display=swap" as="style">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"></noscript>
 
-    <link rel="preload" href="/img/index/capa-index-720w.webp" as="image" media="(max-width: 720px)">
-    <link rel="preload" href="/img/index/capa-index-1024w.webp" as="image" media="(min-width: 721px) and (max-width: 1024px)">
-    <link rel="preload" href="/img/index/capa-index-1920w.webp" as="image" media="(min-width: 1025px)">
+  <link rel="preload" 
+        href="./img/index/video-desktop.mp4" 
+        as="video" 
+        type="video/mp4" 
+        media="(min-width: 768px)">
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- Preload de vídeo mobile -->
+  <link rel="preload" 
+        href="./img/index/video-mobile.mp4" 
+        as="video" 
+        type="video/mp4" 
+        media="(max-width: 767px)">
+
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
 
     
   <script>document.documentElement.className += ' js';</script>
@@ -226,17 +235,7 @@
       </div>
     </section>
   
-
-    
-  
       <section class="destaques-background">
-        <!-- <div class="svg-ponto-vista-container animate-me">
-          <svg width="301" height="160" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)">
-            <path id="circuloDireita" d="M84.042 23.648a20.366 20.366 0 0 0 40.651 0c.029-.427.046-.855.046-1.285 0-.431-.017-.859-.046-1.282a20.365 20.365 0 0 0-40.65 0A22.01 22.01 0 0 0 84 22.363c0 .43.018.858.042 1.285z" fill="#EA307E"/>
-            <path id="circuloEsquerda" d="M193.786 159.556a20.784 20.784 0 0 0 20.744-22.072A20.779 20.779 0 0 0 193.788 118a20.783 20.783 0 0 0-20.742 19.484c-.028.428-.046.855-.046 1.286 0 .43.018.858.046 1.285a20.782 20.782 0 0 0 20.74 19.501z" fill="#EA307E"/>
-            <path d="M60 23h180c32.574 0 59 26.904 59 59.5 0 32.596-26.426 59.5-59 59.5H60c-32.574 0-59-26.904-59-59.5C1 49.904 27.426 23 60 23z" stroke="#EA307E" stroke-width="2"/></g><defs><clipPath id="a"><path fill="#fff" transform="rotate(90 149.88 150.25)" d="M0 0h159.185v300H0z"/></clipPath></defs></svg>
-            
-        </div> -->
         <div class="container destaques-lista">
           <div class="destaque destaque-experiencia animate-me">
             <span class="numero" data-end-value="200">+200</span>
@@ -391,12 +390,6 @@
       </svg>        
       </section>  
 
-        <!-- <div class="svg-canal-container">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 869.37 862.22">
-              <g data-name="Camada 2"><path d="M361.44 852.22c-46 0-91.92-.61-136.88-1.21-69.13-.92-140.62-1.88-210.9-.58l-3.44.06.07-3.44C11.83 775.33 24.13 698.88 45.87 626a857.54 857.54 0 0 1 200.47-346.82 842.06 842.06 0 0 1 189-149.37 885 885 0 0 1 184.5-80.17C697.24 25.93 781.11 12 856 10.3l3.38-.08v421.16l-3.53-.25c-31.54-2.21-195-6.6-315.38 124C435 669.54 436.06 808.26 438.91 848.05l.25 3.48-3.49.06c-24.67.46-49.44.63-74.23.63zm-273.67-9c46 0 91.93.62 136.88 1.22 68 .91 138.27 1.85 207.44.64-2.66-44.55-.92-181.17 103.51-294.42 118.48-128.5 277.9-128.48 317.16-126.31V17c-88.57 2.46-376.94 29.66-601.62 266.72C48.37 497.67 19.64 744.1 17 843.75c23.5-.4 47.14-.57 70.77-.57z" style="fill:#ea307e;stroke:#ea307e;stroke-miterlimit:10;stroke-width:20px" data-name="Camada 1"/></g>
-            </svg>
-          </div>
-       -->
       <section class="metodologia">
         <div class="container">
           <div class="metodologia-texto animate-me">
@@ -438,17 +431,17 @@
           </div>
           <div class="footer-newsletter animate-me">
             <h3>Assine nossa Newsletter</h3>
-            <form class="newsletter-form">
+            <form id="newsletterForm" action="/newsletter.php" method="POST">
               <label for="nome-newsletter" class="visually-hidden">Nome</label>
               <input type="text" id="nome-newsletter" name="nome-newsletter" placeholder="Nome" required>
+              
               <label for="email-newsletter" class="visually-hidden">E-mail</label>
               <input type="email" id="email-newsletter" name="email-newsletter" placeholder="E-mail" required>
+              
               <button type="submit">Assinar</button>
             </form>
-          </div>
-          
-        </div>
-      
+          </div>         
+        </div>      
       </footer>
          
       <!-- Ícone flutuante do WhatsApp -->
@@ -482,7 +475,6 @@
 
     // Inicializa o segundo Swiper
     const swiper2 = new Swiper('#swiper2', {
-        loop: true,
         slidesPerView: 1,
         spaceBetween: 30,
         pagination: {

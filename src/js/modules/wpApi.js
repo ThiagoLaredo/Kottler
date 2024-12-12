@@ -1,5 +1,5 @@
 export async function fetchWordPressPosts(page = 1, perPage = 5) {
-  const apiURL = `https://womanlab.com.br/blog/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${page}`;
+  const apiURL = `https://agenciakottler.com.br/blog/wp-json/wp/v2/posts?_embed&per_page=${perPage}&page=${page}`;
   
   try {
     const response = await fetch(apiURL);
