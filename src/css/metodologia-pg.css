@@ -1,4 +1,17 @@
-
+.introducao.metodologia-back {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/metodologia/metodologia.webp'); /* Substitua pelo caminho da sua imagem */
+  background-size: cover; /* Garante que a imagem cubra toda a área */
+  background-position: top; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  background-attachment: fixed;
+  display: flex;
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente o conteúdo */
+  opacity: 0;
+}
 .metodologia-container {
   display: flex;
   flex-direction: column;

@@ -1,3 +1,17 @@
+.introducao.contato-back {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../img/contato/contato.webp'); /* Substitua pelo caminho da sua imagem */
+    background-size: cover; /* Garante que a imagem cubra toda a área */
+    background-position: top; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    background-attachment: fixed;
+    display: flex;
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    opacity: 0;
+  }
 
 .contato-container {
     display: flex;
@@ -8,7 +22,7 @@
 
 .form-container {
     width: 100%;
-    max-width: 500px;
+    max-width: 600px;
     padding: 20px;
 }
 #contactForm {
