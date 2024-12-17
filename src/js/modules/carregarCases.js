@@ -19,7 +19,6 @@ export default class CarregarCases {
     }
   }
 
-  // 1. Renderizar o submenu de cases
   renderizarSubmenu(selector) {
     const submenu = document.querySelector(selector);
     if (!submenu || !this.data) return;
@@ -32,7 +31,6 @@ export default class CarregarCases {
     `;
   }
 
-  // 2. Renderizar os 3 últimos cases na página inicial (index.html)
   renderizarSwiper(selector) {
     const swiperContainer = document.querySelector(selector);
     if (!swiperContainer || !this.data) return;
@@ -50,39 +48,34 @@ export default class CarregarCases {
     `).join('');
   }
 
- // 3. Renderizar a lista de cases (cases.html)
-renderizarListaCases(selector) {
-  const listaContainer = document.querySelector(selector);
-  if (!listaContainer || !this.data) {
-    console.warn('Contêiner ou dados não encontrados para renderizar a lista de cases.');
-    return;
+  renderizarListaCases(selector) {
+    const listaContainer = document.querySelector(selector);
+    if (!listaContainer || !this.data) {
+      console.warn('Contêiner ou dados não encontrados para renderizar a lista de cases.');
+      return;
+    }
+
+    listaContainer.innerHTML = this.data.cases.map(caseItem => `
+      <div class="case">
+        <h2>${caseItem.titulo}</h2>
+        <img src="${caseItem.imagem}" alt="${caseItem.titulo}">
+        <a href="./case.html?id=${caseItem.id}" class="btn-ver-mais">Ver o case</a>
+      </div>
+    `).join('');
   }
 
-  listaContainer.innerHTML = this.data.cases.map(caseItem => `
-    <div class="case">
-      <h2>${caseItem.titulo}</h2>
-      <img src="${caseItem.imagem}" alt="${caseItem.titulo}">
-      <a href="./case.html?id=${caseItem.id}" class="btn-ver-mais">Ver o case</a>
-    </div>
-  `).join('');
-}
-
-
-  // Método para inicializar o modal para vídeos
   initModal() {
     const closeModalButton = document.querySelector('.close-modal');
     if (closeModalButton) {
       closeModalButton.addEventListener('click', () => this.fecharModal());
     }
   }
-  
-  
 
   abrirModal(videoUrl) {
     const modal = document.getElementById('video-modal');
     const videoPlayer = document.getElementById('video-player');
     const videoSource = document.getElementById('video-source');
-  
+
     if (modal && videoPlayer && videoSource) {
       videoSource.src = videoUrl;
       videoPlayer.load();
@@ -90,191 +83,123 @@ renderizarListaCases(selector) {
       videoPlayer.play();
     }
   }
-  
+
   fecharModal() {
     const modal = document.getElementById('video-modal');
     const videoPlayer = document.getElementById('video-player');
-  
+
     if (modal && videoPlayer) {
       videoPlayer.pause();
       videoPlayer.currentTime = 0;
       modal.style.display = 'none';
     }
   }
-  
-  
 
- // 4. Renderizar o case detalhado (case.html)
-renderizarCaseDetalhado(selector) {
-  const container = document.querySelector(selector);
-  const urlParams = new URLSearchParams(window.location.search);
-  const caseId = urlParams.get('id');
-  if (!container || !this.data || !caseId) return;
+  renderizarCaseDetalhado(selector) {
+    const container = document.querySelector(selector);
+    const urlParams = new URLSearchParams(window.location.search);
+    const caseId = urlParams.get('id');
+    if (!container || !this.data || !caseId) return;
 
-  const caseItem = this.data.cases.find(item => item.id === caseId);
-  if (!caseItem) {
-    container.innerHTML = "<p>Case não encontrado.</p>";
-    return;
-  }
+    const caseItem = this.data.cases.find(item => item.id === caseId);
+    if (!caseItem) {
+      container.innerHTML = "<p>Case não encontrado.</p>";
+      return;
+    }
 
-  // Renderizar o conteúdo detalhado do case
-  container.innerHTML = `
-    <!-- Introdução do Case -->
-    <section class="case-introducao">
-      <div class="container case-introducao-container">
-        <div class="case-titulo">
-          <h1>${caseItem.titulo}</h1>
-        </div>
-      </div>
-      <img src="${caseItem.imagem}" alt="${caseItem.titulo}" width="800" height="600">
-    </section>
-
-    <!-- Detalhamento do Case com Texto e Galeria -->
-    <section class="case-container container">
-      <div class="case-content-esquerda">
-        <!-- Cliente -->
-        <div class="case-content animate-me">
-          <h2>Cliente: ${caseItem.cliente}</h2>
-          <p>${caseItem.descricao_cliente}</p>
-        </div>
-        
-        <!-- Desafio -->
-        <div class="case-content animate-me">
-        <h2>Desafio</h2>
-        ${Array.isArray(caseItem.desafio) 
-          ? caseItem.desafio.map(paragrafo => `<p>${paragrafo}</p>`).join('')
-          : `<p>${caseItem.desafio}</p>`}
-        </div>
-
-
-      <!-- Estratégia Implementada -->
-      <div class="case-content animate-me">
-        <h2>Estratégia Implementada</h2>
-        ${caseItem.estrategia.map(estr => `
-          <div>
-            <h3>${estr.fase}</h3>
-            ${Array.isArray(estr.descricao)
-              ? estr.descricao.map(desc => `<p>${desc}</p>`).join('')
-              : `<p>${estr.descricao}</p>`}
-            ${estr.detalhes ? `
-              <ul>
-                ${estr.detalhes.map(det => `<li><strong>${det.canal}:</strong> ${det.conteudo}</li>`).join('')}
-              </ul>` : ''}
+    container.innerHTML = `
+      <section class="case-introducao">
+        <div class="container case-introducao-container">
+          <div class="case-titulo">
+            <h1>${caseItem.titulo}</h1>
           </div>
-        `).join('')}
-      </div>
+        </div>
+        <img src="${caseItem.imagem}" alt="${caseItem.titulo}" width="800" height="600">
+      </section>
 
-
-        <!-- Resultados -->
-        <div class="case-content">
-          <h2>Resultados</h2>
-          ${Object.keys(caseItem.resultados).map(canal => {
-            const resultado = caseItem.resultados[canal];
-            if (Array.isArray(resultado)) {
-              return `
+      <section class="case-container container">
+        <div class="case-content-esquerda">
+          <div class="case-content animate-me">
+            <h2>Cliente: ${caseItem.cliente}</h2>
+            <p>${caseItem.descricao_cliente}</p>
+          </div>
+          <div class="case-content animate-me">
+            <h2>Desafio</h2>
+            ${Array.isArray(caseItem.desafio) 
+              ? caseItem.desafio.map(paragrafo => `<p>${paragrafo}</p>`).join('')
+              : `<p>${caseItem.desafio}</p>`}
+          </div>
+          <div class="case-content animate-me">
+            <h2>Estratégia Implementada</h2>
+            ${caseItem.estrategia.map(estr => `
+              <div>
+                <h3>${estr.fase}</h3>
+                ${Array.isArray(estr.descricao)
+                  ? estr.descricao.map(desc => `<p>${desc}</p>`).join('')
+                  : `<p>${estr.descricao}</p>`}
+                ${estr.detalhes ? `
+                  <ul>
+                    ${estr.detalhes.map(det => `<li><strong>${det.canal}:</strong> ${det.conteudo}</li>`).join('')}
+                  </ul>` : ''}
+              </div>
+            `).join('')}
+          </div>
+          <div class="case-content">
+            <h2>Resultados</h2>
+            ${Object.keys(caseItem.resultados).map(canal => {
+              const resultado = caseItem.resultados[canal];
+              return Array.isArray(resultado) ? `
                 <div class="resultado-item">
                   <h3>${canal.charAt(0).toUpperCase() + canal.slice(1)}</h3>
-                  <div class="resultado-detalhes">
-                    <ul>
-                      ${resultado.map(item => `<li>${item}</li>`).join('')}
-                    </ul>
-                  </div>
-                </div>
-              `;
-            } else {
-              return `
+                  <ul>${resultado.map(item => `<li>${item}</li>`).join('')}</ul>
+                </div>` : `
                 <div class="resultado-item animate-me">
                   <h3>${canal.charAt(0).toUpperCase() + canal.slice(1)}</h3>
-                  <div class="resultado-detalhes">
-                    <p>${resultado}</p>
-                  </div>
-                </div>
-              `;
-            }
-          }).join('')}
+                  <p>${resultado}</p>
+                </div>`;
+            }).join('')}
+          </div>
+          <div class="case-content">
+            <h2>Conclusão</h2>
+            ${Array.isArray(caseItem.conclusao) 
+              ? caseItem.conclusao.map(paragrafo => `<p>${paragrafo}</p>`).join('')
+              : `<p>${caseItem.conclusao}</p>`}
+            ${caseItem.video && caseItem.video.includes('instagram.com') ? `
+              <a href="${caseItem.video}" target="_blank" class="btn btn-video">Assistir o vídeo no Instagram</a>` : ''}
+            ${caseItem.video && caseItem.video.endsWith('.mp4') ? `
+              <a href="#" class="btn">Assistir o vídeo</a>` : ''}
+          </div>
         </div>
 
-        <!-- Conclusão -->
-        <div class="case-content">
-          <h2>Conclusão</h2>
-          ${Array.isArray(caseItem.conclusao)
-            ? caseItem.conclusao.map(paragrafo => `<p>${paragrafo}</p>`).join('')
-            : `<p>${caseItem.conclusao}</p>`}
-          ${caseItem.video ? `<a href="#" class="video-link">Assista o vídeo</a>` : ''}
-        </div>
-      </div>
+        ${caseItem.galeria && caseItem.galeria.length > 0 ? `
+        <div class="case-content-direita case-galeria">
+          <div class="galeria-container">
+            ${caseItem.galeria.map(imagem => `<img src="${imagem}" alt="${caseItem.titulo}">`).join('')}
+          </div>
+        </div>` : ''}
+      </section>
+    `;
 
-      <!-- Galeria de Imagens à Direita -->
-      ${caseItem.galeria && caseItem.galeria.length > 0 ? `
-      <div class="case-content-direita case-galeria">
-        <div class="galeria-container">
-          ${caseItem.galeria.map(imagem => `
-            <img src="${imagem}" alt="${caseItem.titulo}" class="galeria-imagem animate-me">
-          `).join('')}
-        </div>
-      </div>` : ''}
-    </section>
-  `;
+    const videoLink = container.querySelector('.video-link');
+    if (videoLink && caseItem.video.endsWith('.mp4')) {
+      videoLink.addEventListener('click', (event) => {
+        event.preventDefault();
+        this.abrirModal(caseItem.video);
+      });
+    }
+  }
 
-// Aplicar animação após renderizar o conteúdo
-const elementosParaAnimar = container.querySelectorAll('.animate-me');
-gsap.from(elementosParaAnimar, {
-  opacity: 0,
-  y: 50,
-  duration: 3,
-  ease: "power1.out",
-  stagger: 0.6, // Opção para animação em sequência
-});
+  async init(submenuSelector, swiperSelector, listaSelector, caseSelector) {
+    await this.fetchData();
 
-const introducao = document.querySelector(".case-introducao");
-if (introducao) {
-    gsap.fromTo(introducao, {
-        clipPath: "polygon(0 0, 100% 0, 100% 0, 0 0)",
-        opacity: 0
-    }, {
-        clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
-        opacity: 1,
-        duration: 1.5,
-        ease: "power2.out",
-        onComplete: () => introducao.style.clipPath = 'none'
-    });
-}
+    if (submenuSelector) this.renderizarSubmenu(submenuSelector);
+    if (swiperSelector) this.renderizarSwiper(swiperSelector);
+    if (listaSelector) this.renderizarListaCases(listaSelector);
 
-gsap.set([".case-titulo"], { opacity: 0 });
-
-    gsap.to([".case-titulo"], { duration: 0.5, delay: 2, opacity: 1, ease: "power1.inOut" });
-
-
-   // Adicionar evento de clique dinamicamente para abrir o modal
-   const videoLink = container.querySelector('.video-link');
-   if (videoLink && caseItem.video) {
-     videoLink.addEventListener('click', (event) => {
-       event.preventDefault();
-       this.abrirModal(caseItem.video);
-     });
-   }
-}
-
-async init(submenuSelector, swiperSelector, listaSelector, caseSelector) {
-  await this.fetchData();
-
-  if (submenuSelector) this.renderizarSubmenu(submenuSelector);
-  if (swiperSelector) this.renderizarSwiper(swiperSelector);
-  if (listaSelector) this.renderizarListaCases(listaSelector);
-
-  const isCaseDetailPage = window.location.pathname.includes('case.html');
-  const urlParams = new URLSearchParams(window.location.search);
-  const caseId = urlParams.get('id');
-
-  if (caseSelector && isCaseDetailPage) {
-    this.renderizarCaseDetalhado(caseSelector);
-
-    // Inicializar o modal somente se estivermos na página `case.html`
-    if (caseId) {
+    const isCaseDetailPage = window.location.pathname.includes('case.html');
+    if (caseSelector && isCaseDetailPage) {
+      this.renderizarCaseDetalhado(caseSelector);
       this.initModal();
     }
   }
-}
-
-
 }
