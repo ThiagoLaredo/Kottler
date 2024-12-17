@@ -39,7 +39,8 @@
 
 .btn:hover {
   background-color: var(--textwhite);
-  color: var(--bg);
+  color: var(--primary);
+  transform: scale(1.05); /* Efeito de aumento no tamanho */
 }
 
 .texto-destaque {
