@@ -27,7 +27,7 @@ import MenuMobile from './modules/menu-mobile.js';
 import HeaderScroll from './modules/header-scroll.js';
 import CarregarCases from './modules/carregarCases.js';
 import FormHandler from './modules/formHandler.js';
-import { fetchWordPressPosts } from './modules/wpAPI.js';
+// import { fetchWordPressPosts } from './modules/wpAPI.js';
 import { initPageOpenAnimations, initScrollAnimations } from './modules/animations.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -114,64 +114,64 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Renderização de posts do blog
-    const postsContainer = document.getElementById('blog-container');
-    const paginationContainer = document.getElementById('pagination-container');
+    // const postsContainer = document.getElementById('blog-container');
+    // const paginationContainer = document.getElementById('pagination-container');
 
     // Somente chama renderBlogPosts se #blog-container existir
-    if (postsContainer && paginationContainer) {
-        let currentPage = 1; // Página inicial
-        const postsPerPage = 6; // Número de posts por página
+    // if (postsContainer && paginationContainer) {
+    //     let currentPage = 1; // Página inicial
+    //     const postsPerPage = 6; // Número de posts por página
 
-        async function renderBlogPosts(page = 1) {
-            const { posts, totalPages } = await fetchWordPressPosts(page, postsPerPage);
+    //     async function renderBlogPosts(page = 1) {
+    //         const { posts, totalPages } = await fetchWordPressPosts(page, postsPerPage);
 
-            // Limpa o container antes de adicionar os posts
-            postsContainer.innerHTML = '';
-            paginationContainer.innerHTML = '';
+    //         // Limpa o container antes de adicionar os posts
+    //         postsContainer.innerHTML = '';
+    //         paginationContainer.innerHTML = '';
 
-            if (Array.isArray(posts) && posts.length > 0) {
-                posts.forEach(post => {
-                    const imageUrl = post._embedded && post._embedded['wp:featuredmedia'] 
-                        ? post._embedded['wp:featuredmedia'][0].source_url 
-                        : '';
+    //         if (Array.isArray(posts) && posts.length > 0) {
+    //             posts.forEach(post => {
+    //                 const imageUrl = post._embedded && post._embedded['wp:featuredmedia'] 
+    //                     ? post._embedded['wp:featuredmedia'][0].source_url 
+    //                     : '';
                     
-                    const postElement = document.createElement('div');
-                    postElement.classList.add('blog-post');
+    //                 const postElement = document.createElement('div');
+    //                 postElement.classList.add('blog-post');
                     
-                    postElement.innerHTML = `
-                        <h2>${post.title.rendered}</h2>
-                        ${imageUrl ? `<img src="${imageUrl}" alt="${post.title.rendered}">` : ''}
-                        <p>${post.excerpt.rendered}</p>
-                        <a href="${post.link}">Leia mais</a>
-                    `;
+    //                 postElement.innerHTML = `
+    //                     <h2>${post.title.rendered}</h2>
+    //                     ${imageUrl ? `<img src="${imageUrl}" alt="${post.title.rendered}">` : ''}
+    //                     <p>${post.excerpt.rendered}</p>
+    //                     <a href="${post.link}">Leia mais</a>
+    //                 `;
                     
-                    postsContainer.appendChild(postElement);
-                });
+    //                 postsContainer.appendChild(postElement);
+    //             });
 
-                // Gera os botões de paginação
-                for (let i = 1; i <= totalPages; i++) {
-                    const pageButton = document.createElement('button');
-                    pageButton.textContent = i;
-                    pageButton.classList.add('pagination-button');
-                    if (i === page) {
-                        pageButton.classList.add('active');
-                    }
+    //             // Gera os botões de paginação
+    //             for (let i = 1; i <= totalPages; i++) {
+    //                 const pageButton = document.createElement('button');
+    //                 pageButton.textContent = i;
+    //                 pageButton.classList.add('pagination-button');
+    //                 if (i === page) {
+    //                     pageButton.classList.add('active');
+    //                 }
                     
-                    pageButton.addEventListener('click', () => {
-                        currentPage = i;
-                        renderBlogPosts(currentPage);
-                    });
+    //                 pageButton.addEventListener('click', () => {
+    //                     currentPage = i;
+    //                     renderBlogPosts(currentPage);
+    //                 });
                     
-                    paginationContainer.appendChild(pageButton);
-                }
-            } else {
-                postsContainer.innerHTML = '<p>Nenhum post disponível no momento.</p>';
-            }
-        }
+    //                 paginationContainer.appendChild(pageButton);
+    //             }
+    //         } else {
+    //             postsContainer.innerHTML = '<p>Nenhum post disponível no momento.</p>';
+    //         }
+    //     }
 
-        // Chama a função de renderização de posts inicialmente
-        renderBlogPosts(currentPage);
-    } else {
-        console.warn('Elementos necessários para a renderização do blog não foram encontrados.');
-    }
+    //     // Chama a função de renderização de posts inicialmente
+    //     renderBlogPosts(currentPage);
+    // } else {
+    //     console.warn('Elementos necessários para a renderização do blog não foram encontrados.');
+    // }
 });
