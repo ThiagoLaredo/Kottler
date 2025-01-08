@@ -234,19 +234,32 @@
         </div>
 
         <div class="form-container page-open-animate">
+          
           <form id="contactForm" method="POST" data-netlify="true">
+            <h2>Fale com a gente!</h2>
+            <p>Preencha o formulário para enviar uma mensagem.</p>
+      
             <input type="hidden" name="form-name" value="contact">
           
-            <label for="nome">Nome</label>
+            <label for="nome" class="visually-hidden">Nome</label>
             <input type="text" id="nome" name="nome" placeholder="Nome" required>
-          
-            <label for="email">E-mail</label>
+    
+            <label for="empresa" class="visually-hidden">Empresa</label>
+            <input type="text" id="empresa" name="empresa" placeholder="Empresa">
+    
+            <label for="email" class="visually-hidden">E-mail</label>
             <input type="email" id="email" name="email" placeholder="E-mail" required>
-          
-            <label for="mensagem">Mensagem</label>
-            <textarea id="mensagem" name="mensagem" placeholder="Mensagem"></textarea>
-          
-            <button type="submit">Enviar</button>
+    
+            <label for="whatsapp" class="visually-hidden">Whatsapp/Celular</label>
+            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Whatsapp/Celular" required>
+    
+            <label for="origem" class="visually-hidden">Como você conheceu a Agência Kottler?</label>
+            <input type="text" id="origem" name="origem" placeholder="Como você conheceu a Agência Kottler?">
+    
+            <label for="mensagem" class="visually-hidden">Como podemos te ajudar?</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos te ajudar?"></textarea>
+    
+            <button type="submit" class="btn">Enviar</button>
           
             <!-- Div para exibir a mensagem de resposta -->
             <div id="contactResponseMessage" style="margin-top: 10px; font: 500 1rem/1.4 'Raleway', sans-serif; display: none;"></div>
@@ -286,20 +299,19 @@
         </div>
         <div class="footer-newsletter animate-me">
           <h3>Assine nossa Newsletter</h3>
-        <form id="newsletterForm" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="newsletter">
+          <form id="newsletterForm" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="newsletter">
 
-          <label for="nome-newsletter">Nome</label>
-          <input type="text" id="nome-newsletter" name="nome-newsletter" placeholder="Nome" required>
-
-          <label for="email-newsletter">E-mail</label>
-          <input type="email" id="email-newsletter" name="email-newsletter" placeholder="E-mail" required>
-
-          <button type="submit">Assinar</button>
-
-          <!-- Div para exibir a mensagem de resposta -->
-          <div id="newsletterResponseMessage" style="margin-top: 10px; font: 500 1rem/1.4 'Raleway', sans-serif; display: none;"></div>
-        </form>
+            <label for="nome-newsletter" class="visually-hidden">Nome</label>
+            <input type="text" id="nome-newsletter" name="nome-newsletter" placeholder="Nome" required>
+            
+            <label for="email-newsletter" class="visually-hidden">E-mail</label>
+            <input type="email" id="email-newsletter" name="email-newsletter" placeholder="E-mail" required>
+            
+            <button type="submit">Assinar</button>
+            <!-- Div para exibir a mensagem de resposta -->
+        <div id="newsletterResponseMessage" style="margin-top: 10px; font: 500 1rem/1.4 'Raleway', sans-serif; display: none;"></div>
+          </form>
         </div>      
       </div>
     </footer>
