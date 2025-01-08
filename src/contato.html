@@ -187,7 +187,6 @@
                 <ul class="submenu submenu-cases"></ul>
               </li>
               <li><a href="./metodologia.html">Metodologia</a></li>
-              <li><a href="./blog.html">Blog</a></li>
               <li><a href="./contato.html" id="contato-link">Contato</a></li>            
             </ul>        
           </nav>
@@ -293,7 +292,9 @@
         </div>
         <div class="footer-newsletter animate-me">
           <h3>Assine nossa Newsletter</h3>
-          <form id="newsletterForm" action="/newsletter.php" method="POST">
+          <form id="newsletterForm" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="newsletter">
+
             <label for="nome-newsletter" class="visually-hidden">Nome</label>
             <input type="text" id="nome-newsletter" name="nome-newsletter" placeholder="Nome" required>
             
