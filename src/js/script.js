@@ -61,22 +61,38 @@ document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
 
     // Instancia o formulário de contato se existir na página
+    // if (document.getElementById('contactForm')) {
+    //     new FormHandler({
+    //         formId: 'contactForm',
+    //         endpoint: './enviar.php',
+    //         successMessage: 'Mensagem enviada com sucesso!',
+    //         errorMessage: 'Erro ao enviar a mensagem.',
+    //     });
+    // }
+
+    // Instancia o formulário de newsletter se existir na página
+    // if (document.getElementById('newsletterForm')) {
+    //     new FormHandler({
+    //         formId: 'newsletterForm',
+    //         endpoint: './newsletter.php',
+    //         successMessage: 'Inscrição realizada com sucesso!',
+    //         errorMessage: 'Erro ao realizar a inscrição.',
+    //     });
+    // }
+
     if (document.getElementById('contactForm')) {
         new FormHandler({
             formId: 'contactForm',
-            endpoint: './enviar.php',
             successMessage: 'Mensagem enviada com sucesso!',
-            errorMessage: 'Erro ao enviar a mensagem.',
+            errorMessage: 'Erro ao enviar a mensagem. Por favor, tente novamente.',
         });
     }
 
-    // Instancia o formulário de newsletter se existir na página
     if (document.getElementById('newsletterForm')) {
         new FormHandler({
             formId: 'newsletterForm',
-            endpoint: './newsletter.php',
             successMessage: 'Inscrição realizada com sucesso!',
-            errorMessage: 'Erro ao realizar a inscrição.',
+            errorMessage: 'Erro ao realizar a inscrição. Por favor, tente novamente.',
         });
     }
 
