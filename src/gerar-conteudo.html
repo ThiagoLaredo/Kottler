@@ -187,7 +187,6 @@
                 <ul class="submenu submenu-cases"></ul>
               </li>
               <li><a href="./metodologia.html">Metodologia</a></li>
-              <li><a href="./blog.html">Blog</a></li>
               <li><a href="./contato.html" id="contato-link">Contato</a></li>            
             </ul>               
           </nav>
@@ -326,15 +325,18 @@
         </div>
         <div class="footer-newsletter animate-me">
           <h3>Assine nossa Newsletter</h3>
-            <form id="newsletterForm" action="/newsletter.php" method="POST">
-              <label for="nome-newsletter" class="visually-hidden">Nome</label>
-              <input type="text" id="nome-newsletter" name="nome-newsletter" placeholder="Nome" required>
-              
-              <label for="email-newsletter" class="visually-hidden">E-mail</label>
-              <input type="email" id="email-newsletter" name="email-newsletter" placeholder="E-mail" required>
-              
-              <button type="submit">Assinar</button>
-            </form>
+ <form id="newsletterForm" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="newsletter">
+
+  <label for="nome-newsletter" class="visually-hidden">Nome</label>
+  <input type="text" id="nome-newsletter" name="nome-newsletter" placeholder="Nome" required>
+  
+  <label for="email-newsletter" class="visually-hidden">E-mail</label>
+  <input type="email" id="email-newsletter" name="email-newsletter" placeholder="E-mail" required>
+  
+  <button type="submit">Assinar</button>
+</form>
+
         </div>        
       </div>   
     </footer>
