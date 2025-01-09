@@ -66,12 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
     initPageOpenAnimations();
     initScrollAnimations();
 
-
-
-    const form = document.getElementById('contactForm');
-    if (form) {
         setupContactForm();
-        setupNewsletterForm();    }
+        setupNewsletterForm();    
 
 
     // Carrega e inicializa os cases se existirem os seletores
