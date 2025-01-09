@@ -233,39 +233,10 @@
             <path d="M60 23h180c32.574 0 59 26.904 59 59.5 0 32.596-26.426 59.5-59 59.5H60c-32.574 0-59-26.904-59-59.5C1 49.904 27.426 23 60 23z" stroke="#EA307E" stroke-width="2"/></g><defs><clipPath id="a"><path fill="#fff" transform="rotate(90 149.88 150.25)" d="M0 0h159.185v300H0z"/></clipPath></defs></svg>   
         </div>
 
-        <div class="form-container page-open-animate">
-          
-          <form id="contactForm" method="POST" action="/obrigado.html" data-netlify="true" netlify-honeypot="bot-field">            
-            <h2>Fale com a gente!</h2>
-            <p>Preencha o formulário para enviar uma mensagem.</p>
-      
-            <input type="hidden" name="form-name" value="contact">
-            <input type="hidden" name="bot-field">
-          
-            <label for="nome" class="visually-hidden">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Nome" required>
-    
-            <label for="empresa" class="visually-hidden">Empresa</label>
-            <input type="text" id="empresa" name="empresa" placeholder="Empresa">
-    
-            <label for="email" class="visually-hidden">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="E-mail" required>
-    
-            <label for="whatsapp" class="visually-hidden">Whatsapp/Celular</label>
-            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Whatsapp/Celular" required>
-    
-            <label for="origem" class="visually-hidden">Como você conheceu a Agência Kottler?</label>
-            <input type="text" id="origem" name="origem" placeholder="Como você conheceu a Agência Kottler?">
-    
-            <label for="mensagem" class="visually-hidden">Como podemos te ajudar?</label>
-            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos te ajudar?"></textarea>
-    
-            <button type="submit" class="btn">Enviar</button>
-          
-            <!-- Div para exibir a mensagem de resposta -->
-            <div id="contactFormResponseMessage" style="margin-top: 10px; font: 500 1rem/1.4 'Raleway', sans-serif; display: none;"></div>
-          </form>
-          
+        <div class="obrigado page-open-animate">
+          <h1>Obrigado pelo contato!</h1>
+          <p>Em breve entraremos em contato com você.</p>
+          <a href="./index.html">Voltar para a página inicial</a>       
         </div>      
     </section>
 
@@ -300,7 +271,7 @@
         </div>
         <div class="footer-newsletter animate-me">
           <h3>Assine nossa Newsletter</h3>
-          <form id="newsletterForm" method="POST" action="/obrigado.html" data-netlify="true" netlify-honeypot="bot-field">
+          <form id="newsletterForm" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="newsletter">
             <input type="hidden" name="bot-field">
         

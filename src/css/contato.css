@@ -85,4 +85,23 @@
     cursor: pointer;
 }
 
+.obrigado h1 {
+    font: 600 2rem 'Raleway', sans-serif;
+    color: var(--textwhite);
+    text-align: center;
+    margin: 0 0 20px 0;
+}
 
+.obrigado p {
+    font: 300 1.2rem 'Raleway', sans-serif;
+    color: var(--textwhite);
+    text-align: center;
+}
+
+.obrigado a {
+    font: 300 1.2rem 'Raleway', sans-serif;
+    color: var(--primary);
+    text-align: center;
+    display: block;
+    margin-top: 20px;
+}
