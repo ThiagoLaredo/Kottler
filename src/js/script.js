@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Verifica e inicializa o formulário de newsletter
     const newsletterFormEl = document.getElementById('newsletterForm');
-    const newsletterResponseEl = document.getElementById('newsletterResponseMessage');
+    const newsletterResponseEl = document.getElementById('newsletterFormResponseMessage');
 
     if (newsletterFormEl && newsletterResponseEl) {
         console.log('Inicializando FormHandler para o formulário de newsletter');
