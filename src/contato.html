@@ -300,7 +300,7 @@
         </div>
         <div class="footer-newsletter animate-me">
           <h3>Assine nossa Newsletter</h3>
-          <form id="newsletterForm" action="https://api.web3forms.com/submit" method="POST"> 
+          <form id="newsletterForm"> 
             <label for="nome-newsletter" class="visually-hidden">Nome</label>
             <input type="text" id="nome-newsletter" name="nome-newsletter" placeholder="Nome" required>
             
@@ -308,6 +308,11 @@
             <input type="email" id="email-newsletter" name="email-newsletter" placeholder="E-mail" required>
             
             <button type="submit">Assinar</button>
+          </form> 
+          <div id="thankYouMessage" style="display: none;">
+            <h3 data-translate="faleconosco.obrigadoTitulo">Obrigado por entrar em contato!</h3>
+            <p data-translate="faleconosco.obrigadoDescricao">Recebemos sua mensagem e entraremos em contato em breve.</p>
+          </div>
         </div>      
       </div>
     </footer>
