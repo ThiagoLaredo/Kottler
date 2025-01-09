@@ -29,11 +29,6 @@ export default class FormHandler {
 
         // Exibe mensagem de carregamento
         this.showMessage('Enviando...', 'info');
-
-        // Aguarda brevemente para exibir a mensagem antes de enviar
-        setTimeout(() => {
-            this.form.submit(); // Envia o formulário pelo comportamento padrão
-        }, 500);
     }
 
     showMessage(message, type) {
