@@ -26,7 +26,7 @@ import "../css/blog.css";
 import MenuMobile from './modules/menu-mobile.js';
 import HeaderScroll from './modules/header-scroll.js';
 import CarregarCases from './modules/carregarCases.js';
-import { setupForm } from './modules/formHandler.js';
+import { setupContactForm, setupNewsletterForm } from './forms.js';
 // import { fetchWordPressPosts } from './modules/wpAPI.js';
 import { initPageOpenAnimations, initScrollAnimations } from './modules/animations.js';
 
@@ -70,8 +70,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const form = document.getElementById('contactForm');
     if (form) {
-        setupForm();
-    }
+        setupContactForm();
+        setupNewsletterForm();    }
 
 
     // Carrega e inicializa os cases se existirem os seletores
