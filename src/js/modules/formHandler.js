@@ -18,7 +18,7 @@ export function setupForm() {
         event.preventDefault();  // Prevenir o envio tradicional do formulário
 
         const formData = new FormData(form);
-        formData.append('apikey', '9d6f5468-0dc7-4c4b-b0d1-e285b610e0b1'); // Substitua com sua chave real do Web3Forms
+        formData.append('apikey', '5f26723d-35c4-4a43-b5bd-0ee827dcff90'); // Substitua com sua chave real do Web3Forms
 
         fetch('https://api.web3forms.com/submit', {
             method: 'POST',
