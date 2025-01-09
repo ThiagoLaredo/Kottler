@@ -26,7 +26,7 @@ import "../css/blog.css";
 import MenuMobile from './modules/menu-mobile.js';
 import HeaderScroll from './modules/header-scroll.js';
 import CarregarCases from './modules/carregarCases.js';
-import FormHandler from './modules/formHandler.js';
+// import FormHandler from './modules/formHandler.js';
 // import { fetchWordPressPosts } from './modules/wpAPI.js';
 import { initPageOpenAnimations, initScrollAnimations } from './modules/animations.js';
 
@@ -87,34 +87,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
 
     // Verifica e inicializa o formulário de contato
-    const contactFormEl = document.getElementById('contactForm');
-    const contactResponseEl = document.getElementById('contactFormResponseMessage');
+    // const contactFormEl = document.getElementById('contactForm');
+    // const contactResponseEl = document.getElementById('contactFormResponseMessage');
 
-    if (contactFormEl && contactResponseEl) {
-        console.log('Inicializando FormHandler para o formulário de contato');
-        new FormHandler({
-            formId: 'contactForm',
-            successMessage: 'Mensagem enviada com sucesso!',
-            errorMessage: 'Erro ao enviar a mensagem. Por favor, tente novamente.',
-        });
-    } else {
-        console.error('Erro: Formulário de contato ou elemento de resposta não encontrado no DOM.');
-    }
+    // if (contactFormEl && contactResponseEl) {
+    //     console.log('Inicializando FormHandler para o formulário de contato');
+    //     new FormHandler({
+    //         formId: 'contactForm',
+    //         successMessage: 'Mensagem enviada com sucesso!',
+    //         errorMessage: 'Erro ao enviar a mensagem. Por favor, tente novamente.',
+    //     });
+    // } else {
+    //     console.error('Erro: Formulário de contato ou elemento de resposta não encontrado no DOM.');
+    // }
 
     // Verifica e inicializa o formulário de newsletter
-    const newsletterFormEl = document.getElementById('newsletterForm');
-    const newsletterResponseEl = document.getElementById('newsletterFormResponseMessage');
+    // const newsletterFormEl = document.getElementById('newsletterForm');
+    // const newsletterResponseEl = document.getElementById('newsletterFormResponseMessage');
 
-    if (newsletterFormEl && newsletterResponseEl) {
-        console.log('Inicializando FormHandler para o formulário de newsletter');
-        new FormHandler({
-            formId: 'newsletterForm',
-            successMessage: 'Inscrição realizada com sucesso!',
-            errorMessage: 'Erro ao realizar a inscrição. Por favor, tente novamente.',
-        });
-    } else {
-        console.error('Erro: Formulário de newsletter ou elemento de resposta não encontrado no DOM.');
-    }
+    // if (newsletterFormEl && newsletterResponseEl) {
+    //     console.log('Inicializando FormHandler para o formulário de newsletter');
+    //     new FormHandler({
+    //         formId: 'newsletterForm',
+    //         successMessage: 'Inscrição realizada com sucesso!',
+    //         errorMessage: 'Erro ao realizar a inscrição. Por favor, tente novamente.',
+    //     });
+    // } else {
+    //     console.error('Erro: Formulário de newsletter ou elemento de resposta não encontrado no DOM.');
+    // }
 
 
     // Carrega e inicializa os cases se existirem os seletores
