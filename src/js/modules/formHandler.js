@@ -1,15 +1,22 @@
 export default class FormHandler {
-    constructor({ formId, successMessage, errorMessage }) {
+    constructor({ formId, successMessage, errorMessage, endpoint = '/', hideMessageAfter = 10000 }) {
         this.form = document.getElementById(formId);
         this.responseMessage = document.getElementById(`${formId}ResponseMessage`);
 
+        if (!this.form) {
+            console.error(`Formulário não encontrado: ${formId}`);
+            return;
+        }
+
         if (!this.responseMessage) {
-            console.error(`Elemento de mensagem não encontrado: ${formId}ResponseMessage`);
+            console.error(`Elemento de mensagem não encontrado para o formulário: ${formId}ResponseMessage`);
             return;
         }
 
         this.successMessage = successMessage || 'Formulário enviado com sucesso!';
         this.errorMessage = errorMessage || 'Ocorreu um erro ao enviar o formulário.';
+        this.endpoint = endpoint;
+        this.hideMessageAfter = hideMessageAfter;
 
         this.addEventListeners();
     }
@@ -20,14 +27,16 @@ export default class FormHandler {
 
     async handleSubmit(event) {
         event.preventDefault(); // Evita o comportamento padrão do envio
-
         const formData = new FormData(this.form);
+
+        console.log(`Enviando formulário: ${this.form.id}`);
+        console.log('Dados do formulário:', [...formData.entries()]);
 
         // Mostra a mensagem de carregamento
         this.showMessage('Enviando...', 'info');
 
         try {
-            const response = await fetch('/', {
+            const response = await fetch(this.endpoint, {
                 method: 'POST',
                 body: formData,
             });
@@ -42,10 +51,10 @@ export default class FormHandler {
             this.showMessage(error.message || this.errorMessage, 'error');
         }
 
-        // Opcional: Oculta a mensagem após 10 segundos
+        // Oculta a mensagem após o tempo configurado
         setTimeout(() => {
             this.responseMessage.style.display = 'none';
-        }, 10000);
+        }, this.hideMessageAfter);
     }
 
     showMessage(message, type) {
