@@ -235,11 +235,12 @@
 
         <div class="form-container page-open-animate">
           
-          <form id="contactForm" method="POST" data-netlify="true">
+          <form id="contactForm" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <h2>Fale com a gente!</h2>
             <p>Preencha o formulário para enviar uma mensagem.</p>
       
             <input type="hidden" name="form-name" value="contact">
+            <input type="hidden" name="bot-field">
           
             <label for="nome" class="visually-hidden">Nome</label>
             <input type="text" id="nome" name="nome" placeholder="Nome" required>
@@ -262,7 +263,7 @@
             <button type="submit" class="btn">Enviar</button>
           
             <!-- Div para exibir a mensagem de resposta -->
-            <div id="contactResponseMessage" style="margin-top: 10px; font: 500 1rem/1.4 'Raleway', sans-serif; display: none;"></div>
+            <div id="contactFormResponseMessage" style="margin-top: 10px; font: 500 1rem/1.4 'Raleway', sans-serif; display: none;"></div>
           </form>
           
         </div>      
@@ -299,8 +300,9 @@
         </div>
         <div class="footer-newsletter animate-me">
           <h3>Assine nossa Newsletter</h3>
-          <form id="newsletterForm" method="POST" data-netlify="true">
+          <form id="newsletterForm" method="POST" data-netlify="true" netlify-honeypot="bot-field">
             <input type="hidden" name="form-name" value="newsletter">
+            <input type="hidden" name="bot-field">
         
             <label for="nome-newsletter" class="visually-hidden">Nome</label>
             <input type="text" id="nome-newsletter" name="nome" placeholder="Nome" required>
@@ -311,7 +313,7 @@
             <button type="submit">Assinar</button>
         
             <!-- Div para mensagens de resposta -->
-            <div id="newsletterResponseMessage" style="margin-top: 10px; display: none;"></div>
+            <div id="newsletterFormResponseMessage" style="margin-top: 10px; display: none;"></div>
           </form>
         </div>      
       </div>

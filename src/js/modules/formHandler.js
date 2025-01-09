@@ -28,19 +28,23 @@ export default class FormHandler {
     async handleSubmit(event) {
         event.preventDefault(); // Evita o comportamento padrão do envio
         const formData = new FormData(this.form);
-
+    
         console.log(`Enviando formulário: ${this.form.id}`);
         console.log('Dados do formulário:', [...formData.entries()]);
-
+    
+        // Converte os dados para o formato necessário
+        const formBody = new URLSearchParams([...formData.entries()]).toString();
+    
         // Mostra a mensagem de carregamento
         this.showMessage('Enviando...', 'info');
-
+    
         try {
             const response = await fetch(this.endpoint, {
                 method: 'POST',
-                body: formData,
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: formBody,
             });
-
+    
             if (response.ok) {
                 this.showMessage(this.successMessage, 'success');
                 this.form.reset(); // Limpa os campos do formulário
@@ -50,12 +54,13 @@ export default class FormHandler {
         } catch (error) {
             this.showMessage(error.message || this.errorMessage, 'error');
         }
-
+    
         // Oculta a mensagem após o tempo configurado
         setTimeout(() => {
             this.responseMessage.style.display = 'none';
         }, this.hideMessageAfter);
     }
+    
 
     showMessage(message, type) {
         this.responseMessage.textContent = message;
