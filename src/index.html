@@ -429,21 +429,25 @@
             </div>
           </div>
           <div class="footer-newsletter animate-me">
-            <h3>Assine nossa Newsletter</h3>
-            <form id="newsletterForm" method="POST" data-netlify="true">
-              <input type="hidden" name="form-name" value="newsletter">
+              <h3>Assine nossa Newsletter</h3>
+              <form id="newsletterForm" method="POST" data-netlify="true">
+                  <input type="hidden" name="form-name" value="newsletter">
 
-              <label for="nome-newsletter" class="visually-hidden">Nome</label>
-              <input type="text" id="nome-newsletter" name="nome-newsletter" placeholder="Nome" required>
-              
-              <label for="email-newsletter" class="visually-hidden">E-mail</label>
-              <input type="email" id="email-newsletter" name="email-newsletter" placeholder="E-mail" required>
-              
-              <button type="submit">Assinar</button>
-              <!-- Div para exibir a mensagem de resposta -->
-          <div id="newsletterResponseMessage" style="margin-top: 10px; font: 500 1rem/1.4 'Raleway', sans-serif; display: none;"></div>
-            </form>
-          </div>         
+                  <!-- Campo para Nome -->
+                  <label for="nome-newsletter" class="visually-hidden">Nome</label>
+                  <input type="text" id="nome-newsletter" name="nome" placeholder="Nome" required>
+
+                  <!-- Campo para Email -->
+                  <label for="email-newsletter" class="visually-hidden">E-mail</label>
+                  <input type="email" id="email-newsletter" name="email" placeholder="E-mail" required>
+
+                  <!-- Botão de Submissão -->
+                  <button type="submit">Assinar</button>
+
+                  <!-- Div para Exibir Mensagem de Resposta -->
+                  <div id="newsletterResponseMessage" style="margin-top: 10px; font: 500 1rem/1.4 'Raleway', sans-serif; display: none;"></div>
+              </form>
+          </div>     
         </div>      
       </footer>
          
