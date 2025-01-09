@@ -85,23 +85,22 @@
     cursor: pointer;
 }
 
-.obrigado h1 {
-    font: 600 2rem 'Raleway', sans-serif;
-    color: var(--textwhite);
-    text-align: center;
-    margin: 0 0 20px 0;
-}
-
-.obrigado p {
-    font: 300 1.2rem 'Raleway', sans-serif;
-    color: var(--textwhite);
-    text-align: center;
-}
-
-.obrigado a {
-    font: 300 1.2rem 'Raleway', sans-serif;
-    color: var(--primary);
-    text-align: center;
-    display: block;
+#thankYouMessage {
     margin-top: 20px;
-}
+    padding: 15px;
+    background-color: #f7ebeb;
+    /* border: 1px solid #dcdcdc; */
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  #thankYouMessage h3 {
+      font: 600 1.2rem "Inter", sans-serif;
+      color: var(--primary);
+      margin-bottom: 10px;
+  } 
+  
+  #thankYouMessage p {
+      font: 300 1rem/1.5 "Inter", sans-serif;
+      color: var(--text);
+  }
