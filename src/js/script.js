@@ -80,21 +80,36 @@ document.addEventListener('DOMContentLoaded', () => {
     //     });
     // }
 
-    if (document.getElementById('contactForm')) {
+    // Verifica e inicializa o formulário de contato
+    const contactFormEl = document.getElementById('contactForm');
+    const contactResponseEl = document.getElementById('contactFormResponseMessage');
+
+    if (contactFormEl && contactResponseEl) {
+        console.log('Inicializando FormHandler para o formulário de contato');
         new FormHandler({
             formId: 'contactForm',
             successMessage: 'Mensagem enviada com sucesso!',
             errorMessage: 'Erro ao enviar a mensagem. Por favor, tente novamente.',
         });
+    } else {
+        console.error('Erro: Formulário de contato ou elemento de resposta não encontrado no DOM.');
     }
 
-    if (document.getElementById('newsletterForm')) {
+    // Verifica e inicializa o formulário de newsletter
+    const newsletterFormEl = document.getElementById('newsletterForm');
+    const newsletterResponseEl = document.getElementById('newsletterResponseMessage');
+
+    if (newsletterFormEl && newsletterResponseEl) {
+        console.log('Inicializando FormHandler para o formulário de newsletter');
         new FormHandler({
             formId: 'newsletterForm',
             successMessage: 'Inscrição realizada com sucesso!',
             errorMessage: 'Erro ao realizar a inscrição. Por favor, tente novamente.',
         });
+    } else {
+        console.error('Erro: Formulário de newsletter ou elemento de resposta não encontrado no DOM.');
     }
+
 
     // Carrega e inicializa os cases se existirem os seletores
     const submenuCasesEl = document.querySelector('.submenu-cases');
