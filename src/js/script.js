@@ -32,6 +32,12 @@ import { initPageOpenAnimations, initScrollAnimations } from './modules/animatio
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente carregado.");
+    // Verifica os elementos de formulário e resposta no DOM
+    console.log('Verificando elementos de formulário:');
+    console.log('contactForm:', document.getElementById('contactForm'));
+    console.log('contactFormResponseMessage:', document.getElementById('contactFormResponseMessage'));
+    console.log('newsletterForm:', document.getElementById('newsletterForm'));
+    console.log('newsletterFormResponseMessage:', document.getElementById('newsletterFormResponseMessage'));
 
     // Inicializa o menu mobile com submenu integrado, caso os elementos existam
     const menuMobile = new MenuMobile(
