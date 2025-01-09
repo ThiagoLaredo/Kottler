@@ -2,6 +2,17 @@ export default class FormHandler {
     constructor({ formId, successMessage, errorMessage }) {
         this.form = document.getElementById(formId);
         this.responseMessage = document.getElementById(`${formId}ResponseMessage`);
+
+        // Logs para verificar se os elementos estão sendo encontrados
+        console.log(`Buscando elemento de resposta: ${formId}ResponseMessage`);
+        console.log(this.responseMessage);
+
+        // Verifica se o elemento de resposta existe
+        if (!this.responseMessage) {
+            console.error(`Elemento de mensagem não encontrado: ${formId}ResponseMessage`);
+            return;
+        }
+
         this.successMessage = successMessage || 'Formulário enviado com sucesso!';
         this.errorMessage = errorMessage || 'Ocorreu um erro ao enviar o formulário.';
 
@@ -13,10 +24,9 @@ export default class FormHandler {
     }
 
     async handleSubmit(event) {
-        event.preventDefault(); // Evita o comportamento padrão do envio
+        event.preventDefault();
         const formData = new FormData(this.form);
 
-        // Mostra mensagem de carregamento
         this.showMessage('Enviando...', 'info');
 
         try {
@@ -28,7 +38,7 @@ export default class FormHandler {
 
             if (response.ok) {
                 this.showMessage(this.successMessage, 'success');
-                this.form.reset(); // Limpa os campos do formulário
+                this.form.reset();
             } else {
                 throw new Error('Erro ao enviar o formulário. Tente novamente mais tarde.');
             }
@@ -36,13 +46,14 @@ export default class FormHandler {
             this.showMessage(error.message || this.errorMessage, 'error');
         }
 
-        // Opcional: Oculta a mensagem após 10 segundos
         setTimeout(() => {
             this.responseMessage.style.display = 'none';
         }, 10000);
     }
 
     showMessage(message, type) {
+        if (!this.responseMessage) return;
+
         this.responseMessage.textContent = message;
         this.responseMessage.style.display = 'block';
         this.responseMessage.style.color = type === 'success' ? 'green' : type === 'error' ? 'red' : 'black';
