@@ -25,10 +25,11 @@ export default class FormHandler {
     }
 
     handleSubmit(event) {
-        event.preventDefault(); // Evita o comportamento padrão momentaneamente
-
-        // Exibe mensagem de carregamento
+        // Mostra a mensagem de carregamento
         this.showMessage('Enviando...', 'info');
+
+        // Não impede o comportamento padrão do formulário
+        // Deixe o navegador realizar o envio normalmente
     }
 
     showMessage(message, type) {
