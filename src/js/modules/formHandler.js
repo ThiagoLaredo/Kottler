@@ -18,7 +18,7 @@ export function setupContactForm() {
       event.preventDefault();
   
       const formData = new FormData(form);
-      formData.append('apikey', 'SUA_CHAVE_WEB3FORMS');
+      formData.append('apikey', '5f26723d-35c4-4a43-b5bd-0ee827dcff90');
   
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
@@ -61,11 +61,11 @@ export function setupContactForm() {
       event.preventDefault();
   
       const formData = new FormData(form);
-      formData.append('apikey', 'SUA_CHAVE_WEB3FORMS');
+      formData.append('apikey', '5f26723d-35c4-4a43-b5bd-0ee827dcff90');
   
       // Se quiser identificar qual formulário é qual no painel do Web3Forms,
       // adicione um campo oculto extra, por ex.:
-      // formData.append('form_id', 'newsletter');
+      formData.append('form_id', 'newsletter');
   
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',

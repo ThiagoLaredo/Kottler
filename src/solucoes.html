@@ -311,9 +311,7 @@
         </div>
         <div class="footer-newsletter animate-me">
           <h3>Assine nossa Newsletter</h3>
-          <form id="newsletterForm" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="newsletter">
-
+          <form id="newsletterForm"> 
             <label for="nome-newsletter" class="visually-hidden">Nome</label>
             <input type="text" id="nome-newsletter" name="nome-newsletter" placeholder="Nome" required>
             
@@ -321,9 +319,11 @@
             <input type="email" id="email-newsletter" name="email-newsletter" placeholder="E-mail" required>
             
             <button type="submit">Assinar</button>
-            <!-- Div para exibir a mensagem de resposta -->
-        <div id="newsletterFormResponseMessage" style="margin-top: 10px; font: 500 1rem/1.4 'Raleway', sans-serif; display: none;"></div>
-          </form>
+          </form> 
+          <div id="thankYouMessage" style="display: none;">
+            <h3 data-translate="faleconosco.obrigadoTitulo">Obrigado por entrar em contato!</h3>
+            <p data-translate="faleconosco.obrigadoDescricao">Recebemos sua mensagem e entraremos em contato em breve.</p>
+          </div>
         </div>     
       </div>  
     </footer>
