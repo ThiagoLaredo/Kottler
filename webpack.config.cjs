@@ -17,7 +17,6 @@
     'gerar-conteudo',
     'metodologia',
     'contato',
-    'obrigado',
     'blog',
   ];
 
