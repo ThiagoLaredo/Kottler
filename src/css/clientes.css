@@ -19,10 +19,6 @@
   display: flex; /* Altera para flex para garantir que os logos fiquem lado a lado */
 }
 
-/* .logos-clientes .coluna-1 {
-  margin-right: 50%;
-} */
-
 .logos-clientes img {
   width: auto;
   height: 260px;
