@@ -18,7 +18,6 @@
     'metodologia',
     'contato',
     'blog',
-    'googlecbae4daf0a01a7b9',
   ];
 
   const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({
@@ -93,6 +92,7 @@
         patterns: [
           { from: 'src/img', to: 'img' },
           { from: 'src/cases.json', to: 'cases.json' },
+          { from: 'src/googlecbae4daf0a01a7b9.html', to: 'googlecbae4daf0a01a7b9.html' }, 
         ]
       }),
     ],
