@@ -20,7 +20,12 @@
   max-width: 40%;
 }
 
-.cases-home-texto h2 {
+.cases-home-texto h2  {
+  font: 300 2.4rem 'Raleway', sans-serif;
+  color: var(--textwhite);
+}
+
+.cases-home-texto h2 a  {
   font: 300 2.4rem 'Raleway', sans-serif;
   color: var(--textwhite);
 }
