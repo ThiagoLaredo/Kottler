@@ -56,7 +56,7 @@
 .solucao-grupo {
   display: flex;
   flex-direction: column; /* Novo container como coluna */
-  align-items: flex-start; /* Alinha itens à esquerda */
+  align-items: stretch; /* Faz com que todas as soluções tenham a mesma altura */
   width: 100%; /* Ocupa a largura total dentro do gap especificado */
 }
 
@@ -105,6 +105,10 @@
 .solucao p {
   color: var(--textwhite);
   font: 300 1rem/1.6 'Raleway', sans-serif;
+}
+
+.solucao p a {
+  color: var(--primary);
 }
 
 .solucao ul {

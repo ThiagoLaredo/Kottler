@@ -16,6 +16,10 @@
     color: var(--textwhite);
 }
 
+.metodologia h2 a {
+  color: var(--textwhite);
+}
+
 .metodologia p {
   font: 300 1rem/1.6 'Raleway', sans-serif;
   color: var(--textwhite);
