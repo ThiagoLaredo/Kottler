@@ -121,20 +121,6 @@
  width: fit-content;
 }
 
-
-/* .case-content li::before {
-  content: '';
-  position: absolute;
-  left: 0; 
-  top: 50%;
-  transform: translateY(-50%);
-  width: 6px; 
-  height: 6px;
-  border-radius: 50%;
-  background-color: var(--primary);
-}  */
-
-
 .case-content li {
   font: 300 1rem/1.6 'Raleway', sans-serif;
   color: var(--textwhite);
