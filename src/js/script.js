@@ -30,19 +30,18 @@ import { setupContactForm, setupNewsletterForm } from './modules/formHandler.js'
 import { initPageOpenAnimations, initScrollAnimations } from './modules/animations.js';
 import { BlogManager } from "./modules/blog-manager.js";
 
-const blogManager = new BlogManager();
-
-// Detectar qual página está carregada
-if (window.location.pathname.endsWith("blog.html")) {
-  blogManager.loadPosts();
-} else if (window.location.pathname.endsWith("post.html")) {
-  blogManager.loadPost();
-}
-
-
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente carregado.");
-    // Verifica os elementos de formulário e resposta no DOM
+
+    const blogManager = new BlogManager();
+
+    // Detectar qual página está carregada
+    if (window.location.pathname.endsWith("blog.html")) {
+    blogManager.loadPosts();
+    } else if (window.location.pathname.endsWith("post.html")) {
+    blogManager.loadPost();
+    }
+
     console.log('Verificando elementos de formulário:');
     console.log('contactForm:', document.getElementById('contactForm'));
     console.log('contactFormResponseMessage:', document.getElementById('contactFormResponseMessage'));
@@ -104,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
             '.case-detalhado'     // Página de case detalhado (case.html)
         );
     }
-
     // Renderização de posts do blog
     // const postsContainer = document.getElementById('blog-container');
     // const paginationContainer = document.getElementById('pagination-container');
