@@ -28,6 +28,17 @@ import CarregarCases from './modules/carregarCases.js';
 import { setupContactForm, setupNewsletterForm } from './modules/formHandler.js';
 // import { fetchWordPressPosts } from './modules/wpAPI.js';
 import { initPageOpenAnimations, initScrollAnimations } from './modules/animations.js';
+import { BlogManager } from "./modules/blog-manager.js";
+
+const blogManager = new BlogManager();
+
+// Detectar qual página está carregada
+if (window.location.pathname.endsWith("blog.html")) {
+  blogManager.loadPosts();
+} else if (window.location.pathname.endsWith("post.html")) {
+  blogManager.loadPost();
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente carregado.");

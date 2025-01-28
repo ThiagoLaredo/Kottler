@@ -18,6 +18,7 @@
     'metodologia',
     'contato',
     'blog',
+    'post',
   ];
 
   const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({
