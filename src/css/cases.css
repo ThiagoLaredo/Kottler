@@ -45,6 +45,11 @@
   font: 300 1rem/1.6 'Raleway', sans-serif;
 }
 
+.intro-cases p a {
+  color: var(--textwhite);
+  font: 500 1rem/1.6 'Raleway', sans-serif;
+}
+
 .cases-lista {
   padding: 80px 20px;
   display: flex;
