@@ -1,7 +1,5 @@
-# .env
+.env
 node_modules/
-*.php
-PHPMailer
 # *.log
 # *.cache
 # *.bak

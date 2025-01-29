@@ -98,7 +98,7 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.CONTENTFUL_SPACE_ID': JSON.stringify(process.env.CONTENTFUL_SPACE_ID),
       'process.env.CONTENTFUL_ACCESS_TOKEN': JSON.stringify(process.env.CONTENTFUL_ACCESS_TOKEN),
-    }),
+    }),   
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
