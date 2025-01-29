@@ -1,5 +1,5 @@
 const webpack = require('webpack');
-const dotenv = require('dotenv');
+// const dotenv = require('dotenv');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -8,7 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
-dotenv.config();
+// dotenv.config();
 
 console.log('CONTENTFUL_SPACE_ID:', process.env.CONTENTFUL_SPACE_ID);
 console.log('CONTENTFUL_ACCESS_TOKEN:', process.env.CONTENTFUL_ACCESS_TOKEN);
