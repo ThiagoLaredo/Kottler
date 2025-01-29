@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const dotenv = require('dotenv');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -6,6 +7,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
+
+dotenv.config();
+
+console.log('CONTENTFUL_SPACE_ID:', process.env.CONTENTFUL_SPACE_ID);
+console.log('CONTENTFUL_ACCESS_TOKEN:', process.env.CONTENTFUL_ACCESS_TOKEN);
 
 const pages = [
   'index',
@@ -96,8 +102,8 @@ module.exports = {
       ],
     }),
     new webpack.DefinePlugin({
-      'process.env.CONTENTFUL_SPACE_ID': JSON.stringify(process.env.CONTENTFUL_SPACE_ID),
-      'process.env.CONTENTFUL_ACCESS_TOKEN': JSON.stringify(process.env.CONTENTFUL_ACCESS_TOKEN),
+      'process.env.CONTENTFUL_SPACE_ID': JSON.stringify('oputswbco4ug'),
+      'process.env.CONTENTFUL_ACCESS_TOKEN': JSON.stringify('t0k-RHn4eskADHT1Gdjr27xnkXu7WqPS3NOkQdTYlZs'),
     }),   
   ],
   resolve: {
