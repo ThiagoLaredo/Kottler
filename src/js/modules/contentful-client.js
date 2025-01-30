@@ -1,10 +1,13 @@
 import { createClient } from 'contentful';
 
-// console.log('Space ID:', process.env.CONTENTFUL_SPACE_ID);
-// console.log('Access Token:', process.env.CONTENTFUL_ACCESS_TOKEN);
+console.log('Inicializando Contentful Client');
 
-// Inicializar o cliente Contentful
 export const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,  // Usando a variável injetada
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN, // Usando a variável injetada
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
+
+// Teste se o cliente está realmente inicializando
+client.getEntries({ content_type: "projeto" })
+  .then(() => console.log("Contentful conectado com sucesso!"))
+  .catch((err) => console.error("Erro ao conectar com o Contentful:", err));
