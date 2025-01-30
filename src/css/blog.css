@@ -47,19 +47,25 @@
 }
 
 #post-container h3 {
-  font: 300 1.2rem/1.2 'Raleway', sans-serif;
+  font: 300 1.2rem/1.4 'Raleway', sans-serif;
   color: var(--textwhite);
   margin-bottom: 20px;
 }
 
 #post-container p {
-  font: 300 1rem/1.2 'Raleway', sans-serif;
+  font: 300 1rem/1.4 'Raleway', sans-serif;
   color: var(--textwhite);
+  margin-bottom: 20px;
+}
+
+#post-container ul {
+list-style: bullet;
 }
 
 #post-container li {
   font: 300 1rem/1.2 'Raleway', sans-serif;
   color: var(--textwhite);
+  padding-left: 10px;
 }
 
 .underline {
