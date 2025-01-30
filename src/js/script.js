@@ -26,7 +26,6 @@ import MenuMobile from './modules/menu-mobile.js';
 import HeaderScroll from './modules/header-scroll.js';
 import CarregarCases from './modules/carregarCases.js';
 import { setupContactForm, setupNewsletterForm } from './modules/formHandler.js';
-// import { fetchWordPressPosts } from './modules/wpAPI.js';
 import { initPageOpenAnimations, initScrollAnimations } from './modules/animations.js';
 import { BlogManager } from "./modules/blog-manager.js";
 
