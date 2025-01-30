@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Detectar qual página está carregada
     if (window.location.pathname.endsWith("blog")) {
     blogManager.loadPosts();
-    } else if (window.location.pathname.endsWith("post")) {
+    } else if (window.location.pathname.endsWith("post.html")) {
     blogManager.loadPost();
     }
 
