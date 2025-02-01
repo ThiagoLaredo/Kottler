@@ -19,7 +19,7 @@ export class BlogManager {
           let previewContent = "Sem conteúdo disponível";
           if (item.fields.body) {
             previewContent =
-              documentToHtmlString(item.fields.body).substring(0, 150) + "...";
+              documentToHtmlString(item.fields.corpo).substring(0, 150) + "...";
           }
 
           // Verificar e obter a imagem
