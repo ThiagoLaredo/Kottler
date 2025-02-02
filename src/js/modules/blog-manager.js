@@ -36,11 +36,15 @@ export class BlogManager {
           }
 
           post.innerHTML = `
-            <img src="${imageUrl}" alt="${item.fields.title}" />
-            <h2>${item.fields.title}</h2>
-            <p>${previewContent}</p>
-            <a href="post.html?slug=${item.fields.slug}">Leia mais</a>
-          `;
+          <a href="post.html?slug=${item.fields.slug}" class="post-link">
+            <div class="post-content">
+              <img src="${imageUrl}" alt="${item.fields.title}" />
+              <h2>${item.fields.title}</h2>
+              <p>${previewContent}</p>
+            </div>
+          </a>
+        `;
+              
           postsContainer.appendChild(post);
         });
       })
@@ -57,12 +61,13 @@ export class BlogManager {
       .getEntries({
         content_type: "projeto",
         "fields.slug": slug,
+        include: 2, // Para carregar assets (imagens)
       })
       .then((response) => {
         if (response.items.length > 0) {
           const post = response.items[0];
 
-          // Verificar e obter a imagem
+          // Verificar e obter a imagem principal
           let backgroundImageUrl = "";
           if (post.fields.imagem) {
             const images = Array.isArray(post.fields.imagem) ? post.fields.imagem : [post.fields.imagem];
@@ -86,17 +91,32 @@ export class BlogManager {
           const richTextContent = post.fields.corpo;
           const formattedBody = richTextContent ? documentToHtmlString(richTextContent) : "<p>Conteúdo não disponível.</p>";
 
+          // Processar a galeria de imagens
+          let galleryHtml = "";
+          if (post.fields.galeria && post.fields.galeria.length > 0) {
+            galleryHtml = `<div class="gallery-container">`;
+            post.fields.galeria.forEach((image) => {
+              if (image.fields && image.fields.file) {
+                const imageUrl = `https:${image.fields.file.url}`;
+                const altText = image.fields.title || "Imagem da galeria";
+                galleryHtml += `<div class="gallery-item"><img src="${imageUrl}" alt="${altText}" /></div>`;
+              }
+            });
+            galleryHtml += `</div>`;
+          }
+
           // Atualizar o conteúdo do post
           if (postContainer) {
             postContainer.innerHTML = `
               ${formattedBody}
-              <a class="voltar-blog" href="blog.html">Voltar ao Blog</a>
+              ${galleryHtml}
+              <a class="voltar-blog" href="blog">Voltar ao Blog</a>
             `;
           }
         } else {
           postContainer.innerHTML = `
             <p>Post não encontrado.</p>
-            <a class="voltar-blog" href="blog.html">Voltar ao Blog</a>
+            <a class="voltar-blog" href="blog">Voltar ao Blog</a>
           `;
         }
       })

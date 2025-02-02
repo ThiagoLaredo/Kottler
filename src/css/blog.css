@@ -13,20 +13,23 @@
   opacity: 0;
 }
 
+.introducao.blog-back h1 {
+ text-align: left;
+}
+
 .blog h2 {
   padding: 100px 20px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 70vh;
-}
-
-.blog h2 {
   font-family: 'Raleway', sans-serif;
   color: var(--primary);
   font-size: 2.5em;
   letter-spacing: 2px;
+  text-align: left;
 }
+
 
 #posts {
   display: flex;
@@ -87,6 +90,23 @@ list-style: disc;
   color: var(--primary);
 }
 
+.post-link {
+  text-decoration: none;
+  color: inherit;
+  display: block; /* Faz o link cobrir tudo */
+}
+
+.post-content {
+  padding: 15px;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+.post-link:hover .post-content {
+  background: rgba(0, 0, 0, 0.05); /* Efeito hover */
+}
+
+
 .post-preview {
   display: flex;
   flex-direction: column;
@@ -121,6 +141,22 @@ list-style: disc;
   text-decoration: none;
 }
 
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 20px 0;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+
 #pagination-container {
   margin-top: 20px;
   text-align: center;
@@ -151,6 +187,7 @@ list-style: disc;
   background-color: var(--textwhite);
   color: var(--primary);
 }
+
 
 
 
