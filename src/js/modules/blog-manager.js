@@ -37,14 +37,12 @@ export class BlogManager {
 
           post.innerHTML = `
           <a href="post.html?slug=${item.fields.slug}" class="post-link">
-            <div class="post-content">
-              <img src="${imageUrl}" alt="${item.fields.title}" />
-              <h2>${item.fields.title}</h2>
-              <p>${previewContent}</p>
-            </div>
+            <img src="${imageUrl}" alt="${item.fields.title}" />
+            <h2>${item.fields.title}</h2>
+            <p>${previewContent} <span class="read-more">Leia mais</span></p>
           </a>
         `;
-              
+               
           postsContainer.appendChild(post);
         });
       })

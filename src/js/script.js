@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const blogManager = new BlogManager();
 
     // Detectar qual página está carregada
-    if (window.location.pathname.endsWith("blog")) {
+    if (window.location.pathname.endsWith("blog.html")) {
     blogManager.loadPosts();
     } else if (window.location.pathname.endsWith("post.html")) {
     blogManager.loadPost();
