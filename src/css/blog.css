@@ -179,8 +179,9 @@ list-style: disc;
 
 .gallery-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
+  /* grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); */
+  grid-template-columns: 1fr;
+  gap: 20px;
   padding: 20px 0;
 }
 
@@ -192,8 +193,7 @@ list-style: disc;
   object-fit: cover;
 }
 
-
-#pagination-container {
+/* #pagination-container {
   margin-top: 20px;
   text-align: center;
 }
@@ -209,7 +209,7 @@ list-style: disc;
   border-radius: 4px;  
   color: var(--textwhite);
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Removida a vírgula extra */
+  transition: background-color 0.3s ease; 
 }
 
 .pagination-button.active {
@@ -222,10 +222,7 @@ list-style: disc;
 .pagination-button:hover {
   background-color: var(--textwhite);
   color: var(--primary);
-}
-
-
-
+} */
 
 @media (max-width: 768px) {
   .blog-post {
