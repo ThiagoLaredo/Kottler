@@ -22,22 +22,19 @@ export class BlogManager {
             previewContent = documentToPlainTextString(item.fields.corpo).substring(0, 150) + "...";
           }
 
-          // Verificar e obter a imagem
+          // Verificar se há imagem antes de definir a URL
           let imageUrl = "";
-          if (item.fields.imagem) {
-            const images = Array.isArray(item.fields.imagem) ? item.fields.imagem : [item.fields.imagem];
-            if (images[0].fields && images[0].fields.file) {
-              imageUrl = `https:${images[0].fields.file.url}`;
+          if (item.fields.imagem && Array.isArray(item.fields.imagem) && item.fields.imagem.length > 0) {
+            const image = item.fields.imagem[0]; 
+            if (image.fields && image.fields.file) {
+              imageUrl = `https:${image.fields.file.url}`;
             }
           }
 
-          if (!imageUrl) {
-            imageUrl = "/img/blog/fallback.webp"; // Imagem de fallback
-          }
-
+          // Criar HTML do post apenas se houver imagem
           post.innerHTML = `
           <a href="post.html?slug=${item.fields.slug}" class="post-link">
-            <img src="${imageUrl}" alt="${item.fields.title}" />
+            ${imageUrl ? `<img src="${imageUrl}" alt="${item.fields.title}" />` : ""}
             <h2>${item.fields.title}</h2>
             <p>${previewContent} <span class="read-more">Leia mais</span></p>
           </a>
@@ -65,19 +62,51 @@ export class BlogManager {
         if (response.items.length > 0) {
           const post = response.items[0];
 
-          // Verificar e obter a imagem principal
+          // Atualizar título da página com prefixo fixo
+          const seoTitle = `Agência Kottler: ${post.fields.seoTitle || post.fields.title}`;
+          document.title = seoTitle;
+
+          // Atualizar meta description
+          const seoDescription = post.fields.seoDescription || "Descrição do post não disponível.";
+          let metaDescription = document.querySelector('meta[name="description"]');
+          if (metaDescription) {
+            metaDescription.setAttribute("content", seoDescription);
+          } else {
+            const newMetaDescription = document.createElement("meta");
+            newMetaDescription.setAttribute("name", "description");
+            newMetaDescription.setAttribute("content", seoDescription);
+            document.head.appendChild(newMetaDescription);
+          }
+
+          // Verificar se há imagem SEO antes de definir as meta tags
+          let seoImage = "";
+          if (post.fields.seoImage && post.fields.seoImage.fields && post.fields.seoImage.fields.file) {
+            seoImage = `https:${post.fields.seoImage.fields.file.url}`;
+          }
+
+          if (seoImage) {
+            document.querySelector('meta[property="og:image"]').setAttribute("content", seoImage);
+            document.querySelector('meta[name="twitter:image"]').setAttribute("content", seoImage);
+            document.querySelector('meta[property="og:image:alt"]').setAttribute("content", post.fields.title || "Imagem do post");
+            document.querySelector('meta[name="twitter:image:alt"]').setAttribute("content", post.fields.title || "Imagem do post");
+          }
+
+          // Definir a imagem de fundo da introdução somente se houver imagem
           let backgroundImageUrl = "";
-          if (post.fields.imagem) {
-            const images = Array.isArray(post.fields.imagem) ? post.fields.imagem : [post.fields.imagem];
-            if (images[0].fields && images[0].fields.file) {
-              backgroundImageUrl = `https:${images[0].fields.file.url}`;
+          if (post.fields.imagem && Array.isArray(post.fields.imagem) && post.fields.imagem.length > 0) {
+            const image = post.fields.imagem[0];
+            if (image.fields && image.fields.file) {
+              backgroundImageUrl = `https:${image.fields.file.url}`;
             }
           }
 
-          // Atualizar a introdução
           const introducaoSection = document.querySelector(".introducao");
           if (introducaoSection) {
-            introducaoSection.style.backgroundImage = `url('${backgroundImageUrl}')`;
+            if (backgroundImageUrl) {
+              introducaoSection.style.backgroundImage = `url('${backgroundImageUrl}')`;
+            } else {
+              introducaoSection.style.backgroundImage = "none";
+            }
 
             const tituloElement = introducaoSection.querySelector("h1");
             if (tituloElement) {
