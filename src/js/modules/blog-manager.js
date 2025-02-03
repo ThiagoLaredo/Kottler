@@ -32,7 +32,7 @@ export class BlogManager {
           }
 
           if (!imageUrl) {
-            imageUrl = "caminho/para/imagem/fallback.jpg"; // Imagem de fallback
+            imageUrl = "/img/blog/fallback.webp"; // Imagem de fallback
           }
 
           post.innerHTML = `
@@ -42,7 +42,7 @@ export class BlogManager {
             <p>${previewContent} <span class="read-more">Leia mais</span></p>
           </a>
         `;
-               
+
           postsContainer.appendChild(post);
         });
       })
