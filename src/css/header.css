@@ -106,7 +106,7 @@ ul[data-menu="list"] {
   padding: 0.5rem 1rem;
   text-decoration: none;
   background-color: #fff; 
-  color: var(--primary);  
+  color: var(--bg-escuro);  
   transition: background-color 0.3s, color 0.3s;
 }
 

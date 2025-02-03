@@ -93,6 +93,7 @@ module.exports = {
         { from: 'src/img', to: 'img' },
         { from: 'src/cases.json', to: 'cases.json' },
         { from: 'src/googlecbae4daf0a01a7b9.html', to: 'googlecbae4daf0a01a7b9.html' },
+        { from: 'src/legendas.vtt', to: 'legendas.vtt' }, 
       ],
     }),
     new webpack.DefinePlugin({
