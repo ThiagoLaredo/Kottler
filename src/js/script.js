@@ -28,6 +28,7 @@ import CarregarCases from './modules/carregarCases.js';
 import { setupContactForm, setupNewsletterForm } from './modules/formHandler.js';
 import { initPageOpenAnimations, initScrollAnimations } from './modules/animations.js';
 import { BlogManager } from "./modules/blog-manager.js";
+import VideoPreload from "./modules/VideoPreload.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente carregado.");
@@ -73,6 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Animações de abertura de página e scroll
     initPageOpenAnimations();
     initScrollAnimations();
+    new VideoPreload();
 
     const contactFormEl = document.getElementById('contactForm');
     if (contactFormEl) {
