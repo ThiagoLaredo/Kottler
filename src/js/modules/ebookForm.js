@@ -19,12 +19,18 @@ export default class EbookForm {
         const path = window.location.pathname;
         console.log('Caminho da página (EbookForm):', path);
     
+        // Verifica se o pop-up já foi exibido nesta sessão
+        const hasShownPopupThisSession = sessionStorage.getItem('ebook_popup_shown');
+    
         // Exibir o pop-up automaticamente APENAS na index, caso o e-book não tenha sido baixado
-        if (!this.hasDownloaded && (path === '/' || path === '/index.html')) {
+        if (!this.hasDownloaded && !hasShownPopupThisSession && (path === '/' || path === '/index.html')) {
             console.log('Abrindo pop-up automaticamente na index (EbookForm)');
             this.showPopup();
+    
+            // Marca que o pop-up já foi mostrado nesta sessão
+            sessionStorage.setItem('ebook_popup_shown', 'true');
         } else {
-            console.log('Não é a index. Pop-up não será aberto automaticamente (EbookForm)');
+            console.log('Pop-up já foi exibido nesta sessão ou não é a index (EbookForm)');
         }
     
         // Fechar pop-up ao clicar no botão de fechar
@@ -33,8 +39,7 @@ export default class EbookForm {
         // Mostrar o pop-up ao clicar no botão fixo (permanece em todas as páginas)
         this.ebookButton.addEventListener('click', () => this.showPopup());
     }
-    
-
+     
     showPopup() {
         this.popup.style.visibility = 'visible';
         this.popup.style.opacity = '1';
