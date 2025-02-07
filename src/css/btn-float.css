@@ -79,3 +79,24 @@
 .floating-button:hover .button-text {
     opacity: 1;
 }
+
+@media (max-width: 768px) {
+    .floating-button:hover,
+    .floating-button.ebook-button:hover {
+        width: 50px; /* Mantém o tamanho original */
+        border-radius: 50%;
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    .floating-button:hover img {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-right: 0;
+    }
+
+    .floating-button:hover .button-text {
+        opacity: 0;
+    }
+}
