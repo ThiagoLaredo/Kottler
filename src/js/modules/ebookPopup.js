@@ -18,21 +18,26 @@ export default class EbookPopup {
             this.hidePopup();
             return;
         }
-
-        // Obtém o caminho da URL
+    
+        // Obtém o caminho da URL e imprime no console para depuração
         const path = window.location.pathname;
-
+        console.log('Caminho da página:', path);
+    
         // Exibe o pop-up automaticamente **apenas na página inicial**
-        if (path === '/' || path === '') {
+        if (path === '/' || path === '/index.html') {
+            console.log('Abrindo pop-up na index.');
             this.showPopup();
+        } else {
+            console.log('Não é a index. Pop-up não será exibido automaticamente.');
         }
-
+    
         // Fechar pop-up ao clicar no botão de fechar
         this.closeBtn?.addEventListener('click', () => this.hidePopup());
-
+    
         // Submeter o formulário
         this.form.addEventListener('submit', (event) => this.handleFormSubmit(event));
     }
+    
 
     showPopup() {
         this.popup.style.visibility = 'visible';
