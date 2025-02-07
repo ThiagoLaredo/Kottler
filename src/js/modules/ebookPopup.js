@@ -19,10 +19,13 @@ export default class EbookPopup {
             return;
         }
 
-        // Verifica se está na página inicial antes de abrir automaticamente
-        if (window.location.pathname === './') {
+        // Obtém o caminho da URL
+        const path = window.location.pathname;
+
+        // Exibe o pop-up automaticamente **apenas na página inicial**
+        if (path === '/' || path === '') {
             this.showPopup();
-}
+        }
 
         // Fechar pop-up ao clicar no botão de fechar
         this.closeBtn?.addEventListener('click', () => this.hidePopup());
