@@ -20,7 +20,7 @@ export default class EbookPopup {
         }
 
         // Verifica se está na página inicial antes de abrir automaticamente
-        if (window.location.pathname === '/') {
+        if (window.location.pathname === './') {
             this.showPopup();
 }
 
