@@ -133,9 +133,8 @@
 }
 
 #ebookThankYouMessage {
-    font: 300 1rem 'Raleway', sans-serif;
+    font: 500 1rem 'Raleway', sans-serif;
     text-align: center;
-    font-weight: 500;
     color: var(--textwhite)
 }
 

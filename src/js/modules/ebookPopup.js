@@ -19,16 +19,22 @@ export default class EbookPopup {
             return;
         }
     
-        // Obtém o caminho da URL e imprime no console para depuração
+        // Obtém o caminho da URL e verifica se está na index
         const path = window.location.pathname;
         console.log('Caminho da página:', path);
     
-        // Exibe o pop-up automaticamente **apenas na página inicial**
-        if (path === '/' || path === '/index.html') {
+        // Verifica se o pop-up já foi exibido nesta sessão
+        const hasShownPopupThisSession = sessionStorage.getItem('ebook_popup_shown') === 'true';
+    
+        // Exibe o pop-up automaticamente APENAS na index e APENAS 1x por sessão
+        if (!hasShownPopupThisSession && (path === '/' || path === '/index.html')) {
             console.log('Abrindo pop-up na index.');
             this.showPopup();
+    
+            // Marca que o pop-up já foi mostrado nesta sessão
+            sessionStorage.setItem('ebook_popup_shown', 'true');
         } else {
-            console.log('Não é a index. Pop-up não será exibido automaticamente.');
+            console.log('Não é a index ou o pop-up já foi exibido nesta sessão.');
         }
     
         // Fechar pop-up ao clicar no botão de fechar
@@ -37,6 +43,7 @@ export default class EbookPopup {
         // Submeter o formulário
         this.form.addEventListener('submit', (event) => this.handleFormSubmit(event));
     }
+    
     
 
     showPopup() {
