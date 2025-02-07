@@ -14,13 +14,15 @@ export default class EbookPopup {
     }
 
     init() {
-        // if (this.hasDownloaded) {
-        //     this.hidePopup();
-        //     return;
-        // }
+        if (this.hasDownloaded) {
+            this.hidePopup();
+            return;
+        }
 
-        // Exibir o pop-up automaticamente ao carregar a página
-        this.showPopup();
+        // Verifica se está na página inicial antes de abrir automaticamente
+        if (window.location.pathname === '/') {
+            this.showPopup();
+}
 
         // Fechar pop-up ao clicar no botão de fechar
         this.closeBtn?.addEventListener('click', () => this.hidePopup());

@@ -109,7 +109,7 @@ export const initPageOpenAnimations = () => {
           }
         }
 
-        gsap.to('.whatsapp-float', {
+        gsap.to('.whatsapp-button', {
             scale: 1.1, // aumenta o tamanho do ícone
             duration: 0.6, // duração da animação
             repeat: -1, // repete infinitamente

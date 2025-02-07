@@ -12,7 +12,7 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease, visibility 0.3s ease;
-    z-index: 999;
+    z-index: 1002;
 }
 
 .popup-content {
@@ -89,7 +89,7 @@
     font-size: 18px;
     cursor: pointer;
     color: var(--textwhite);
-    z-index: 99;
+    z-index: 1003;
 }
 
 #downloadForm {
