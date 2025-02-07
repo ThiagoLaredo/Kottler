@@ -94,6 +94,7 @@ module.exports = {
         { from: 'src/cases.json', to: 'cases.json' },
         { from: 'src/googlecbae4daf0a01a7b9.html', to: 'googlecbae4daf0a01a7b9.html' },
         { from: 'src/legendas.vtt', to: 'legendas.vtt' }, 
+        { from: 'src/marketing-e-industria.pdf', to: 'marketing-e-industria.pdf' }, // Adiciona o PDF aqui
       ],
     }),
     new webpack.DefinePlugin({
