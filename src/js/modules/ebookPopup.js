@@ -24,9 +24,9 @@ export default class EbookPopup {
         console.log('Caminho da página:', path);
     
         // Verifica se o pop-up já foi exibido nesta sessão
-        const hasShownPopupThisSession = sessionStorage.getItem('ebook_popup_shown') === 'true';
+        const hasShownPopupThisSession = sessionStorage.getItem('ebook_popup_shown');
     
-        // Exibe o pop-up automaticamente APENAS na index e APENAS 1x por sessão
+        // Se ainda não foi mostrado nesta sessão e está na index, exibe o pop-up
         if (!hasShownPopupThisSession && (path === '/' || path === '/index.html')) {
             console.log('Abrindo pop-up na index.');
             this.showPopup();
@@ -34,7 +34,7 @@ export default class EbookPopup {
             // Marca que o pop-up já foi mostrado nesta sessão
             sessionStorage.setItem('ebook_popup_shown', 'true');
         } else {
-            console.log('Não é a index ou o pop-up já foi exibido nesta sessão.');
+            console.log('Pop-up já foi exibido nesta sessão ou não é a index.');
         }
     
         // Fechar pop-up ao clicar no botão de fechar
@@ -45,7 +45,6 @@ export default class EbookPopup {
     }
     
     
-
     showPopup() {
         this.popup.style.visibility = 'visible';
         this.popup.style.opacity = '1';
