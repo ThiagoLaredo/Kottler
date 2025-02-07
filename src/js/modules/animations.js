@@ -24,8 +24,8 @@ export const initPageOpenAnimations = () => {
     gsap.to(".social-instagram a", { duration: 0.5, delay: 0.2, opacity: 1, ease: "power1.inOut" });
     gsap.to("[data-menu='logo']", { duration: 0.5, delay: 0.3, opacity: 1, ease: "power1.inOut" });
     gsap.to("[data-menu='button']", { duration: 0.5, delay: 0.4, opacity: 1, ease: "power1.inOut" });
-    gsap.to([".solucao-intro", ".solucoes-intro", ".intro-cases", ".case-titulo"], { duration: 0.5, delay: 2, opacity: 1, ease: "power1.inOut" });
-
+    gsap.to([".solucao-intro", ".solucoes-intro", ".intro-cases", ".case-titulo"], { duration: 0.5, delay: 2, opacity: 1, ease: "power1.inOut", });
+    
     // Anima apenas os links e spans de primeiro nível, incluindo o <span>Serviços</span>
     gsap.to("#menu > li > a, #menu > li > span", { 
         duration: 0.5, 
@@ -117,8 +117,6 @@ export const initPageOpenAnimations = () => {
             ease: 'power1.inOut' // suaviza a entrada e saída da animação
           });          
 };
-
-
 
 export const initScrollAnimations = () => {
   // Seleciona todas as sections e o footer, exceto a introdução
@@ -338,4 +336,3 @@ export const initScrollAnimations = () => {
     console.warn("Nenhum elemento com a classe .numero foi encontrado. A animação de contagem não será executada.");
   }
 };
-

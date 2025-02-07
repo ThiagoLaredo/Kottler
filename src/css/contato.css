@@ -25,6 +25,7 @@
     max-width: 600px;
     padding: 20px;
 }
+
 #contactForm {
     border: 1px solid var(--primary);
     border-radius: 20px;

@@ -21,6 +21,8 @@ import "../css/metodologia-pg.css";
 import "../css/contato.css";
 import "../css/social-sidebar.css";
 import "../css/blog.css";
+import "../css/popup.css";
+import "../css/btn-float.css";
 
 import MenuMobile from './modules/menu-mobile.js';
 import HeaderScroll from './modules/header-scroll.js';
@@ -29,6 +31,8 @@ import { setupContactForm, setupNewsletterForm } from './modules/formHandler.js'
 import { initPageOpenAnimations, initScrollAnimations } from './modules/animations.js';
 import { BlogManager } from "./modules/blog-manager.js";
 import VideoPreload from "./modules/VideoPreload.js";
+import EbookPopup from "./modules/ebookPopup.js";
+import EbookForm from "./modules/ebookForm.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente carregado.");
@@ -73,8 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Animações de abertura de página e scroll
     initPageOpenAnimations();
+    initPageOpenAnimations();   
+
     initScrollAnimations();
     new VideoPreload();
+    new EbookPopup();
+    new EbookForm();
 
     const contactFormEl = document.getElementById('contactForm');
     if (contactFormEl) {
