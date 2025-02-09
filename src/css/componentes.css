@@ -62,15 +62,15 @@
 
 .swiper-button-prev::after, .swiper-button-next::after {
   color: var(--primary); 
-  font-size: 20px; 
+  font-size: 24px !important;
 }
 
 .swiper-pagination-bullet {
-  background-color: rgba(var(--primary-rgb), 0.5);
+  background-color: rgba(var(--primary-rgb), 0.5) !important;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: var(--primary); 
+  background-color: var(--primary) !important; 
 }
 
 @media (max-width: 768px) {
