@@ -33,6 +33,10 @@ import { BlogManager } from "./modules/blog-manager.js";
 import VideoPreload from "./modules/VideoPreload.js";
 import EbookPopup from "./modules/ebookPopup.js";
 import EbookForm from "./modules/ebookForm.js";
+import {
+    MySwiperSolucoes, 
+    MySwiperCases 
+  } from "./modules/myswiper.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente carregado.");
@@ -83,6 +87,12 @@ document.addEventListener('DOMContentLoaded', () => {
     new VideoPreload();
     new EbookPopup();
     new EbookForm();
+
+    // Slider horizontal de solucoes
+    new MySwiperSolucoes();
+
+    // Slider horizontal de cases
+    new MySwiperCases();
 
     const contactFormEl = document.getElementById('contactForm');
     if (contactFormEl) {

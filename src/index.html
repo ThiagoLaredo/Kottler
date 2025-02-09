@@ -31,7 +31,7 @@
   <!-- Preload de vídeo mobile -->
   <link rel="preload" href="./img/index/video-mobile.mp4" as="video" type="video/mp4">
 
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
 
   <script>document.documentElement.className += ' js';</script>
   </head>
@@ -630,47 +630,6 @@
       <span class="button-text">Fale Conosco</span>
       <img src="./img/whatsapp-icon2.svg" alt="WhatsApp" class="whatsapp-icon">
     </a>
-
-   <!-- Swiper JS -->
-   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-   <!-- Seu script de inicialização -->
-   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    // Inicializa o primeiro Swiper
-    const swiper1 = new Swiper('#swiper1', {
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 30,
-        autoplay: {
-        delay: 2000, // Define o tempo de atraso entre transições automáticas
-        disableOnInteraction: false, // Continua o autoplay mesmo após interação do usuário
-        },
-        pagination: {
-            el: '#pagination1',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '#next1',
-            prevEl: '#prev1',
-        },
-    });
-
-    // Inicializa o segundo Swiper
-    const swiper2 = new Swiper('#swiper2', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        pagination: {
-            el: '#pagination2',
-            clickable: true,
-        },
-        navigation: {
-            nextEl: '#next2',
-            prevEl: '#prev2',
-        },
-    });
-});
-
-  </script>
 
   </body>
 </html>
