@@ -32,6 +32,7 @@ import { initPageOpenAnimations, initScrollAnimations } from './modules/animatio
 import { BlogManager } from "./modules/blog-manager.js";
 import VideoPreload from "./modules/VideoPreload.js";
 import EbookPopup from "./modules/ebookPopup.js";
+import { updateBackgrounds } from "./modules/updateBackgrounds.js";
 import EbookForm from "./modules/ebookForm.js";
 import {
     MySwiperSolucoes, 
@@ -93,6 +94,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Slider horizontal de cases
     new MySwiperCases();
+
+    updateBackgrounds();
+    window.addEventListener("resize", updateBackgrounds);
 
     const contactFormEl = document.getElementById('contactForm');
     if (contactFormEl) {

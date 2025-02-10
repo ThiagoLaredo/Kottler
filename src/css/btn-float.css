@@ -18,6 +18,7 @@
     overflow: hidden;
     white-space: nowrap;
     padding: 0; /* Remove padding para não afetar o alinhamento */
+    overflow: visible;
 }
 
 /* Posição específica para cada botão */
