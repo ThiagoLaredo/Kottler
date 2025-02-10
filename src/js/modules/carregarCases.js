@@ -1,8 +1,3 @@
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger.js';
-
-gsap.registerPlugin(ScrollTrigger);
-
 export default class CarregarCases {
   constructor(url) {
     this.url = url;
@@ -34,11 +29,18 @@ export default class CarregarCases {
   renderizarSwiper(selector) {
     const swiperContainer = document.querySelector(selector);
     if (!swiperContainer || !this.data) return;
-
+  
     const ultimosCases = this.data.cases.slice(-3).reverse();
     swiperContainer.innerHTML = ultimosCases.map(caseItem => `
       <div class="swiper-slide slide-case">
-        <img src="${caseItem.imagem}" alt="${caseItem.titulo}" loading="lazy">
+        <img 
+        srcset="${caseItem.imagem.mobile} 480w, 
+                ${caseItem.imagem.desktop} 1024w" 
+        sizes="(max-width: 600px) 480px, 
+              (min-width: 601px) 1024px"
+        src="${caseItem.imagem.desktop}" 
+        alt="${caseItem.titulo}" 
+        loading="lazy">
         <div class="slide-case-texto">
           <h3>${caseItem.cliente}</h3>
           <p>${caseItem.descricao_home}</p>
@@ -47,6 +49,7 @@ export default class CarregarCases {
       </div>
     `).join('');
   }
+  
 
   renderizarListaCases(selector) {
     const listaContainer = document.querySelector(selector);
@@ -58,8 +61,16 @@ export default class CarregarCases {
     listaContainer.innerHTML = this.data.cases.map(caseItem => `
       <div class="case">
         <h2>${caseItem.titulo}</h2>
-        <img src="${caseItem.imagem}" alt="${caseItem.titulo}">
-        <a href="./case.html?id=${caseItem.id}" class="btn-ver-mais">Ver o case</a>
+<img 
+          srcset="${caseItem.imagem.mobile} 480w, 
+                  ${caseItem.imagem.desktop} 1024w, 
+                  ${caseItem.imagem.large} 1920w" 
+          sizes="(max-width: 600px) 480px, 
+                (max-width: 1024px) 1024px, 
+                1920px" 
+          src="${caseItem.imagem.desktop}" 
+          alt="${caseItem.titulo}" 
+          loading="lazy">           <a href="./case.html?id=${caseItem.id}" class="btn-ver-mais">Ver o case</a>
       </div>
     `).join('');
   }
@@ -114,7 +125,16 @@ export default class CarregarCases {
             <h1>${caseItem.titulo}</h1>
           </div>
         </div>
-        <img src="${caseItem.imagem}" alt="${caseItem.titulo}" width="800" height="600">
+        <img 
+          srcset="${caseItem.imagem.mobile} 480w, 
+                  ${caseItem.imagem.desktop} 1024w, 
+                  ${caseItem.imagem.large} 1920w" 
+          sizes="(max-width: 600px) 480px, 
+                (max-width: 1024px) 1024px, 
+                1920px" 
+          src="${caseItem.imagem.desktop}" 
+          alt="${caseItem.titulo}" 
+          loading="lazy">    
       </section>
 
       <section class="case-container container">
