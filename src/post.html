@@ -29,17 +29,15 @@
     <meta name="twitter:image" content="https://www.agenciakottler.com.br/img/agencia-kottler-facebook.webp">
     <meta name="twitter:image:alt" content="Imagem de SEO para Twitter">
 
-    <!-- Preconnect to Google Fonts -->
+    <!-- Preconnect to Google Fonts for faster font loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  
-    <!-- Preload Google Fonts -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..800;1,300..800&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
-    </noscript>
-  
+
+    <!-- Preload and asynchronously load Google Fonts to avoid render-blocking -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" rel="stylesheet"></noscript>
+      
     <!-- JavaScript Detection -->
     <script>document.documentElement.className += ' js';</script>
   </head>
