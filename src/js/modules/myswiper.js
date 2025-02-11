@@ -51,14 +51,10 @@ import 'swiper/css/pagination';
 
     console.log('Initializing Swiper Cases...');
     this.swiper = new Swiper('#swiper2', {
-    modules: [Pagination, Autoplay, Navigation],
+    modules: [Pagination, Navigation],
     direction: 'horizontal',
     slidesPerView: 1,
     spaceBetween: 30,
-    autoplay: {
-        delay: 2000, // Define o tempo de atraso entre transições automáticas
-        disableOnInteraction: false, // Continua o autoplay mesmo após interação do usuário
-        },
     pagination: {
         el: '#pagination2',
         clickable: true,
