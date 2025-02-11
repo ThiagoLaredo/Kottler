@@ -57,18 +57,21 @@ export default class CarregarCases {
     const ultimosCases = this.data.cases.slice(-3).reverse();
     swiperContainer.innerHTML = ultimosCases.map(caseItem => `
       <div class="swiper-slide slide-case">
-        <img 
-        srcset="${caseItem.imagem.mobile} ${caseItem.imagem.mobile_width}w, 
-                ${caseItem.imagem.desktop} ${caseItem.imagem.desktop_width}w,
-                ${caseItem.imagem.large} 1920w" 
-        sizes="(max-width: 600px) ${caseItem.imagem.mobile_width}px, 
-              (max-width: 1024px) ${caseItem.imagem.desktop_width}px, 
-              1920px"
-        src="${caseItem.imagem.desktop}" 
-        alt="${caseItem.titulo}" 
-        loading="lazy"
-        width="${caseItem.imagem.desktop_width}" 
-        height="${caseItem.imagem.desktop_height}">
+       <img 
+    srcset="${caseItem.imagem.mobile} ${caseItem.imagem.mobile_width}w, 
+            ${caseItem.imagem.desktop} ${caseItem.imagem.desktop_width}w,
+            ${caseItem.imagem.large} 1920w" 
+    sizes="(max-width: 600px) ${caseItem.imagem.mobile_width}px, 
+           (max-width: 1024px) ${caseItem.imagem.desktop_width}px, 
+           (max-width: 1440px) 1200px, 
+           1920px"
+    src="${caseItem.imagem.desktop}" 
+    alt="${caseItem.titulo}" 
+    loading="lazy"
+    width="${caseItem.imagem.desktop_width}" 
+    height="${caseItem.imagem.desktop_height}">
+
+
         <div class="slide-case-texto">
           <h3>${caseItem.cliente}</h3>
           <p>${caseItem.descricao_home}</p>
