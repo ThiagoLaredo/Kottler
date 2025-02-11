@@ -3,7 +3,7 @@
   align-items: center; /* Centraliza verticalmente o conteúdo do link */
   justify-content: center; /* Centraliza horizontalmente o conteúdo dentro do botão */
   font: 600 1rem/1.6 'Raleway', sans-serif;
-  color: var(--textwhite);
+  color: #fff;
   text-transform: uppercase;
   background-color: var(--primary);
   text-decoration: none;
