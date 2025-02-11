@@ -52,6 +52,9 @@ export default class EbookPopup {
     }
 
     hidePopup() {
+        // Carrega a imagem de fundo apenas quando o popup é aberto
+        const popupImage = this.popup.querySelector('.popup-image');
+        popupImage.style.backgroundImage = "url('./img/popup/banner-ebook.webp')";
         this.popup.style.visibility = 'hidden';
         this.popup.style.opacity = '0';
         this.popup.style.pointerEvents = 'none';
