@@ -26,29 +26,7 @@ export default class CarregarCases {
     `;
   }
 
-  // renderizarSwiper(selector) {
-  //   const swiperContainer = document.querySelector(selector);
-  //   if (!swiperContainer || !this.data) return;
-  
-  //   const ultimosCases = this.data.cases.slice(-3).reverse();
-  //   swiperContainer.innerHTML = ultimosCases.map(caseItem => `
-  //     <div class="swiper-slide slide-case">
-  //       <img 
-  //       srcset="${caseItem.imagem.mobile} 480w, 
-  //               ${caseItem.imagem.desktop} 1024w" 
-  //       sizes="(max-width: 600px) 480px, 
-  //             (min-width: 601px) 1024px"
-  //       src="${caseItem.imagem.desktop}" 
-  //       alt="${caseItem.titulo}" 
-  //       loading="lazy">
-  //       <div class="slide-case-texto">
-  //         <h3>${caseItem.cliente}</h3>
-  //         <p>${caseItem.descricao_home}</p>
-  //         <a class="btn-vazado" href="./case.html?id=${caseItem.id}">Ver case completo</a>
-  //       </div>
-  //     </div>
-  //   `).join('');
-  // }
+
 
   renderizarSwiper(selector) {
     const swiperContainer = document.querySelector(selector);
