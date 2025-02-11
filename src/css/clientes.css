@@ -21,12 +21,13 @@
 
 .logos-clientes img {
   width: auto;
+  max-width: 100%;  /* Garante que a largura não ultrapasse o container */
   height: 260px;
   margin: 0 20px;
   background-color: var(--bg-escuro);
   padding: 20px;
   border-radius: 20px;
-  /* border: 1px solid var(--primary); */
+  object-fit: contain; /* Mantém a imagem dentro do espaço */
 }
 
 .setas-up {
