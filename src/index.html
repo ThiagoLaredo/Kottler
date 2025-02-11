@@ -31,7 +31,7 @@
   <!-- Preload de vídeo mobile -->
   <link rel="preload" href="./img/index/video-mobile.mp4" as="video" type="video/mp4">
 
-  <!-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"> -->
+  <link rel="preload" as="image" href="/img/popup/banner-ebook.webp" type="image/webp" fetchpriority="high">
 
   <script>document.documentElement.className += ' js';</script>
   </head>
@@ -554,16 +554,14 @@
             <a class="btn" href="./metodologia.html">Conheça nossa metodologia</a>
           </div>  
         </div>
-        <img 
-        srcset="./img/index/estrategia-kottler-480w.webp 480w, 
-                ./img/index/estrategia-kottler-1024w.webp 1024w, 
-                ./img/index/estrategia-kottler-1171w.webp 1171w" 
-        sizes="(max-width: 600px) 480px, 
-               (max-width: 1024px) 1024px, 
-               (min-width: 1025px) 1171px"
-        src="./img/index/estrategia-kottler-1024w.webp" 
+        <img srcset="
+            ./img/index/estrategia-kottler-480w.webp 480w, 
+            ./img/index/estrategia-kottler-800w.webp 800w, 
+            ./img/index/estrategia-kottler-1171w.webp 1171w"
+        sizes="(max-width: 600px) 480px, (max-width: 1024px) 800px, 1171px"
+        src="https://agenciakottler.com.br/img/index/estrategia-kottler-1171w.webp" 
         alt="Foto da nossa equipe" 
-        loading="lazy">
+        loading="lazy" width="1171" height="658">
       </section>
 
       <footer>
