@@ -41,9 +41,9 @@ export default class EbookForm {
     }
      
     showPopup() {
-                // Carrega a imagem de fundo apenas quando o popup é aberto
-                const popupImage = this.popup.querySelector('.popup-image');
-                popupImage.style.backgroundImage = "url('./img/popup/banner-ebook.webp')";
+        // Carrega a imagem de fundo apenas quando o popup é aberto
+        const popupImage = this.popup.querySelector('.popup-image');
+        popupImage.style.backgroundImage = "url('./img/popup/banner-ebook.webp')";
         this.popup.style.visibility = 'visible';
         this.popup.style.opacity = '1';
         this.popup.style.pointerEvents = 'auto';
