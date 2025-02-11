@@ -28,7 +28,6 @@
 
 .popup-image {
     position: relative;
-    background-image: url('../img/popup/banner-ebook.webp'); /* Substitua pelo caminho da sua imagem */
     background-size: cover; /* Garante que a imagem cubra toda a área */
     background-position: 50%; /* Centraliza a imagem */
     background-repeat: no-repeat; /* Evita que a imagem se repita */
