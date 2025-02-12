@@ -58,8 +58,8 @@ export default class EbookPopup {
         const popupImage = this.popup.querySelector('.popup-image picture');
     
         // Define a imagem correta com base no tamanho da tela
-        const mobileImage = '../img/popup/banner-ebook-mobile.webp';
-        const desktopImage = '../img/popup/banner-ebook-desktop.webp';
+        const mobileImage = './img/popup/banner-ebook-mobile.webp';
+        const desktopImage = './img/popup/banner-ebook-desktop.webp';
     
         if (window.innerWidth <= 768) {
             popupImage.innerHTML = `<source srcset="${mobileImage}" media="(max-width: 768px)">`;
