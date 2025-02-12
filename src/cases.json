@@ -18,9 +18,9 @@
       },
 
       "galeria": [
-        "../img/cases-o/mania-de-cirurgia/resultados-case-campanha-de-lancamento-1.webp",
+        "./img/cases/mania-de-cirurgia/resultados-case-campanha-de-lancamento-1.webp",
         "./img/cases/mania-de-cirurgia/case-campanha-de-lancamento.webp",
-        "../img/cases/mania-de-cirurgia/resultados-case-mania-de-cirurgia.webp"
+        "./img/cases/mania-de-cirurgia/resultados-case-mania-de-cirurgia.webp"
       ],
 
       "desafio": "A missão da Agência Kottler foi clara: realizar uma campanha de lançamento para vender as 75 vagas disponíveis para a comunidade, cada uma avaliada em R$ 5.000,00. O desafio era criar um ambiente de alto engajamento e exclusividade, garantindo que as vagas fossem preenchidas em um curto espaço de tempo, além de gerar um público aquecido para turmas futura",
