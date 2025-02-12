@@ -18,7 +18,7 @@
       },
 
       "galeria": [
-        "./img/cases-o/mania-de-cirurgia/resultados-case-campanha-de-lancamento-1.webp",
+        "../img/cases-o/mania-de-cirurgia/resultados-case-campanha-de-lancamento-1.webp",
         "./img/cases/mania-de-cirurgia/case-campanha-de-lancamento.webp",
         "../img/cases/mania-de-cirurgia/resultados-case-mania-de-cirurgia.webp"
       ],
