@@ -45,10 +45,29 @@ export default class EbookPopup {
     }
     
     
+    // showPopup() {
+    //     // Carrega a imagem de fundo apenas quando o popup é aberto
+    //     const popupImage = this.popup.querySelector('.popup-image');
+    //     popupImage.style.backgroundImage = "url('./img/popup/banner-ebook.webp')";
+    //     this.popup.style.visibility = 'visible';
+    //     this.popup.style.opacity = '1';
+    //     this.popup.style.pointerEvents = 'auto';
+    // }
+
     showPopup() {
-        // Carrega a imagem de fundo apenas quando o popup é aberto
-        const popupImage = this.popup.querySelector('.popup-image');
-        popupImage.style.backgroundImage = "url('./img/popup/banner-ebook.webp')";
+        const popupImage = this.popup.querySelector('.popup-image picture');
+    
+        // Define a imagem correta com base no tamanho da tela
+        const mobileImage = '../img/popup/banner-ebook-mobile.webp';
+        const desktopImage = '../img/popup/banner-ebook-desktop.webp';
+    
+        if (window.innerWidth <= 768) {
+            popupImage.innerHTML = `<source srcset="${mobileImage}" media="(max-width: 768px)">`;
+        } else {
+            popupImage.innerHTML = `<source srcset="${desktopImage}" media="(min-width: 769px)">`;
+        }
+    
+        // Exibe o popup
         this.popup.style.visibility = 'visible';
         this.popup.style.opacity = '1';
         this.popup.style.pointerEvents = 'auto';
