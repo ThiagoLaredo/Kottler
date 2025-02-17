@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preload" as="image" href="/img/banner-ebook.webp" type="image/webp" fetchpriority="high">
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,33 +10,46 @@
     <meta name="description" content="Transformamos ideias em resultados com soluções de marketing, vendas e conteúdo alinhadas aos objetivos do seu negócio.">
     <link rel="icon" href="./img/favicon.png" type="image/png">
 
-   <!-- Open Graph / Facebook -->
-   <meta property="og:title" content="Agência Kottler: Marketing Estratégico, Resultados e Criação">
-   <meta property="og:description" content="Transformamos ideias em resultados com soluções de marketing, vendas e conteúdo alinhadas aos objetivos do seu negócio.">
-   <meta property="og:image" content="https://www.agenciakottler.com.br/img/agencia-kottler-facebook.webp">
-   <meta property="og:image:width" content="1200">  <!-- Largura da imagem -->
-   <meta property="og:image:height" content="658">  <!-- Altura da imagem -->
-   <meta property="og:url" content="https://www.agenciakottler.com.br">
+     <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Agência Kottler: Marketing Estratégico, Resultados e Criação">
+    <meta property="og:description" content="Transformamos ideias em resultados com soluções de marketing, vendas e conteúdo alinhadas aos objetivos do seu negócio.">
+    <meta property="og:image" content="https://www.agenciakottler.com.br/img/agencia-kottler-facebook.webp">
+    <meta property="og:image:width" content="1200">  <!-- Largura da imagem -->
+    <meta property="og:image:height" content="630">  <!-- Altura da imagem -->
+    <meta property="og:url" content="https://www.agenciakottler.com.br">
+    <meta property="og:type" content="website">
 
-   <!-- Preconnect to Google Fonts for faster font loading -->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Agência Kottler: Marketing Estratégico, Resultados e Criação">
+    <meta name="twitter:description" content="Transformamos ideias em resultados com soluções de marketing, vendas e conteúdo alinhadas aos objetivos do seu negócio.">
+    <meta name="twitter:image" content="https://www.agenciakottler.com.br/img/agencia-kottler-twitter.webp">
+
+    <!-- Preconnect to Google Fonts for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Preload and asynchronously load Google Fonts to avoid render-blocking -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..800;1,300..800&display=swap" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" rel="stylesheet"></noscript>
 
+    <script>document.documentElement.className += ' js';</script>
 
-    <link rel="preload" href="/img/index/capa-index-720w.webp" as="image" media="(max-width: 720px)">
-    <link rel="preload" href="/img/index/capa-index-1024w.webp" as="image" media="(min-width: 721px) and (max-width: 1024px)">
-    <link rel="preload" href="/img/index/capa-index-1920w.webp" as="image" media="(min-width: 1025px)">
-
-  
-    
-  <script>document.documentElement.className += ' js';</script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P34T87S9');</script>
+    <!-- End Google Tag Manager -->
   </head>
+
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P34T87S9"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header class="header">
       <div class="container">
       <div class="header_menu">
@@ -162,38 +177,35 @@
             </g>
           </g>
           </svg>
-
-
           <span class="visually-hidden">Voltar para a página inicial</span>
         </a>
-          <nav class="menu" data-menu="suave">
-            <button data-menu="button" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
-              <span id="hamburguer"></span>
-            </button>          
-            <ul data-menu="list" id="menu">
-              <li><a href="./index.html">Home</a></li>
-              <li class="has-submenu">
-                <span>Soluções</span>
-                <ul class="submenu">
-                  <li><a href="./solucoes.html">Todas</a></li>
-                  <li><a href="./vender-mais.html">Para vender mais</a></li>
-                  <li><a href="./se-posicionar.html">Para se posicionar</a></li>
-                  <li><a href="./gerar-conteudo.html">Para gerar conteúdo</a></li>
-                </ul>
-              </li>
-              <li class="has-submenu">
-                <span>Cases</span>
-                <ul class="submenu submenu-cases"></ul>
-              </li>
-              <li><a href="./metodologia.html">Metodologia</a></li>
-              <li><a href="./blog.html">Blog</a></li>
-              <li><a href="./contato.html" id="contato-link">Contato</a></li>            
-            </ul>        
-          </nav>
+        <nav class="menu" data-menu="suave">
+          <button data-menu="button" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
+            <span id="hamburguer"></span>
+          </button>          
+          <ul data-menu="list" id="menu">
+            <li><a href="./index.html">Home</a></li>
+            <li class="has-submenu">
+              <span>Soluções</span>
+              <ul class="submenu">
+                <li><a href="./solucoes.html">Todas</a></li>
+                <li><a href="./vender-mais.html">Para vender mais</a></li>
+                <li><a href="./se-posicionar.html">Para se posicionar</a></li>
+                <li><a href="./gerar-conteudo.html">Para gerar conteúdo</a></li>
+              </ul>
+            </li>
+            <li class="has-submenu">
+              <span>Cases</span>
+              <ul class="submenu submenu-cases"></ul>
+            </li>
+            <li><a href="./metodologia.html">Metodologia</a></li>
+            <li><a href="./blog.html">Blog</a></li>
+            <li><a href="./contato.html" id="contato-link">Contato</a></li>            
+          </ul>        
+        </nav>
       </div>
      </div>
     </header>
-
     <a data-menu="contato-mobile" href="mailto:gestao@agenciakottler.com" target="_blank">gestao@agenciakottler.com</a>
     <a data-menu="linkedin" href="https://br.linkedin.com/company/agencia-kottler" target="_blank">
       <img src="./img/linkedin.svg" alt="icone Linkedin mobile" width="32" height="32">
@@ -203,7 +215,6 @@
       <img src="./img/instagram.svg" alt="icone Instagram mobile" width="32" height="32">
       <span class="visually-hidden">Ir para o Instagram</span>
     </a>
-
     <!-- Barra fixa de redes sociais -->
     <div id="social-sidebar">
       <a href="https://www.instagram.com/agenciakottler/" target="_blank">
@@ -222,9 +233,9 @@
          <h1>Contato</h1>
        </div>
       </div> 
-     </section>
+    </section>
 
-     <section class="contato-container container">
+    <section class="contato-container container">
 
       <div class="svg-ponto-vista-container animate-me">
           <svg width="301" height="160" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)">
@@ -233,44 +244,42 @@
             <path d="M60 23h180c32.574 0 59 26.904 59 59.5 0 32.596-26.426 59.5-59 59.5H60c-32.574 0-59-26.904-59-59.5C1 49.904 27.426 23 60 23z" stroke="#EA307E" stroke-width="2"/></g><defs><clipPath id="a"><path fill="#fff" transform="rotate(90 149.88 150.25)" d="M0 0h159.185v300H0z"/></clipPath></defs></svg>   
         </div>
 
-        <div class="form-container page-open-animate">
-          
-          <form id="contactForm">
-            <h2>Fale com a gente!</h2>
-            <p>Preencha o formulário para enviar uma mensagem.</p>
-    
-            <label for="nome" class="visually-hidden">Nome</label>
-            <input type="text" id="nome" name="nome" placeholder="Nome" required>
-    
-            <label for="empresa" class="visually-hidden">Empresa</label>
-            <input type="text" id="empresa" name="empresa" placeholder="Empresa">
-    
-            <label for="email" class="visually-hidden">E-mail</label>
-            <input type="email" id="email" name="email" placeholder="E-mail" required>
-    
-            <label for="whatsapp" class="visually-hidden">Whatsapp/Celular</label>
-            <input type="tel" id="whatsapp" name="whatsapp" placeholder="Whatsapp/Celular" required>
-    
-            <label for="origem" class="visually-hidden">Como você conheceu a Agência Kottler?</label>
-            <input type="text" id="origem" name="origem" placeholder="Como você conheceu a Agência Kottler?">
-    
-            <label for="mensagem" class="visually-hidden">Como podemos te ajudar?</label>
-            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos te ajudar?"></textarea>
-    
-            <button type="submit" class="btn">Enviar</button>
-        </form>
+      <div class="form-container page-open-animate">
+        
+        <form id="contactForm">
+          <h2>Fale com a gente!</h2>
+          <p>Preencha o formulário para enviar uma mensagem.</p>
+  
+          <label for="nome" class="visually-hidden">Nome</label>
+          <input type="text" id="nome" name="nome" placeholder="Nome" required>
+  
+          <label for="empresa" class="visually-hidden">Empresa</label>
+          <input type="text" id="empresa" name="empresa" placeholder="Empresa">
+  
+          <label for="email" class="visually-hidden">E-mail</label>
+          <input type="email" id="email" name="email" placeholder="E-mail" required>
+  
+          <label for="whatsapp" class="visually-hidden">Whatsapp/Celular</label>
+          <input type="tel" id="whatsapp" name="whatsapp" placeholder="Whatsapp/Celular" required>
+  
+          <label for="origem" class="visually-hidden">Como você conheceu a Agência Kottler?</label>
+          <input type="text" id="origem" name="origem" placeholder="Como você conheceu a Agência Kottler?">
+  
+          <label for="mensagem" class="visually-hidden">Como podemos te ajudar?</label>
+          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Como podemos te ajudar?"></textarea>
+  
+          <button type="submit" class="btn">Enviar</button>
+      </form>
 
-          <!-- Mensagem de agradecimento oculta -->
-      <div id="contactThankYouMessage" style="display: none;">
-        <h3>Obrigado por entrar em contato!</h3>
-        <p>Recebemos sua mensagem e entraremos em contato em breve.</p>
-      </div>
-          
-        </div>      
+        <!-- Mensagem de agradecimento oculta -->
+    <div id="contactThankYouMessage" style="display: none;">
+      <h3>Obrigado por entrar em contato!</h3>
+      <p>Recebemos sua mensagem e entraremos em contato em breve.</p>
+    </div>
+        
+      </div>      
     </section>
 
-  
-  
     <footer>
       <div class="rodape container">
         <div class="footer-sobre animate-me">
