@@ -1,25 +1,32 @@
-// forms.js
-
-// Função para o formulário de contato
-export function setupContactForm() {
-  const form = document.getElementById('contactForm');
-  const thankYouMessage = document.getElementById('contactThankYouMessage');
-
-  if (!form) {
-    console.error('Formulário de contato não encontrado.');
-    return;
-  }
-  if (!thankYouMessage) {
-    console.error('Mensagem de agradecimento do contato não encontrada.');
-    return;
+export default class FormHandler {
+  constructor() {
+    this.contactForm = document.getElementById('contactForm');
+    this.newsletterForm = document.getElementById('newsletterForm');
+    this.apiKey = 'a936ac9d-2155-46dc-8ab2-0d46ae112c69'; // API Key Web3Forms
+    this.init();
   }
 
-  form.addEventListener('submit', event => {
+  init() {
+    if (this.contactForm) {
+      this.contactForm.addEventListener('submit', (e) => this.handleSubmit(e, 'contato'));
+    }
+    if (this.newsletterForm) {
+      this.newsletterForm.addEventListener('submit', (e) => this.handleSubmit(e, 'newsletter'));
+    }
+
+    if (window.location.pathname.includes('obrigado.html')) {
+      this.showThankYouMessage();
+    }
+  }
+
+  handleSubmit(event, formType) {
     event.preventDefault();
 
+    const form = event.target;
     const formData = new FormData(form);
-    // Substitua pela sua própria chave de API Web3Forms
-    formData.append('apikey', 'a936ac9d-2155-46dc-8ab2-0d46ae112c69');
+    formData.append('apikey', this.apiKey);
+
+    localStorage.setItem('formType', formType);
 
     fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -27,64 +34,30 @@ export function setupContactForm() {
     })
       .then(response => response.json())
       .then(data => {
-        console.log('Success (contato):', data);
-        thankYouMessage.style.display = 'block';
-        form.style.display = 'none';
-        form.reset();
-
-        const topPosition =
-          thankYouMessage.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({ top: topPosition, behavior: 'smooth' });
+        console.log('Success:', data);
+        if (data.success) {
+          window.location.href = 'obrigado.html';
+        } else {
+          alert('Erro ao enviar o formulário. Tente novamente.');
+        }
       })
       .catch(error => {
-        console.error('Error (contato):', error);
-        alert('Houve um erro ao enviar o formulário de contato. Tente novamente.');
+        console.error('Error:', error);
+        alert('Houve um erro ao enviar o formulário. Tente novamente.');
       });
-  });
-}
-
-// Função para o formulário de newsletter
-export function setupNewsletterForm() {
-  const form = document.getElementById('newsletterForm');
-  const thankYouMessage = document.getElementById('newsletterThankYouMessage');
-
-  if (!form) {
-    console.error('Formulário de newsletter não encontrado.');
-    return;
-  }
-  if (!thankYouMessage) {
-    console.error('Mensagem de agradecimento da newsletter não encontrada.');
-    return;
   }
 
-  form.addEventListener('submit', event => {
-    event.preventDefault();
+  showThankYouMessage() {
+    const formType = localStorage.getItem('formType');
+    const contactMessage = document.getElementById('contactThankYouMessage');
+    const newsletterMessage = document.getElementById('newsletterThankYouMessage');
 
-    const formData = new FormData(form);
-    // Substitua pela sua própria chave de API Web3Forms
-    formData.append('apikey', 'a936ac9d-2155-46dc-8ab2-0d46ae112c69');
-
-    // Se quiser identificar qual formulário é qual no painel do Web3Forms,
-    // adicione um campo extra: formData.append('form_id', 'newsletter');
-
-    fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      body: formData,
-    })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Success (newsletter):', data);
-        thankYouMessage.style.display = 'block';
-        form.style.display = 'none';
-        form.reset();
-
-        const topPosition =
-          thankYouMessage.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({ top: topPosition, behavior: 'smooth' });
-      })
-      .catch(error => {
-        console.error('Error (newsletter):', error);
-        alert('Houve um erro ao enviar o formulário de newsletter. Tente novamente.');
-      });
-  });
+    if (formType === 'contato' && contactMessage) {
+      contactMessage.style.display = 'flex';
+      if (newsletterMessage) newsletterMessage.style.display = 'none';
+    } else if (formType === 'newsletter' && newsletterMessage) {
+      newsletterMessage.style.display = 'flex';
+      if (contactMessage) contactMessage.style.display = 'none';
+    }
+  }
 }

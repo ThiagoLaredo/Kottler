@@ -18,6 +18,7 @@ const pages = [
   'gerar-conteudo',
   'metodologia',
   'contato',
+  'obrigado',
   'blog',
   'post',
 ];

@@ -23,11 +23,12 @@ import "../css/social-sidebar.css";
 import "../css/blog.css";
 import "../css/popup.css";
 import "../css/btn-float.css";
+import "../css/obrigado.css";
 
 import MenuMobile from './modules/menu-mobile.js';
 import HeaderScroll from './modules/header-scroll.js';
 import CarregarCases from './modules/carregarCases.js';
-import { setupContactForm, setupNewsletterForm } from './modules/formHandler.js';
+import FormHandler from './modules/formHandler.js';
 import { initPageOpenAnimations, initScrollAnimations } from './modules/animations.js';
 import { BlogManager } from "./modules/blog-manager.js";
 import VideoPreload from "./modules/VideoPreload.js";
@@ -82,7 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Animações de abertura de página e scroll
     initPageOpenAnimations();
-    initPageOpenAnimations();   
 
     initScrollAnimations();
     new VideoPreload();
@@ -98,18 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
     updateBackgrounds();
     window.addEventListener("resize", updateBackgrounds);
 
-    const contactFormEl = document.getElementById('contactForm');
-    if (contactFormEl) {
-      setupContactForm();
-    }
-    
-    const newsletterFormEl = document.getElementById('newsletterForm');
-    if (newsletterFormEl) {
-      setupNewsletterForm();
-    }
+    new FormHandler();
      
-
-
     // Carrega e inicializa os cases se existirem os seletores
     const submenuCasesEl = document.querySelector('.submenu-cases');
     const swiperWrapperEl = document.querySelector('.cases-slides .swiper-wrapper');
