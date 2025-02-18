@@ -14,6 +14,16 @@
   text-align: center;
 }
 
+.btn-voltar {
+  background-color: var(--textwhite); 
+  color: var(--primary);
+  width: fit-content;
+}
+
+.btn-voltar:hover {
+  transform: scale(1.05); /* Efeito de aumento no tamanho */
+}
+
 .btn-vazado {
   display: inline-flex; /* Usar flexbox para alinhar itens dentro do link */
   align-items: center; /* Centraliza verticalmente o conteúdo do link */
@@ -40,7 +50,7 @@
 .btn:hover {
   background-color: var(--textwhite);
   color: var(--primary);
-  transform: scale(1.05); /* Efeito de aumento no tamanho */
+  transform: scale(1.05); 
 }
 
 .texto-destaque {
