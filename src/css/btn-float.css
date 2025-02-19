@@ -33,6 +33,7 @@
     background-color: var(--primary);
 }
 
+
 /* Ícone dentro do botão */
 .floating-button img {
     width: 24px;
@@ -43,15 +44,11 @@
 
 /* Expansão ao passar o mouse */
 .floating-button:hover {
-    width: 160px; /* Expande para a direita */
+    width: fit-content;
     border-radius: 50px;
     gap: 10px;
     justify-content: flex-start;
     padding-left: 15px; /* Espaço para o ícone */
-}
-
-.floating-button.ebook-button:hover {
-    width: 420px; /* Expande para a direita */
 }
 
 /* No estado normal, o ícone fica centralizado */

@@ -14,10 +14,11 @@
   text-align: center;
 }
 
-.btn-voltar {
+.btn-voltar, .btn-quero {
   background-color: var(--textwhite); 
   color: var(--primary);
   width: fit-content;
+  cursor: pointer;
 }
 
 .btn-voltar:hover {
