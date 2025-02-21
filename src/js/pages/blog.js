@@ -15,13 +15,13 @@ import "../../css/blog.css";
 
 import MenuMobile from '../modules/menu-mobile.js';
 import HeaderScroll from '../modules/header-scroll.js';
-import CarregarCases from '../modules/carregarCases.js';
 import FormHandler from '../modules/formHandler.js';
 import { initPageOpenAnimations, initScrollAnimations } from '../modules/animations.js';
 import EbookPopup from "../modules/ebookPopup.js";
 import { updateBackgrounds } from "../modules/updateBackgrounds.js";
 import EbookForm from "../modules/ebookForm.js";
 import { BlogManager } from "../modules/blog-manager.js";
+import renderizarSubmenu from '../modules/cases/renderizarSubmenu.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -71,20 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Formulário
     new FormHandler();
 
-    // Carrega e inicializa os cases se existirem os seletores
+    // JSON dos cases
     const submenuCasesEl = document.querySelector('.submenu-cases');
-    const swiperWrapperEl = document.querySelector('.cases-slides .swiper-wrapper');
-    const casesListaEl = document.querySelector('.cases-lista');
-    const caseDetalhadoEl = document.querySelector('.case-detalhado');
 
-    // Só inicia o carregamento dos cases se pelo menos um dos elementos existir
-    if (submenuCasesEl || swiperWrapperEl || casesListaEl || caseDetalhadoEl) {
-        const cases = new CarregarCases('../cases.json');
-        cases.init(
-            '.submenu-cases',     // Submenu
-            '.cases-slides .swiper-wrapper', // Swiper na index.html
-            '.cases-lista',       // Página de lista de cases (cases.html)
-            '.case-detalhado'     // Página de case detalhado (case.html)
-        );
-    }    
+    if (submenuCasesEl) {
+        renderizarSubmenu('.submenu-cases', '../cases.json');
+    }  
 });

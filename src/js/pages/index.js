@@ -18,7 +18,6 @@ import "../../css/popup.css";
 import "../../css/btn-float.css";
 
 import MenuMobile from '../modules/menu-mobile.js';
-import CarregarCases from '../modules/carregarCases.js';
 import HeaderScroll from '../modules/header-scroll.js';
 import FormHandler from '../modules/formHandler.js';
 import { initPageOpenAnimations, initScrollAnimations } from '../modules/animations.js';
@@ -29,8 +28,9 @@ import EbookForm from "../modules/ebookForm.js";
 import {
     MySwiperSolucoes, 
     MySwiperCases 
-} from "../modules/myswiper.js";
-
+  } from "../modules/myswiper.js";
+import renderizarSubmenu from '../modules/cases/renderizarSubmenu.js';
+import renderizarSwiper from "../modules/cases/renderizarSwiper.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente carregado.");
@@ -75,21 +75,16 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener("resize", updateBackgrounds);
 
     new FormHandler();
-     
-    // Carrega e inicializa os cases se existirem os seletores
+
+    // JSON dos cases
     const submenuCasesEl = document.querySelector('.submenu-cases');
     const swiperWrapperEl = document.querySelector('.cases-slides .swiper-wrapper');
-    const casesListaEl = document.querySelector('.cases-lista');
-    const caseDetalhadoEl = document.querySelector('.case-detalhado');
 
-    // Só inicia o carregamento dos cases se pelo menos um dos elementos existir
-    if (submenuCasesEl || swiperWrapperEl || casesListaEl || caseDetalhadoEl) {
-        const cases = new CarregarCases('../cases.json');
-        cases.init(
-            '.submenu-cases',     // Submenu
-            '.cases-slides .swiper-wrapper', // Swiper na index.html
-            '.cases-lista',       // Página de lista de cases (cases.html)
-            '.case-detalhado'     // Página de case detalhado (case.html)
-        );
+    if (submenuCasesEl) {
+        renderizarSubmenu('.submenu-cases', '../cases.json');
+    }
+
+    if (swiperWrapperEl) {
+        renderizarSwiper('.cases-slides .swiper-wrapper', '../cases.json');
     }
 });

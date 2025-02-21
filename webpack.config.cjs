@@ -212,32 +212,27 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
-        vendors: {
+        defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all',
         },
         common: {
-          test: /[\\/]src[\\/]js[\\/](modules|utils)[\\/]/, // Ajuste para seus arquivos compartilhados
-          name: 'common',
+          test: /[\\/]src[\\/]js[\\/](modules|utils)[\\/]/,
+          name(module, chunks, cacheGroupKey) {
+            const allChunksNames = chunks.map((chunk) => chunk.name).join('~');
+            return `common~${allChunksNames}`;
+          },
           minSize: 0,
           chunks: 'all',
         },
       },
     },
+    runtimeChunk: 'single', // Melhora cache ao separar o runtime
     minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          format: {
-            comments: false,
-          },
-        },
-        extractComments: false,
-      }),
-      new CssMinimizerPlugin(),
-    ],
-  },  
+    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
+  },
+  
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
