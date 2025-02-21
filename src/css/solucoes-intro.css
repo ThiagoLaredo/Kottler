@@ -1,0 +1,79 @@
+.solucoes-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.solucao-intro {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente a partir do topo */
+  right: 20px; /* Mantém 20px da borda direita */
+  transform: translateY(-30%); /* Ajusta para centralizar o próprio tamanho do elemento */
+  z-index: 1;
+  background: var(--primary); /* Adiciona um fundo semitransparente para melhor legibilidade */
+  padding: 40px;
+  border-radius: 20px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+}
+
+
+.solucao-intro h1 {
+  color: var(--textwhite);
+  font: 700 2.5rem 'Raleway', sans-serif;
+  text-align: center;
+}
+
+.solucoes-intro {
+    position: absolute;
+    right: 20px;
+    bottom: 80px; /* Posiciona o contêiner 50% a partir do topo */
+    z-index: 1;
+    background: var(--primary); /* Adiciona um fundo semitransparente para melhor legibilidade */
+    padding: 40px;
+    border-radius: 20px;
+    width: 60%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+}
+  
+.solucoes-intro h1 {
+color: var(--textwhite);
+font: 700 2.5rem 'Raleway', sans-serif;
+}
+  
+.solucoes-intro p {
+color: var(--textwhite);
+font: 300 1rem/1.6 'Raleway', sans-serif;
+}
+  
+.solucoes-intro p a {
+color: var(--textwhite);
+font: 500 1rem/1.6 'Raleway', sans-serif;
+}
+
+@media (max-width: 768px) {
+
+  .solucao-intro {
+    background-color: rgba(248, 13, 142, 0.8);
+    top: 53%; /* Centraliza verticalmente a partir do topo */
+    left: 50%; /* Centraliza horizontalmente a partir da esquerda */
+    transform: translate(-50%, -50%); /* Ajusta para centralizar o próprio tamanho do elemento */
+    width: 90%;
+  }
+
+.solucoes-intro {
+    background-color: rgba(248, 13, 142, 0.8);
+    top: 50%; /* Centraliza verticalmente a partir do topo */
+    left: 50%; /* Centraliza horizontalmente a partir da esquerda */
+    transform: translate(-50%, -50%); /* Ajusta para centralizar o próprio tamanho do elemento */
+    width: 90%;
+    padding: 20px;
+}
+}

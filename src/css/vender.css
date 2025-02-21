@@ -12,30 +12,6 @@
   justify-content: center; /* Centraliza horizontalmente o conteúdo */
 }
 
-
-.solucao-intro {
-  position: absolute;
-  top: 50%; /* Centraliza verticalmente a partir do topo */
-  right: 20px; /* Mantém 20px da borda direita */
-  transform: translateY(-30%); /* Ajusta para centralizar o próprio tamanho do elemento */
-  z-index: 1;
-  background: var(--primary); /* Adiciona um fundo semitransparente para melhor legibilidade */
-  padding: 40px;
-  border-radius: 20px;
-  width: 60%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  opacity: 0;
-}
-
-
-.solucao-intro h1 {
-  color: var(--textwhite);
-  font: 700 2.5rem 'Raleway', sans-serif;
-  text-align: center;
-}
-
 .vender-container {
   display: flex;
   flex-direction: column;
@@ -160,8 +136,6 @@
 
   .solucoes-como h2 {
     text-align: center;
-    
-
   }
 }
 

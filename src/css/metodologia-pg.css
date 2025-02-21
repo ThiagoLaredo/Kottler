@@ -12,6 +12,7 @@
   justify-content: center; /* Centraliza horizontalmente o conteúdo */
   opacity: 0;
 }
+
 .metodologia-container {
   display: flex;
   flex-direction: column;
@@ -125,6 +126,32 @@
 }
 
 
+.metodologia-como {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  padding: 40px;
+  /* padding: 80px 20px; */
+}
+
+.metodologia-como h2 {
+  color: var(--textwhite);
+  font: 600 1.6rem/1.6 'Raleway', sans-serif;
+}
+
+.metodologia-como p {
+  color: var(--textwhite);
+  font: 300 1rem/1.6 'Raleway', sans-serif;
+}
+
+.metodologia-como strong {
+  color: var(--primary);
+  font: 600 1rem/1.6 'Raleway', sans-serif;
+}
+
+
 @media (max-width: 768px) { /* Tablets e smartphones */
 
   .timeline {
@@ -134,13 +161,11 @@
   .timeline-line {
     left: -5%;
   }
-  
 
   .timeline-item {
     flex-direction: column;
     align-items: flex-start;
     position: relative; /* Necessário para posicionar os marcadores corretamente */
-
   }
 
   .timeline-item:nth-child(odd) {
@@ -199,6 +224,15 @@
   .metodologia-container h2 {
    text-align: center;
   }
+
+  .metodologia-como {
+    border: none;
+    padding: 0;
+  }
+
+  .smetodologia-como h2 {
+    text-align: center;
+  }
 }
 
 @media (max-width: 480px) { /* Smartphones menores */
@@ -218,7 +252,6 @@
     height: 6px;
   }
 
-
   .timeline-content h3 {
     font-size: 1.2rem;
   }
@@ -230,5 +263,14 @@
   .timeline-content img {
     width: 40px;
     height: 40px;
+  }
+
+  .metodologia-como {
+    border: none;
+    padding: 0;
+  }
+
+  .smetodologia-como h2 {
+    text-align: center;
   }
 }
