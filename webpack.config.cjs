@@ -212,26 +212,23 @@ module.exports = {
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
-        defaultVendors: {
+        // Evita que o chunk vendors seja muito pequeno
+        vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
           chunks: 'all',
+          minSize: 30000, // Adiciona um tamanho mínimo para os chunks
         },
+        // Agrupando módulos comuns
         common: {
           test: /[\\/]src[\\/]js[\\/](modules|utils)[\\/]/,
-          name(module, chunks, cacheGroupKey) {
-            const allChunksNames = chunks.map((chunk) => chunk.name).join('~');
-            return `common~${allChunksNames}`;
-          },
-          minSize: 0,
-          chunks: 'all',
+          name: 'common',
+          minSize: 30000, // Garante que o chunk seja suficientemente grande
         },
       },
     },
-    runtimeChunk: 'single', // Melhora cache ao separar o runtime
-    minimize: true,
-    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
   },
+  
   
   plugins: [
     new CleanWebpackPlugin(),
