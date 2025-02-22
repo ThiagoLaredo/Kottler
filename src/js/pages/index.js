@@ -22,7 +22,7 @@ import HeaderScroll from '../modules/header-scroll.js';
 import FormHandler from '../modules/formHandler.js';
 import { initPageOpenAnimations, initScrollAnimations } from '../modules/animations.js';
 import VideoPreload from "../modules/VideoPreload.js";
-import EbookPopup from "../modules/ebookPopup.js";
+import renderizarSwiper from "../modules/cases/renderizarSwiper.js";
 import { updateBackgrounds } from "../modules/updateBackgrounds.js";
 import EbookForm from "../modules/ebookForm.js";
 import {
@@ -31,6 +31,9 @@ import {
   } from "../modules/myswiper.js";
 import renderizarSubmenu from '../modules/cases/renderizarSubmenu.js';
 import renderizarSwiper from "../modules/cases/renderizarSwiper.js";
+import AnalyticsLoader from "../modules/analyticsLoader.js";
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente carregado.");
@@ -75,6 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener("resize", updateBackgrounds);
 
     new FormHandler();
+    new AnalyticsLoader();
+
 
     // JSON dos cases
     const submenuCasesEl = document.querySelector('.submenu-cases');
