@@ -8,7 +8,6 @@ import "../../css/submenu.css";
 import "../../css/cores.css";
 import "../../css/componentes.css";
 import "../../css/fontes.css";
-import "../../css/vender.css";
 import "../../css/contato.css";
 import "../../css/social-sidebar.css";
 import "../../css/popup.css";
