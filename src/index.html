@@ -3,7 +3,7 @@
   <head>
 
     <!-- Preload da imagem do banner -->
-    <link rel="preload" as="image" href="/img/banner-ebook.webp" type="image/webp" fetchpriority="high">
+    <img src="/img/banner-ebook.webp" alt="Banner Ebook" style="position: absolute; width: 0; height: 0; overflow: hidden;" loading="eager" fetchpriority="high">
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -32,14 +32,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Preload and asynchronously load Google Fonts to avoid render-blocking -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" as="style" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" rel="stylesheet"></noscript>
 
     <script>document.documentElement.className += ' js';</script>
 
     <!-- Google Tag Manager -->
-    <script>
+    <!-- <script>
       window.addEventListener('load', function() {
         setTimeout(function() {
           var script = document.createElement('script');
@@ -48,7 +48,7 @@
           document.head.appendChild(script);
         }, 3000); // Atrasa o GTM em 3 segundos
       });
-    </script>
+    </script> -->
         <!-- End Google Tag Manager -->
 
 </head>
