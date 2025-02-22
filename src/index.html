@@ -3,7 +3,7 @@
   <head>
 
     <!-- Preload da imagem do banner -->
-    <img src="/img/banner-ebook.webp" alt="Banner Ebook" style="position: absolute; width: 0; height: 0; overflow: hidden;" loading="eager" fetchpriority="high">
+    <link rel="preload" href="/img/banner-ebook.webp" as="image" type="image/webp" fetchpriority="high">
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -38,20 +38,7 @@
 
     <script>document.documentElement.className += ' js';</script>
 
-    <!-- Google Tag Manager -->
-    <!-- <script>
-      window.addEventListener('load', function() {
-        setTimeout(function() {
-          var script = document.createElement('script');
-          script.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-P34T87S9';
-          script.defer = true;
-          document.head.appendChild(script);
-        }, 3000); // Atrasa o GTM em 3 segundos
-      });
-    </script> -->
-        <!-- End Google Tag Manager -->
-
-</head>
+  </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P34T87S9"

@@ -16,13 +16,7 @@ export default class AnalyticsLoader {
       if (this.loaded) return; // Já carregou uma vez, não carrega novamente
       this.loaded = true;
       
-      // Carregar Google Analytics
-      if (!this.analyticsLoaded) {
-        this.loadScript('https://www.googletagmanager.com/gtag/js?id=GTM-P34T87S9');
-        this.analyticsLoaded = true;
-      }
-
-      // Carregar Google Tag Manager
+      // Carregar Google Tag Manager (não precisa carregar gtag.js separado)
       if (!this.gtmLoaded) {
         this.loadScript('https://www.googletagmanager.com/gtm.js?id=GTM-P34T87S9', false);
         this.gtmLoaded = true;
@@ -36,4 +30,4 @@ export default class AnalyticsLoader {
       if (!async) script.defer = true;
       document.head.appendChild(script);
     }
-}
+  }  
