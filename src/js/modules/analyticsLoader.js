@@ -1,18 +1,32 @@
 export default class AnalyticsLoader {
     constructor() {
+      this.loaded = false; // Evita carregamento múltiplo
+      this.analyticsLoaded = false; // Evita carregar o Google Analytics várias vezes
+      this.gtmLoaded = false; // Evita carregar o GTM várias vezes
       window.addEventListener('load', () => this.init());
     }
   
     init() {
-      document.addEventListener('mousemove', () => this.loadAnalytics(), { once: true });
-      document.addEventListener('scroll', () => this.loadAnalytics(), { once: true });
-      document.addEventListener('keydown', () => this.loadAnalytics(), { once: true });
+      ['mousemove', 'scroll', 'keydown'].forEach(event =>
+        document.addEventListener(event, () => this.loadAnalytics(), { once: true })
+      );
     }
   
     loadAnalytics() {
-      this.loadScript('https://www.googletagmanager.com/gtag/js?id=G-6RWFRNX0V3', true);
-      this.loadScript('https://www.googletagmanager.com/gtag/js?id=G-LCDLGEV4PD', true);
-      this.loadScript('https://www.googletagmanager.com/gtm.js?id=GTM-P34T87S9', false);
+      if (this.loaded) return; // Já carregou uma vez, não carrega novamente
+      this.loaded = true;
+      
+      // Carregar Google Analytics
+      if (!this.analyticsLoaded) {
+        this.loadScript('https://www.googletagmanager.com/gtag/js?id=GTM-P34T87S9');
+        this.analyticsLoaded = true;
+      }
+
+      // Carregar Google Tag Manager
+      if (!this.gtmLoaded) {
+        this.loadScript('https://www.googletagmanager.com/gtm.js?id=GTM-P34T87S9', false);
+        this.gtmLoaded = true;
+      }
     }
   
     loadScript(src, async = true) {
@@ -22,8 +36,4 @@ export default class AnalyticsLoader {
       if (!async) script.defer = true;
       document.head.appendChild(script);
     }
-  }
-  
-  // Inicializa a classe
-  new AnalyticsLoader();
-  
+}

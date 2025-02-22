@@ -31,6 +31,7 @@ import {
   } from "../modules/myswiper.js";
 import renderizarSubmenu from '../modules/cases/renderizarSubmenu.js';
 import renderizarSwiper from "../modules/cases/renderizarSwiper.js";
+import AnalyticsLoader from '../modules/analyticsLoader.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente carregado.");
@@ -70,6 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Sliders
     new MySwiperSolucoes();
     new MySwiperCases();
+
+      // Inicializa a classe
+        new AnalyticsLoader();
 
     updateBackgrounds();
     window.addEventListener("resize", updateBackgrounds);
