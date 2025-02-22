@@ -22,7 +22,6 @@ import HeaderScroll from '../modules/header-scroll.js';
 import FormHandler from '../modules/formHandler.js';
 import { initPageOpenAnimations, initScrollAnimations } from '../modules/animations.js';
 import VideoPreload from "../modules/VideoPreload.js";
-import renderizarSwiper from "../modules/cases/renderizarSwiper.js";
 import { updateBackgrounds } from "../modules/updateBackgrounds.js";
 import EbookForm from "../modules/ebookForm.js";
 import {
