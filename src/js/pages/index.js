@@ -24,6 +24,7 @@ import { initPageOpenAnimations, initScrollAnimations } from '../modules/animati
 import VideoPreload from "../modules/VideoPreload.js";
 import { updateBackgrounds } from "../modules/updateBackgrounds.js";
 import EbookForm from "../modules/ebookForm.js";
+import EbookPopup from "../modules/ebookPopup.js";
 import {
     MySwiperSolucoes, 
     MySwiperCases 

@@ -2,10 +2,10 @@
 <html lang="en">
   <head>
     <!-- Preload de vídeo desktop -->
-    <link rel="preload" href="./img/index/video-desktop.mp4" as="video" type="video/mp4">
+    <!-- <link rel="preload" href="./img/index/video-desktop.mp4" as="video" type="video/mp4"> -->
 
     <!-- Preload de vídeo mobile -->
-    <link rel="preload" href="./img/index/video-mobile.mp4" as="video" type="video/mp4">
+    <!-- <link rel="preload" href="./img/index/video-mobile.mp4" as="video" type="video/mp4"> -->
 
     <!-- Preload da imagem do banner -->
     <link rel="preload" as="image" href="/img/banner-ebook.webp" type="image/webp" fetchpriority="high">
@@ -245,12 +245,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="introducao">
       <div class="video-background-wrapper">
-        <video autoplay loop muted playsinline class="video-background">
-          <source src="./img/index/video-desktop.mp4" type="video/mp4" media="screen and (min-width: 768px)">
-          <source src="./img/index/video-mobile.mp4" type="video/mp4" media="screen and (max-width: 767px)">
-          Seu navegador não suporta vídeos HTML5.
+        <video preload="auto" autoplay loop muted playsinline class="video-background">
+          <source src="./img/index/video-desktop.mp4" type="video/mp4" media="(min-width: 768px)">
+          <source src="./img/index/video-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
           <track src="./legendas.vtt" kind="captions" srclang="pt" label="Português">
-        </video>
+          Seu navegador não suporta vídeos HTML5.
+        </video>        
       </div>
     </section>
   
