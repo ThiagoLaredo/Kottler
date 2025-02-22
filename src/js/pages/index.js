@@ -31,9 +31,6 @@ import {
   } from "../modules/myswiper.js";
 import renderizarSubmenu from '../modules/cases/renderizarSubmenu.js';
 import renderizarSwiper from "../modules/cases/renderizarSwiper.js";
-import AnalyticsLoader from "../modules/analyticsLoader.js";
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
     console.log("DOM completamente carregado.");
@@ -78,8 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener("resize", updateBackgrounds);
 
     new FormHandler();
-    new AnalyticsLoader();
-
 
     // JSON dos cases
     const submenuCasesEl = document.querySelector('.submenu-cases');
