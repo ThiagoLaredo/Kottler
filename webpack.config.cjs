@@ -29,12 +29,17 @@ const entryPoints = pages.reduce((entries, page) => {
 }, {});
 
 // HTMLPlugins para cada página
-const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({
+const htmlPlugins = pages.map((page) => new HtmlWebpackPlugin({
   template: `./src/${page}.html`,
   filename: `${page}.html`,
   chunks: ['runtime', 'vendors', 'common', page], // Define a ordem de carregamento
+  scriptLoading: 'defer', // Adia o carregamento do JS
   minify: {
     removeRedundantAttributes: false,
+    collapseWhitespace: true, // Remove espaços em branco
+    removeComments: true, // Remove comentários
+    removeEmptyAttributes: true,
+    useShortDoctype: true,
   },
 }));
 
@@ -65,10 +70,10 @@ module.exports = {
                 },
               ],
             ],
-            plugins: ['@babel/plugin-transform-runtime'],
+            plugins: ['@babel/plugin-transform-runtime', { corejs: false }],
           },
         },
-      },      
+      },
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
@@ -90,43 +95,46 @@ module.exports = {
     ],
   },
   optimization: {
-    runtimeChunk: {
-      name: 'runtime', // Runtime separado para melhor cache
-    },
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        terserOptions: {
+          compress: {
+            drop_console: true, // Remove console.log
+            drop_debugger: true,
+            pure_funcs: ['console.log'],
+            passes: 3,
+          },
+          output: {
+            comments: false,
+          },
+        },
+      }),
+      new CssMinimizerPlugin(),
+    ],
     splitChunks: {
       chunks: 'all',
-      minSize: 20000, // Carregar apenas o necessário
       cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'initial', // Apenas o necessário na inicialização
-          priority: -10,
+          chunks: 'initial',
+          enforce: true,
         },
         gsap: {
           test: /[\\/]node_modules[\\/]gsap[\\/]/,
           name: 'gsap',
-          chunks: 'all', // Carrega GSAP apenas nas páginas que o usam
-          priority: 20,
+          chunks: 'async',
         },
         swiper: {
           test: /[\\/]node_modules[\\/]swiper[\\/]/,
           name: 'swiper',
-          chunks: 'all',
-          priority: 20,
-        },
-        common: {
-          test: /[\\/]src[\\/]js[\\/](modules|utils)[\\/]/,
-          name: 'common',
-          chunks: 'all',
-          minSize: 20000,
-          priority: -5,
+          chunks: 'async',
         },
       },
     },
-    minimize: true,
-    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
-  },  
+    runtimeChunk: 'single',
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
