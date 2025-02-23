@@ -29,17 +29,12 @@ const entryPoints = pages.reduce((entries, page) => {
 }, {});
 
 // HTMLPlugins para cada página
-const htmlPlugins = pages.map((page) => new HtmlWebpackPlugin({
+const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({
   template: `./src/${page}.html`,
   filename: `${page}.html`,
   chunks: ['runtime', 'vendors', 'common', page], // Define a ordem de carregamento
-  scriptLoading: 'defer', // Adia o carregamento do JS
   minify: {
     removeRedundantAttributes: false,
-    collapseWhitespace: true, // Remove espaços em branco
-    removeComments: true, // Remove comentários
-    removeEmptyAttributes: true,
-    useShortDoctype: true,
   },
 }));
 
@@ -70,49 +65,44 @@ module.exports = {
                 },
               ],
             ],
-            plugins: [
-              '@babel/plugin-transform-runtime',
-              {
-                corejs: 3, // Defina a versão do core-js se necessário (3 é recomendada)
-              },
-            ],
+            plugins: ['@babel/plugin-transform-runtime'],
           },
+        },
+      },      
+      {
+        test: /\.css$/i,
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpg|webp|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'img/[name][ext][query]',
+        },
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'fonts/[name][ext]',
         },
       },
     ],
   },
-  
   optimization: {
-    minimize: true,
-    minimizer: [
-      new TerserPlugin({
-        terserOptions: {
-          compress: {
-            drop_console: true, // Remove console.log
-            drop_debugger: true,
-            pure_funcs: ['console.log'],
-            passes: 3,
-          },
-          output: {
-            comments: false,
-          },
-        },
-      }),
-      new CssMinimizerPlugin(),
-    ],
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'initial',
-          enforce: true,
+          chunks: 'initial', // Carrega apenas nas páginas necessárias
+          enforce: true,     // Força a separação
         },
         gsap: {
           test: /[\\/]node_modules[\\/]gsap[\\/]/,
           name: 'gsap',
-          chunks: 'async',
+          chunks: 'async', // Só carrega quando necessário
         },
         swiper: {
           test: /[\\/]node_modules[\\/]swiper[\\/]/,
@@ -121,8 +111,8 @@ module.exports = {
         },
       },
     },
-    runtimeChunk: 'single',
   },
+  
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
