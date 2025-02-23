@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -132,6 +132,20 @@ module.exports = {
       'process.env.CONTENTFUL_SPACE_ID': JSON.stringify('oputswbco4ug'),
       'process.env.CONTENTFUL_ACCESS_TOKEN': JSON.stringify('t0k-RHn4eskADHT1Gdjr27xnkXu7WqPS3NOkQdTYlZs'),
     }),
+    new TerserPlugin({
+      terserOptions: {
+        compress: {
+          drop_console: true, // Remove console.log
+          drop_debugger: true,
+          pure_funcs: ['console.log'], // Remove chamadas do console
+          passes: 3, // Otimiza o código mais vezes
+        },
+        output: {
+          comments: false, // Remove comentários
+        },
+      },
+    }),
+    
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
