@@ -90,30 +90,28 @@ module.exports = {
     ],
   },
   optimization: {
-    usedExports: true, // Remove exportações não usadas
     splitChunks: {
-      chunks: 'all', // Divide o código de forma geral
+      chunks: 'all',
       cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'all', // Carrega os módulos de vendors em qualquer lugar necessário
-          enforce: true,  // Força a separação
+          chunks: 'initial', // Carrega apenas nas páginas necessárias
+          enforce: true,     // Força a separação
         },
         gsap: {
           test: /[\\/]node_modules[\\/]gsap[\\/]/,
           name: 'gsap',
-          chunks: 'async', // Só carrega quando necessário (lazy load)
+          chunks: 'async', // Só carrega quando necessário
         },
         swiper: {
           test: /[\\/]node_modules[\\/]swiper[\\/]/,
           name: 'swiper',
-          chunks: 'async', // Só carrega quando necessário (lazy load)
+          chunks: 'async',
         },
       },
     },
   },
-  
   
   plugins: [
     new CleanWebpackPlugin(),
