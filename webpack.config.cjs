@@ -53,11 +53,22 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env'],
+            presets: [
+              [
+                '@babel/preset-env',
+                {
+                  targets: {
+                    esmodules: true, // Apenas navegadores modernos
+                  },
+                  useBuiltIns: false, // Sem polyfills desnecessários
+                  modules: false, // Mantém módulos ES6 para melhor tree-shaking
+                },
+              ],
+            ],
             plugins: ['@babel/plugin-transform-runtime'],
           },
         },
-      },
+      },      
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
@@ -79,36 +90,43 @@ module.exports = {
     ],
   },
   optimization: {
-    runtimeChunk: 'single', // Separa o runtime em um arquivo próprio
+    runtimeChunk: {
+      name: 'runtime', // Runtime separado para melhor cache
+    },
     splitChunks: {
       chunks: 'all',
+      minSize: 20000, // Carregar apenas o necessário
       cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'all',
-          minSize: 30000,
-        },
-        common: {
-          test: /[\\/]src[\\/]js[\\/](modules|utils)[\\/]/,
-          name: 'common',
-          minSize: 30000,
+          chunks: 'initial', // Apenas o necessário na inicialização
+          priority: -10,
         },
         gsap: {
           test: /[\\/]node_modules[\\/]gsap[\\/]/,
           name: 'gsap',
-          chunks: 'all',
+          chunks: 'all', // Carrega GSAP apenas nas páginas que o usam
+          priority: 20,
         },
         swiper: {
           test: /[\\/]node_modules[\\/]swiper[\\/]/,
           name: 'swiper',
           chunks: 'all',
+          priority: 20,
+        },
+        common: {
+          test: /[\\/]src[\\/]js[\\/](modules|utils)[\\/]/,
+          name: 'common',
+          chunks: 'all',
+          minSize: 20000,
+          priority: -5,
         },
       },
     },
     minimize: true,
     minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
-  },
+  },  
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
