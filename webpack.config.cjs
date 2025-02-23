@@ -70,30 +70,18 @@ module.exports = {
                 },
               ],
             ],
-            plugins: ['@babel/plugin-transform-runtime', { corejs: false }],
+            plugins: [
+              '@babel/plugin-transform-runtime',
+              {
+                corejs: 3, // Defina a versão do core-js se necessário (3 é recomendada)
+              },
+            ],
           },
-        },
-      },
-      {
-        test: /\.css$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },
-      {
-        test: /\.(png|svg|jpg|webp|jpeg|gif)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'img/[name][ext][query]',
-        },
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-        generator: {
-          filename: 'fonts/[name][ext]',
         },
       },
     ],
   },
+  
   optimization: {
     minimize: true,
     minimizer: [
