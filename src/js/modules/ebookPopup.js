@@ -65,31 +65,30 @@ export default class EbookPopup {
         const formData = new FormData(this.form);
         formData.append('apikey', 'a936ac9d-2155-46dc-8ab2-0d46ae112c69');
 
-        fetch('https://api.web3forms.com/submit', {
+        // RD Station
+        fetch('http://localhost:3000/rdstation', {
             method: 'POST',
-            body: formData,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                event_type: 'CONVERSION',
+                event_family: 'CDP',
+                payload: {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    legal_basis: 'CONSENT',
+                    legal_basis_message: 'O usuário concordou em receber comunicações.',
+                    conversion_identifier: 'DOWNLOAD_EBOOK'
+                }
+            })
         })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Success (e-book):', data);
-
-            // Exibe a mensagem abaixo do botão
-            this.thankYouMessage.style.display = 'block';
-
-            // Salva no localStorage que o usuário já baixou o e-book
-            localStorage.setItem('ebook_downloaded', 'true');
-
-            // Desativa os campos para evitar novo envio
-            this.form.querySelectorAll('input, button').forEach(el => el.disabled = true);
-
-            // Inicia o download ou abre o PDF em uma nova aba
-            setTimeout(() => {
-                window.open('/marketing-e-industria.pdf', '_blank');
-            }, 1000);
+        .then(rdResponse => rdResponse.json())
+        .then(rdData => {
+            console.log('Success (RD Station - e-book):', rdData);
         })
-        .catch(error => {
-            console.error('Error (e-book):', error);
-            alert('Houve um erro ao enviar o formulário. Tente novamente.');
+        .catch(rdError => {
+            console.error('Error (RD Station - e-book):', rdError);
         });
     }
 }

@@ -286,10 +286,16 @@
             
             <label for="email-newsletter" class="visually-hidden">E-mail</label>
             <input type="email" id="email-newsletter" name="email-newsletter" placeholder="E-mail" required>
+
+            <!-- Campos ocultos exigidos pela RD Station -->
+            <input type="hidden" name="event_type" value="Newsletter Assinada">
+            <input type="hidden" name="legal_basis" value="consent">
+            <input type="hidden" name="legal_basis_message" value="O usuário concordou em receber comunicações da empresa ao assinar a newsletter.">
             
             <button type="submit">Assinar</button>
-          </form>  
-        </div>       
+          </form>      
+        </div> 
+      
       </div>
     </footer>
          
@@ -307,13 +313,15 @@
           <form id="downloadForm">
               <label for="nome-popup" class="visually-hidden">Nome</label>
               <input type="text" id="nome-popup" name="name" placeholder="Nome" required>
-              
+
               <label for="email-popup" class="visually-hidden">E-mail</label>
               <input type="email" id="email-popup" name="email" placeholder="E-mail" required>
 
-              <input type="hidden" name="apikey" value="a936ac9d-2155-46dc-8ab2-0d46ae112c69">
-              <input type="hidden" name="subject" value="Download do E-book">
-              
+              <!-- Campos ocultos exigidos pela RD Station -->
+              <input type="hidden" name="event_type" value="Ebook Baixado - Marketing e Indústria">
+              <input type="hidden" name="legal_basis" value="consent">
+              <input type="hidden" name="legal_basis_message" value="O usuário concordou em receber comunicações da empresa ao baixar o e-book.">
+
               <button class="btn" type="submit">Quero garantir!</button>
 
               <!-- Mensagem de agradecimento (inicialmente oculta) -->
