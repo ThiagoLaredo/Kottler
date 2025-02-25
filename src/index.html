@@ -1,9 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Preload de vídeo desktop -->
+    <link rel="preload" href="./img/index/video-desktop.mp4" as="video" type="video/mp4">
+
+    <!-- Preload de vídeo mobile -->
+    <link rel="preload" href="./img/index/video-mobile.mp4" as="video" type="video/mp4">
 
     <!-- Preload da imagem do banner -->
-    <link rel="preload" href="/img/banner-ebook.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/img/banner-ebook.webp" type="image/webp" fetchpriority="high">
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -32,18 +37,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Preload and asynchronously load Google Fonts to avoid render-blocking -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" as="style" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300..800&display=swap" rel="stylesheet"></noscript>
 
     <script>document.documentElement.className += ' js';</script>
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P34T87S9');</script>
+    <!-- End Google Tag Manager -->
+  
   </head>
-<body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P34T87S9"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P34T87S9"
+      height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header class="header">
       <div class="container">
       <div class="header_menu">
@@ -227,12 +240,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <section class="introducao">
       <div class="video-background-wrapper">
-        <video preload="auto" autoplay loop muted playsinline class="video-background">
-          <source src="./img/index/video-desktop.mp4" type="video/mp4" media="(min-width: 768px)">
-          <source src="./img/index/video-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
-          <track src="./legendas.vtt" kind="captions" srclang="pt" label="Português">
+        <video autoplay loop muted playsinline class="video-background">
+          <source src="./img/index/video-desktop.mp4" type="video/mp4" media="screen and (min-width: 768px)">
+          <source src="./img/index/video-mobile.mp4" type="video/mp4" media="screen and (max-width: 767px)">
           Seu navegador não suporta vídeos HTML5.
-        </video>        
+          <track src="./legendas.vtt" kind="captions" srclang="pt" label="Português">
+        </video>
       </div>
     </section>
   
@@ -610,6 +623,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             <label for="email-newsletter" class="visually-hidden">E-mail</label>
             <input type="email" id="email-newsletter" name="email-newsletter" placeholder="E-mail" required>
+
+            <!-- Campos ocultos exigidos pela RD Station -->
+            <input type="hidden" name="event_type" value="Newsletter Assinada">
+            <input type="hidden" name="legal_basis" value="consent">
+            <input type="hidden" name="legal_basis_message" value="O usuário concordou em receber comunicações da empresa ao assinar a newsletter.">
             
             <button type="submit">Assinar</button>
           </form>      
@@ -631,13 +649,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <form id="downloadForm">
               <label for="nome-popup" class="visually-hidden">Nome</label>
               <input type="text" id="nome-popup" name="name" placeholder="Nome" required>
-              
+
               <label for="email-popup" class="visually-hidden">E-mail</label>
               <input type="email" id="email-popup" name="email" placeholder="E-mail" required>
 
-              <input type="hidden" name="apikey" value="a936ac9d-2155-46dc-8ab2-0d46ae112c69">
-              <input type="hidden" name="subject" value="Download do E-book">
-              
+              <!-- Campos ocultos exigidos pela RD Station -->
+              <input type="hidden" name="event_type" value="Ebook Baixado - Marketing e Indústria">
+              <input type="hidden" name="legal_basis" value="consent">
+              <input type="hidden" name="legal_basis_message" value="O usuário concordou em receber comunicações da empresa ao baixar o e-book.">
+
               <button class="btn" type="submit">Quero garantir!</button>
 
               <!-- Mensagem de agradecimento (inicialmente oculta) -->
