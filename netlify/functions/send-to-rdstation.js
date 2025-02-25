@@ -1,4 +1,4 @@
-const axios = require('axios/dist/axios.cjs');  // Importação explícita do axios
+const axios = require('axios');  // Usando o axios instalado localmente
 
 export const handler = async (event) => {
     try {
