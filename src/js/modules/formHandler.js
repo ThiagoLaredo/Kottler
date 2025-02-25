@@ -197,21 +197,7 @@ export default class FormHandler {
   // ==============================================
   // MENSAGEM DE AGRADECIMENTO NA PÁGINA OBRIGADO
   // ==============================================
-//   showThankYouMessage() {
-//       const formType = localStorage.getItem('formType');
-//       const contactMessage = document.getElementById('contactThankYouMessage');
-//       const newsletterMessage = document.getElementById('newsletterThankYouMessage');
 
-//       if (formType === 'contato' && contactMessage) {
-//           contactMessage.style.display = 'flex';
-//           if (newsletterMessage) newsletterMessage.style.display = 'none';
-//       } else if (formType === 'newsletter' && newsletterMessage) {
-//           newsletterMessage.style.display = 'flex';
-//           if (contactMessage) contactMessage.style.display = 'none';
-//       }
-
-//       localStorage.removeItem('formType'); // Limpa o localStorage após exibir a mensagem
-//   }
 showThankYouMessage() {
     const formType = localStorage.getItem('formType');
     const downloadEbook = localStorage.getItem('downloadEbook'); // Verifica se deve fazer o download
