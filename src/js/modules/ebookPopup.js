@@ -106,12 +106,17 @@ export default class EbookPopup {
         this.popup = document.getElementById('popup');
         this.closeBtn = this.popup?.querySelector('.close-btn');
 
+        // Caminho para as imagens gerado pelo Webpack
+        const mobileImagePath = './img/popup/banner-ebook-mobile.webp';
+        const desktopImagePath = './img/popup/banner-ebook-desktop.webp';
+
         // Criando a imagem com srcset, sizes e lazy loading
         this.popupImage = new Image();
-        this.popupImage.srcset = '/img/popup/banner-ebook-mobile.webp 300w, /img/popup/banner-ebook-desktop.webp 283w';
+        this.popupImage.srcset = `${mobileImagePath} 300w, ${desktopImagePath} 283w`;
         this.popupImage.sizes = '(max-width: 600px) 300px, 283px';  // Ajuste com base no tamanho da tela
-        this.popupImage.src = '/img/popup/banner-ebook-mobile.webp';  // Caminho inicial para o carregamento
+        this.popupImage.src = mobileImagePath;  // Caminho inicial para o carregamento
         this.popupImage.loading = 'lazy';  // Ativar lazy loading
+
 
         // Verifica se o usuário já baixou o e-book
         this.hasDownloaded = localStorage.getItem('ebook_downloaded') === 'true';
