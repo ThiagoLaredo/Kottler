@@ -4,6 +4,8 @@ export default class EbookPopup {
         this.thankYouMessage = document.getElementById('ebookThankYouMessage');
         this.popup = document.getElementById('popup');
         this.closeBtn = this.popup?.querySelector('.close-btn');
+        this.preloadPopupImage = new Image();
+        this.preloadPopupImage.src = '../img/popup/banner-ebook.webp';        
 
         // Verifica se o usuário já baixou o e-book
         this.hasDownloaded = localStorage.getItem('ebook_downloaded') === 'true';
@@ -44,14 +46,27 @@ export default class EbookPopup {
         this.form.addEventListener('submit', (event) => this.handleFormSubmit(event));
     }
     
+    // showPopup() {
+    //     // Carrega a imagem de fundo apenas quando o popup é aberto
+    //     const popupImage = this.popup.querySelector('.popup-image');
+    //     popupImage.style.backgroundImage = "url('../img/popup/banner-ebook.webp')";
+    //     this.popup.style.visibility = 'visible';
+    //     this.popup.style.opacity = '1';
+    //     this.popup.style.pointerEvents = 'auto';
+    // }
+
     showPopup() {
-        // Carrega a imagem de fundo apenas quando o popup é aberto
         const popupImage = this.popup.querySelector('.popup-image');
-        popupImage.style.backgroundImage = "url('../img/popup/banner-ebook.webp')";
+    
+        // Apenas define a imagem se ainda não foi aplicada
+        if (!popupImage.style.backgroundImage) {
+            popupImage.style.backgroundImage = "url('/img/popup/banner-ebook.webp')";
+        }
+    
         this.popup.style.visibility = 'visible';
         this.popup.style.opacity = '1';
         this.popup.style.pointerEvents = 'auto';
-    }
+    }    
 
     hidePopup() {
         this.popup.style.visibility = 'hidden';

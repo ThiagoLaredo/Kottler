@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Preload de vídeo desktop -->
-    <link rel="preload" href="./img/index/video-desktop.mp4" as="video" type="video/mp4">
-
-    <!-- Preload de vídeo mobile -->
-    <link rel="preload" href="./img/index/video-mobile.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="./img/index/video-desktop.mp4" as="video" type="video/mp4" media="(min-width: 1025px)">
+    <link rel="preload" href="./img/index/video-mobile.mp4" as="video" type="video/mp4" media="(max-width: 1024px)">
 
     <!-- Preload da imagem do banner -->
-    <link rel="preload" as="image" href="/img/banner-ebook.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/img/popup/banner-ebook.webp" type="image/webp" fetchpriority="high">
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
