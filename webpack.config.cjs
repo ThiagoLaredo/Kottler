@@ -1,4 +1,7 @@
 const webpack = require('webpack');
+const path = require('path');
+const glob = require('glob');
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
@@ -7,7 +10,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const PurgeCSSPlugin = require('purgecss-webpack-plugin');
 
-const path = require('path');
+const PATHS = { src: path.join(__dirname, 'src') };
 
 const pages = [
   'index',
@@ -24,18 +27,21 @@ const pages = [
   'post',
 ];
 
-// Entradas dinâmicas
+// Criar entradas dinâmicas apenas se o arquivo JS existir
 const entryPoints = pages.reduce((entries, page) => {
-  entries[page] = `./src/js/pages/${page}.js`;
+  const jsPath = `./src/js/pages/${page}.js`;
+  if (require('fs').existsSync(jsPath)) {
+    entries[page] = jsPath;
+  }
   return entries;
 }, {});
 
-// HTMLPlugins para cada página
+// Criar plugins para cada página HTML
 const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({
   template: `./src/${page}.html`,
   filename: `${page}.html`,
   chunks: ['runtime', 'vendors', 'common', page], // Define a ordem de carregamento
-  scriptLoading: 'defer', // Garante que o JS não bloqueia a renderização
+  scriptLoading: 'defer',
   minify: {
     removeRedundantAttributes: false,
   },
@@ -45,7 +51,7 @@ module.exports = {
   entry: entryPoints,
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].[contenthash].js', // Cache busting com contenthash
+    filename: 'js/[name].[contenthash].js',
     clean: true,
   },
   module: {
@@ -60,18 +66,16 @@ module.exports = {
               [
                 '@babel/preset-env',
                 {
-                  targets: {
-                    esmodules: true, // Apenas navegadores modernos
-                  },
-                  useBuiltIns: false, // Sem polyfills desnecessários
-                  modules: false, // Mantém módulos ES6 para melhor tree-shaking
+                  targets: { esmodules: true },
+                  useBuiltIns: false,
+                  modules: false,
                 },
               ],
             ],
             plugins: ['@babel/plugin-transform-runtime'],
           },
         },
-      },      
+      },
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
@@ -105,14 +109,9 @@ module.exports = {
         commons: {
           test: /[\\/]src[\\/]js[\\/]/,
           name: 'common',
-          minSize: 20000, // Evita dividir arquivos muito pequenos
+          minSize: 20000,
           chunks: 'all',
           enforce: true,
-        },
-        gtm: {
-          test: /[\\/]googletagmanager[\\/]/,
-          name: 'gtm',
-          chunks: 'async', // Somente quando necessário
         },
       },
     },
@@ -140,19 +139,6 @@ module.exports = {
     new webpack.DefinePlugin({
       'process.env.CONTENTFUL_SPACE_ID': JSON.stringify('oputswbco4ug'),
       'process.env.CONTENTFUL_ACCESS_TOKEN': JSON.stringify('t0k-RHn4eskADHT1Gdjr27xnkXu7WqPS3NOkQdTYlZs'),
-    }),
-    new TerserPlugin({
-      terserOptions: {
-        compress: {
-          drop_console: true,
-          drop_debugger: true,
-          pure_funcs: ['console.log'],
-          passes: 3, // Otimiza o código mais vezes
-        },
-        output: {
-          comments: false,
-        },
-      },
     }),
   ],
   resolve: {
