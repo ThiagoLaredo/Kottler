@@ -1,6 +1,5 @@
 const webpack = require('webpack');
 const path = require('path');
-const glob = require('glob');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -8,7 +7,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-const PurgeCSSPlugin = require('purgecss-webpack-plugin');
 
 const PATHS = { src: path.join(__dirname, 'src') };
 
@@ -44,6 +42,8 @@ const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({
   scriptLoading: 'defer',
   minify: {
     removeRedundantAttributes: false,
+    collapseWhitespace: true, // Reduz espaços em branco para otimizar o tamanho do HTML
+    removeComments: true, // Remove comentários para reduzir o tamanho
   },
 }));
 
@@ -67,7 +67,8 @@ module.exports = {
                 '@babel/preset-env',
                 {
                   targets: { esmodules: true },
-                  useBuiltIns: false,
+                  useBuiltIns: 'entry', // Usa polyfills de forma eficiente
+                  corejs: 3,
                   modules: false,
                 },
               ],
@@ -97,6 +98,18 @@ module.exports = {
     ],
   },
   optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        parallel: true, // Usa múltiplos núcleos para otimizar o minify
+        terserOptions: {
+          compress: {
+            drop_console: true, // Remove console.log para reduzir o código final
+          },
+        },
+      }),
+      new CssMinimizerPlugin(),
+    ],
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
@@ -109,22 +122,22 @@ module.exports = {
         commons: {
           test: /[\\/]src[\\/]js[\\/]/,
           name: 'common',
-          minSize: 20000,
+          minSize: 20000, // Evita dividir arquivos muito pequenos
           chunks: 'all',
           enforce: true,
         },
+        gtm: {
+          test: /[\\/]googletagmanager[\\/]/,
+          name: 'gtm',
+          chunks: 'async', // Somente quando necessário
+        },
       },
     },
-    minimize: true,
-    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
-    }),
-    new PurgeCSSPlugin({
-      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
     }),
     ...htmlPlugins,
     new CopyWebpackPlugin({
