@@ -108,8 +108,8 @@ export default class EbookPopup {
 
         // Criando a imagem com srcset, sizes e lazy loading
         this.popupImage = new Image();
-        this.popupImage.srcset = '/img/popup/banner-ebook-mobile.webp 142w, /img/popup/banner-ebook-desktop.webp 283w';
-        this.popupImage.sizes = '(max-width: 600px) 142px, 283px';  // Ajuste com base no tamanho da tela
+        this.popupImage.srcset = '/img/popup/banner-ebook-mobile.webp 300w, /img/popup/banner-ebook-desktop.webp 283w';
+        this.popupImage.sizes = '(max-width: 600px) 300px, 283px';  // Ajuste com base no tamanho da tela
         this.popupImage.src = '/img/popup/banner-ebook-mobile.webp';  // Caminho inicial para o carregamento
         this.popupImage.loading = 'lazy';  // Ativar lazy loading
 
@@ -163,8 +163,8 @@ export default class EbookPopup {
             };
 
             // Iniciar o carregamento da imagem com srcset e lazy loading
-            this.popupImage.srcset = '/img/popup/banner-ebook-mobile.webp 142w, /img/popup/banner-ebook-desktop.webp 283w';
-            this.popupImage.sizes = '(max-width: 600px) 142px, 283px'; // Ajuste conforme a largura da tela
+            this.popupImage.srcset = '/img/popup/banner-ebook-mobile.webp 300w, /img/popup/banner-ebook-desktop.webp 283w';
+            this.popupImage.sizes = '(max-width: 600px) 300px, 283px'; // Ajuste conforme a largura da tela
         }
 
         this.popup.style.visibility = 'visible';
