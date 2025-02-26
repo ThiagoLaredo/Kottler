@@ -106,17 +106,16 @@ export default class EbookPopup {
         this.popup = document.getElementById('popup');
         this.closeBtn = this.popup?.querySelector('.close-btn');
 
-        // Caminho para as imagens gerado pelo Webpack
-        const mobileImagePath = './img/popup/banner-ebook-mobile.webp';
-        const desktopImagePath = './img/popup/banner-ebook-desktop.webp';
+        // Caminho para as imagens geradas pelo Webpack
+        this.mobileImagePath = './img/popup/banner-ebook-mobile.webp';
+        this.desktopImagePath = './img/popup/banner-ebook-desktop.webp';
 
         // Criando a imagem com srcset, sizes e lazy loading
         this.popupImage = new Image();
-        this.popupImage.srcset = `${mobileImagePath} 300w, ${desktopImagePath} 283w`;
+        this.popupImage.srcset = `${this.mobileImagePath} 300w, ${this.desktopImagePath} 283w`;
         this.popupImage.sizes = '(max-width: 600px) 300px, 283px';  // Ajuste com base no tamanho da tela
-        this.popupImage.src = mobileImagePath;  // Caminho inicial para o carregamento
+        this.popupImage.src = this.mobileImagePath;  // Caminho inicial para o carregamento
         this.popupImage.loading = 'lazy';  // Ativar lazy loading
-
 
         // Verifica se o usuário já baixou o e-book
         this.hasDownloaded = localStorage.getItem('ebook_downloaded') === 'true';
@@ -124,6 +123,28 @@ export default class EbookPopup {
         if (this.form) {
             this.init();
         }
+
+        // Adicionar preload dinâmico
+        this.addImagePreload();
+    }
+
+    // Função para adicionar preload dinâmico
+    addImagePreload() {
+        const isMobile = window.innerWidth <= 600;  // Definir o limite para mobile
+        const imageToPreload = isMobile
+            ? this.mobileImagePath
+            : this.desktopImagePath;
+
+        // Criar o elemento <link rel="preload">
+        const preloadLink = document.createElement('link');
+        preloadLink.rel = 'preload';
+        preloadLink.as = 'image';
+        preloadLink.href = imageToPreload;
+        preloadLink.type = 'image/webp';
+        preloadLink.fetchpriority = 'high';  // Alta prioridade para carregamento
+
+        // Adicionar o <link> ao <head> do documento
+        document.head.appendChild(preloadLink);
     }
 
     init() {
@@ -168,7 +189,7 @@ export default class EbookPopup {
             };
 
             // Iniciar o carregamento da imagem com srcset e lazy loading
-            this.popupImage.srcset = '/img/popup/banner-ebook-mobile.webp 300w, /img/popup/banner-ebook-desktop.webp 283w';
+            this.popupImage.srcset = `${this.mobileImagePath} 300w, ${this.desktopImagePath} 283w`;
             this.popupImage.sizes = '(max-width: 600px) 300px, 283px'; // Ajuste conforme a largura da tela
         }
 
