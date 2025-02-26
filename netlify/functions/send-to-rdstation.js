@@ -1,9 +1,3 @@
-// const axios = require('axios');  // Usando o axios instalado localmente
-
-// export const handler = async (event) => {
-//     try {
-
-
 const axios = require('axios');
 
 async function getAccessToken() {

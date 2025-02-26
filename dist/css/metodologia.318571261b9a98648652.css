@@ -1,0 +1,355 @@
+.solucoes-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.solucao-intro {
+  position: absolute;
+  top: 50%; /* Centraliza verticalmente a partir do topo */
+  right: 20px; /* Mantém 20px da borda direita */
+  transform: translateY(-30%); /* Ajusta para centralizar o próprio tamanho do elemento */
+  z-index: 1;
+  background: var(--primary); /* Adiciona um fundo semitransparente para melhor legibilidade */
+  padding: 40px;
+  border-radius: 20px;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  opacity: 0;
+}
+
+
+.solucao-intro h1 {
+  color: var(--textwhite);
+  font: 700 2.5rem 'Raleway', sans-serif;
+  text-align: center;
+}
+
+.solucoes-intro {
+    position: absolute;
+    right: 20px;
+    bottom: 80px; /* Posiciona o contêiner 50% a partir do topo */
+    z-index: 1;
+    background: var(--primary); /* Adiciona um fundo semitransparente para melhor legibilidade */
+    padding: 40px;
+    border-radius: 20px;
+    width: 60%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 0;
+}
+  
+.solucoes-intro h1 {
+color: var(--textwhite);
+font: 700 2.5rem 'Raleway', sans-serif;
+}
+  
+.solucoes-intro p {
+color: var(--textwhite);
+font: 300 1rem/1.6 'Raleway', sans-serif;
+}
+  
+.solucoes-intro p a {
+color: var(--textwhite);
+font: 500 1rem/1.6 'Raleway', sans-serif;
+}
+
+@media (max-width: 768px) {
+
+  .solucao-intro {
+    background-color: rgba(248, 13, 142, 0.8);
+    top: 53%; /* Centraliza verticalmente a partir do topo */
+    left: 50%; /* Centraliza horizontalmente a partir da esquerda */
+    transform: translate(-50%, -50%); /* Ajusta para centralizar o próprio tamanho do elemento */
+    width: 90%;
+  }
+
+.solucoes-intro {
+    background-color: rgba(248, 13, 142, 0.8);
+    top: 50%; /* Centraliza verticalmente a partir do topo */
+    left: 50%; /* Centraliza horizontalmente a partir da esquerda */
+    transform: translate(-50%, -50%); /* Ajusta para centralizar o próprio tamanho do elemento */
+    width: 90%;
+    padding: 20px;
+}
+}
+.introducao.metodologia-back {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../img/metodologia.webp); /* Substitua pelo caminho da sua imagem */
+  background-size: cover; /* Garante que a imagem cubra toda a área */
+  background-position: top; /* Centraliza a imagem */
+  background-repeat: no-repeat; /* Evita que a imagem se repita */
+  background-attachment: fixed;
+  display: flex;
+  align-items: center; /* Centraliza verticalmente o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente o conteúdo */
+  opacity: 0;
+}
+
+.metodologia-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 20px;
+}
+
+.processo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.processo h2 {
+  color: var(--textwhite);
+  font: 600 1.6rem/1.6 'Raleway', sans-serif;
+}
+
+.timeline {
+  position: relative;
+  margin: 50px auto;
+  padding: 20px 0;
+  width: 80%;
+}
+
+.timeline-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 100%;
+  width: 4px;
+}
+
+.timeline-item {
+  position: relative;
+  margin: 30px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.timeline-item:nth-child(odd) {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  background-color: var(--background-light);
+  padding: 20px;
+  border-radius: 8px;
+  width: 45%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  margin-right: 30px;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  margin-left: 30px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary);
+  border: 4px solid var(--background-light);
+  border-radius: 50%;
+  z-index: 3; /* Sobrepõe à linha */
+}
+
+.timeline-marker::after {
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  margin: auto;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.timeline-content h3 {
+  color: var(--primary);
+  font: 600 1.5rem/1.4 'Raleway', sans-serif;
+}
+
+.timeline-content p {
+  color: var(--textwhite);
+  font: 300 1rem/1.6 'Raleway', sans-serif;
+}
+
+.timeline-content img {
+  display: block;
+  margin: 0 auto 20px;
+  width: 50px;
+  height: 50px;
+}
+
+
+.metodologia-como {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid var(--primary);
+  border-radius: 20px;
+  padding: 40px;
+  /* padding: 80px 20px; */
+}
+
+.metodologia-como h2 {
+  color: var(--textwhite);
+  font: 600 1.6rem/1.6 'Raleway', sans-serif;
+}
+
+.metodologia-como p {
+  color: var(--textwhite);
+  font: 300 1rem/1.6 'Raleway', sans-serif;
+}
+
+.metodologia-como strong {
+  color: var(--primary);
+  font: 600 1rem/1.6 'Raleway', sans-serif;
+}
+
+
+@media (max-width: 768px) { /* Tablets e smartphones */
+
+  .timeline {
+    width: 90%;
+  }
+
+  .timeline-line {
+    left: -5%;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    position: relative; /* Necessário para posicionar os marcadores corretamente */
+  }
+
+  .timeline-item:nth-child(odd) {
+    flex-direction: column;
+  }
+
+  .timeline-item:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .timeline-content {
+    width: 100%;
+    margin: 10px auto;
+  }
+
+  .timeline-marker {
+    position: absolute;
+    left: -5%; /* Alinha os marcadores com a linha */
+    top: 50%; /* Centraliza verticalmente no item */
+    transform: translateX(-50%);
+    width: 15px; /* Tamanho do marcador ajustado */
+    height: 15px;
+    background-color: var(--primary); /* Cor do marcador */
+    border: 4px solid var(--background-light); /* Borda ao redor do marcador */
+    border-radius: 50%; /* Deixa o marcador circular */
+  }
+
+  .timeline-marker::after {
+    content: "";
+    display: block;
+    width: 8px; /* Círculo interno */
+    height: 8px;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    margin: 0;
+  }
+
+  .metodologia-lista {
+    grid-template-columns: repeat(2, 1fr); /* Reduz para 2 colunas */
+    gap: 20px 30px; /* Ajusta o espaçamento */
+    align-items: center;
+  }
+
+  .metodologia-item h3, .metodologia-item p {
+    text-align: center;
+  }
+
+  .metodologia-container h2 {
+   text-align: center;
+  }
+
+  .metodologia-como {
+    border: none;
+    padding: 0;
+  }
+
+  .smetodologia-como h2 {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) { /* Smartphones menores */
+  .timeline-content {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .timeline-marker {
+    left: -5%; /* Alinha os marcadores junto à linha */
+    width: 12px; /* Marcadores menores */
+    height: 12px;
+  }
+
+  .timeline-marker::after {
+    width: 6px; /* Círculo interno menor */
+    height: 6px;
+  }
+
+  .timeline-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
+  }
+
+  .timeline-content img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .metodologia-como {
+    border: none;
+    padding: 0;
+  }
+
+  .smetodologia-como h2 {
+    text-align: center;
+  }
+}
