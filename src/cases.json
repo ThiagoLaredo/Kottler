@@ -62,15 +62,20 @@
       "cliente": "Rodrigo Armond – RA Fisio",
       "descricao_cliente": "A RA Fisio é uma clínica de fisioterapia de alto padrão, especializada em reabilitação pós-operatória, com foco em joelho, quadril, tornozelo e ombro. Sob a liderança de Rodrigo Armond, a clínica tem se consolidado como uma referência em cuidados personalizados e avançados, oferecendo equipamentos exclusivos e atendimento premium.",
       "descricao_home": "Modernizamos a identidade visual da RA Fisio, preservando sua essência afetiva e destacando inovação e exclusividade. Uma transformação que reflete confiança e acolhimento para um público premium. Confira!",
-      "imagem": {
-        "desktop": "./img/cases/rafisio/case-ra-fisio-1024w.webp",
-        "mobile": "./img/cases/rafisio/case-ra-fisio-480w.webp",
-        "large": "./img/cases/rafisio/case-ra-fisio-1920w.webp",
-        "mobile_width": 480,
-        "mobile_height": 270,
-        "desktop_width": 1024,
-        "desktop_height": 576
-      },
+"imagem": {
+  "mobile": "./img/cases/rafisio/case-ra-fisio-480w.webp",
+  "mobile_width": 480,
+  "mobile_height": 270,
+
+  "desktop": "./img/cases/rafisio/case-ra-fisio-1024w.webp",
+  "desktop_width": 1024,
+  "desktop_height": 576,
+
+  "large": "./img/cases/rafisio/case-ra-fisio-1920w.webp",
+  "large_width": 1920,
+  "large_height": 1080
+},
+
       "galeria": [
         "./img/cases/rafisio/instagram.webp",
         "./img/cases/rafisio/mockup.webp",
