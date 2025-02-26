@@ -1,10 +1,12 @@
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const PurgeCSSPlugin = require('purgecss-webpack-plugin');
+
 const path = require('path');
 
 const pages = [
@@ -33,6 +35,7 @@ const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({
   template: `./src/${page}.html`,
   filename: `${page}.html`,
   chunks: ['runtime', 'vendors', 'common', page], // Define a ordem de carregamento
+  scriptLoading: 'defer', // Garante que o JS não bloqueia a renderização
   minify: {
     removeRedundantAttributes: false,
   },
@@ -96,27 +99,33 @@ module.exports = {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'initial', // Carrega apenas nas páginas necessárias
-          enforce: true,     // Força a separação
+          chunks: 'initial',
+          enforce: true,
         },
-        gsap: {
-          test: /[\\/]node_modules[\\/]gsap[\\/]/,
-          name: 'gsap',
-          chunks: 'async', // Só carrega quando necessário
+        commons: {
+          test: /[\\/]src[\\/]js[\\/]/,
+          name: 'common',
+          minSize: 20000, // Evita dividir arquivos muito pequenos
+          chunks: 'all',
+          enforce: true,
         },
-        swiper: {
-          test: /[\\/]node_modules[\\/]swiper[\\/]/,
-          name: 'swiper',
-          chunks: 'async',
+        gtm: {
+          test: /[\\/]googletagmanager[\\/]/,
+          name: 'gtm',
+          chunks: 'async', // Somente quando necessário
         },
       },
     },
+    minimize: true,
+    minimizer: [new TerserPlugin(), new CssMinimizerPlugin()],
   },
-  
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[contenthash].css',
+    }),
+    new PurgeCSSPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
     }),
     ...htmlPlugins,
     new CopyWebpackPlugin({
@@ -135,17 +144,16 @@ module.exports = {
     new TerserPlugin({
       terserOptions: {
         compress: {
-          drop_console: true, // Remove console.log
+          drop_console: true,
           drop_debugger: true,
-          pure_funcs: ['console.log'], // Remove chamadas do console
+          pure_funcs: ['console.log'],
           passes: 3, // Otimiza o código mais vezes
         },
         output: {
-          comments: false, // Remove comentários
+          comments: false,
         },
       },
     }),
-    
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
