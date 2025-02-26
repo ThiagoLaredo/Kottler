@@ -116,20 +116,20 @@ module.exports = {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'initial',
+          chunks: 'async', // Carregar somente quando necessário
           enforce: true,
         },
         commons: {
           test: /[\\/]src[\\/]js[\\/]/,
           name: 'common',
-          minSize: 20000, // Evita dividir arquivos muito pequenos
+          minSize: 30000, // Aumenta o tamanho mínimo para reduzir a criação de muitos arquivos pequenos
           chunks: 'all',
           enforce: true,
         },
         gtm: {
           test: /[\\/]googletagmanager[\\/]/,
           name: 'gtm',
-          chunks: 'async', // Somente quando necessário
+          chunks: 'async', // Carregar apenas quando necessário
         },
       },
     },
