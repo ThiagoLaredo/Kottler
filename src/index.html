@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Preload de vídeo desktop -->
-    <link rel="preload" href="./img/index/video-desktop.mp4" as="video" type="video/mp4">
-
-    <!-- Preload de vídeo mobile -->
-    <link rel="preload" href="./img/index/video-mobile.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="./img/index/video-desktop.mp4" as="video" type="video/mp4" media="(min-width: 1025px)">
+    <link rel="preload" href="./img/index/video-mobile.mp4" as="video" type="video/mp4" media="(max-width: 1024px)">
 
     <!-- Preload da imagem do banner -->
-    <link rel="preload" as="image" href="/img/banner-ebook.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/img/popup/banner-ebook.webp" type="image/webp" fetchpriority="high">
 
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -45,18 +42,19 @@
 
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P34T87S9');</script>
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5PXSCNBJ');</script>      
     <!-- End Google Tag Manager -->
-  
   </head>
+
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P34T87S9"
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5PXSCNBJ"
       height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+  
     <header class="header">
       <div class="container">
       <div class="header_menu">
@@ -217,23 +215,23 @@
     </header>
 
     <a data-menu="contato-mobile" href="mailto:gestao@agenciakottler.com" target="_blank">gestao@agenciakottler.com</a>
-    <a data-menu="linkedin" href="https://br.linkedin.com/company/agencia-kottler" target="_blank">
+    <a data-menu="linkedin" href="https://br.linkedin.com/company/agencia-kottler" target="_blank" loading="lazy">
       <img src="./img/linkedin.svg" alt="icone Linkedin mobile" width="32" height="32">
       <span class="visually-hidden">Ir para o Linkedin</span>
     </a>
     <a data-menu="instagram" href="https://www.instagram.com/agenciakottler/" target="_blank">
-      <img src="./img/instagram.svg" alt="icone Instagram mobile" width="32" height="32">
+      <img src="./img/instagram.svg" alt="icone Instagram mobile" width="32" height="32" loading="lazy">
       <span class="visually-hidden">Ir para o Instagram</span>
     </a>
 
     <!-- Barra fixa de redes sociais -->
     <div id="social-sidebar">
       <a href="https://www.instagram.com/agenciakottler/" target="_blank">
-        <img src="./img/social-sidebar/instagram-rosa.svg" alt="Instagram" width="32" height="32">
+        <img src="./img/social-sidebar/instagram-rosa.svg" alt="Instagram" width="32" height="32" loading="lazy">
         <span class="visually-hidden">Ir para o Instagram</span>
       </a>
       <a href="https://br.linkedin.com/company/agencia-kottler" target="_blank">
-        <img src="./img/social-sidebar/linkedin-rosa.svg" alt="LinkedIn" width="32" height="32">
+        <img src="./img/social-sidebar/linkedin-rosa.svg" alt="LinkedIn" width="32" height="32" loading="lazy">
         <span class="visually-hidden">Ir para o Linkedin</span>
       </a>
     </div>
@@ -635,56 +633,56 @@
       </div>      
     </footer>
 
-    <!-- Pop-up -->
-    <div id="popup" class="popup">
-      <div class="popup-content">
-        <span class="close-btn">&times;</span>
-        <div class="popup-image">
-          <h3>Marketing & Indústria</h3>
-          <p>Como se <strong>destacar</strong> e liderar as tendências do setor industrial</p>
-        </div>
-        <div class="popup-text">      
-          <p>Tenha acesso a materiais ricos e conteúdos gratuitos mensalmente</p>              
-          <p><strong>Assine agora nossa newsletter!</strong></p>
-          <form id="downloadForm">
-            <label for="nome-popup" class="visually-hidden">Nome</label>
-            <input type="text" id="nome-popup" name="name" placeholder="Nome" required>
-    
-            <label for="email-popup" class="visually-hidden">E-mail</label>
-            <input type="email" id="email-popup" name="email" placeholder="E-mail" required>
-    
-            <!-- Novos campos adicionados -->
-            <label for="telefone-popup" class="visually-hidden">Telefone</label>
-            <input type="tel" id="telefone-popup" name="phone" placeholder="Telefone (com DDD)" required>
-    
-            <label for="cargo-popup" class="visually-hidden">Cargo</label>
-            <input type="text" id="cargo-popup" name="job_title" placeholder="Seu cargo na empresa">
-    
-            <label for="funcionarios-popup" class="visually-hidden">Quantidade de Funcionários</label>
-            <select id="funcionarios-popup" name="employees_count">
-              <option value="" disabled selected>Quantidade de funcionários</option>
-              <option value="1-10">1-10</option>
-              <option value="11-50">11-50</option>
-              <option value="51-200">51-200</option>
-              <option value="201-500">201-500</option>
-              <option value="501-1000">501-1000</option>
-              <option value="1000+">Mais de 1000</option>
-            </select>
-    
-            <!-- Campos ocultos exigidos pela RD Station -->
-            <input type="hidden" name="event_type" value="Ebook Baixado - Marketing e Indústria">
-            <input type="hidden" name="legal_basis" value="consent">
-            <input type="hidden" name="legal_basis_message" value="O usuário concordou em receber comunicações da empresa ao baixar o e-book.">
-    
-            <button class="btn" type="submit">Quero garantir!</button>
-    
-            <p id="ebookThankYouMessage" style="display: none; color: green; font-size: 14px; margin-top: 10px;">
-              Obrigado! Seu e-book será baixado automaticamente.
-            </p>
-          </form>
-        </div>
-      </div>
+ <!-- Pop-up -->
+ <div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close-btn">&times;</span>
+    <div class="popup-image">
+      <h3>Marketing & Indústria</h3>
+      <p>Como se <strong>destacar</strong> e liderar as tendências do setor industrial</p>
     </div>
+    <div class="popup-text">      
+      <p>Tenha acesso a materiais ricos e conteúdos gratuitos mensalmente</p>              
+      <p><strong>Assine agora nossa newsletter!</strong></p>
+      <form id="downloadForm">
+        <label for="nome-popup" class="visually-hidden">Nome</label>
+        <input type="text" id="nome-popup" name="name" placeholder="Nome" required>
+
+        <label for="email-popup" class="visually-hidden">E-mail</label>
+        <input type="email" id="email-popup" name="email" placeholder="E-mail" required>
+
+        <!-- Novos campos adicionados -->
+        <label for="telefone-popup" class="visually-hidden">Telefone</label>
+        <input type="tel" id="telefone-popup" name="phone" placeholder="Telefone (com DDD)" required>
+
+        <label for="cargo-popup" class="visually-hidden">Cargo</label>
+        <input type="text" id="cargo-popup" name="job_title" placeholder="Seu cargo na empresa">
+
+        <label for="funcionarios-popup" class="visually-hidden">Quantidade de Funcionários</label>
+        <select id="funcionarios-popup" name="employees_count">
+          <option value="" disabled selected>Quantidade de funcionários</option>
+          <option value="1-10">1-10</option>
+          <option value="11-50">11-50</option>
+          <option value="51-200">51-200</option>
+          <option value="201-500">201-500</option>
+          <option value="501-1000">501-1000</option>
+          <option value="1000+">Mais de 1000</option>
+        </select>
+
+        <!-- Campos ocultos exigidos pela RD Station -->
+        <input type="hidden" name="event_type" value="Ebook Baixado - Marketing e Indústria">
+        <input type="hidden" name="legal_basis" value="consent">
+        <input type="hidden" name="legal_basis_message" value="O usuário concordou em receber comunicações da empresa ao baixar o e-book.">
+
+        <button class="btn" type="submit">Quero garantir!</button>
+
+        <p id="ebookThankYouMessage" style="display: none; color: green; font-size: 14px; margin-top: 10px;">
+          Obrigado! Seu e-book será baixado automaticamente.
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
 
     <!-- Botão fixo para o e-book -->
     <button id="ebookButton" class="floating-button ebook-button">

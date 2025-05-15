@@ -15,9 +15,11 @@ export default async function renderizarSwiper(selector) {
         srcset="${caseItem.imagem.mobile} ${caseItem.imagem.mobile_width}w, 
                 ${caseItem.imagem.desktop} ${caseItem.imagem.desktop_width}w,
                 ${caseItem.imagem.large} 1920w" 
-        sizes="(max-width: 600px) 100vw, 
-               (max-width: 1024px) 70vw, 
-               50vw"
+        sizes="(max-width: 480px) 100vw,  
+        (max-width: 768px) 80vw,  
+        (max-width: 1024px) 60vw,  
+        (max-width: 1440px) 50vw,  
+        40vw"
         src="${caseItem.imagem.mobile}" 
         alt="${caseItem.titulo}" 
         loading="lazy"

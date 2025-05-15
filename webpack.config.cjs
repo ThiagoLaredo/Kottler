@@ -1,11 +1,14 @@
 const webpack = require('webpack');
+const path = require('path');
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const path = require('path');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
+const PATHS = { src: path.join(__dirname, 'src') };
 
 const pages = [
   'index',
@@ -22,19 +25,25 @@ const pages = [
   'post',
 ];
 
-// Entradas dinâmicas
+// Criar entradas dinâmicas apenas se o arquivo JS existir
 const entryPoints = pages.reduce((entries, page) => {
-  entries[page] = `./src/js/pages/${page}.js`;
+  const jsPath = `./src/js/pages/${page}.js`;
+  if (require('fs').existsSync(jsPath)) {
+    entries[page] = jsPath;
+  }
   return entries;
 }, {});
 
-// HTMLPlugins para cada página
+// Criar plugins para cada página HTML
 const htmlPlugins = pages.map(page => new HtmlWebpackPlugin({
   template: `./src/${page}.html`,
   filename: `${page}.html`,
   chunks: ['runtime', 'vendors', 'common', page], // Define a ordem de carregamento
+  scriptLoading: 'defer',
   minify: {
     removeRedundantAttributes: false,
+    collapseWhitespace: true, // Reduz espaços em branco para otimizar o tamanho do HTML
+    removeComments: true, // Remove comentários para reduzir o tamanho
   },
 }));
 
@@ -42,7 +51,7 @@ module.exports = {
   entry: entryPoints,
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/[name].[contenthash].js', // Cache busting com contenthash
+    filename: 'js/[name].[contenthash].js',
     clean: true,
   },
   module: {
@@ -57,18 +66,17 @@ module.exports = {
               [
                 '@babel/preset-env',
                 {
-                  targets: {
-                    esmodules: true, // Apenas navegadores modernos
-                  },
-                  useBuiltIns: false, // Sem polyfills desnecessários
-                  modules: false, // Mantém módulos ES6 para melhor tree-shaking
+                  targets: { esmodules: true },
+                  useBuiltIns: 'entry', // Usa polyfills de forma eficiente
+                  corejs: 3,
+                  modules: false,
                 },
               ],
             ],
             plugins: ['@babel/plugin-transform-runtime'],
           },
         },
-      },      
+      },
       {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
@@ -90,29 +98,42 @@ module.exports = {
     ],
   },
   optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        parallel: true, // Usa múltiplos núcleos para otimizar o minify
+        terserOptions: {
+          compress: {
+            drop_console: true, // Remove console.log para reduzir o código final
+          },
+        },
+      }),
+      new CssMinimizerPlugin(),
+    ],
     splitChunks: {
       chunks: 'all',
       cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           name: 'vendors',
-          chunks: 'initial', // Carrega apenas nas páginas necessárias
-          enforce: true,     // Força a separação
+          chunks: 'async', // Carregar somente quando necessário
+          enforce: true,
         },
-        gsap: {
-          test: /[\\/]node_modules[\\/]gsap[\\/]/,
-          name: 'gsap',
-          chunks: 'async', // Só carrega quando necessário
+        commons: {
+          test: /[\\/]src[\\/]js[\\/]/,
+          name: 'common',
+          minSize: 30000, // Aumenta o tamanho mínimo para reduzir a criação de muitos arquivos pequenos
+          chunks: 'all',
+          enforce: true,
         },
-        swiper: {
-          test: /[\\/]node_modules[\\/]swiper[\\/]/,
-          name: 'swiper',
-          chunks: 'async',
+        gtm: {
+          test: /[\\/]googletagmanager[\\/]/,
+          name: 'gtm',
+          chunks: 'async', // Carregar apenas quando necessário
         },
       },
     },
   },
-  
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
@@ -132,20 +153,6 @@ module.exports = {
       'process.env.CONTENTFUL_SPACE_ID': JSON.stringify('oputswbco4ug'),
       'process.env.CONTENTFUL_ACCESS_TOKEN': JSON.stringify('t0k-RHn4eskADHT1Gdjr27xnkXu7WqPS3NOkQdTYlZs'),
     }),
-    new TerserPlugin({
-      terserOptions: {
-        compress: {
-          drop_console: true, // Remove console.log
-          drop_debugger: true,
-          pure_funcs: ['console.log'], // Remove chamadas do console
-          passes: 3, // Otimiza o código mais vezes
-        },
-        output: {
-          comments: false, // Remove comentários
-        },
-      },
-    }),
-    
   ],
   resolve: {
     extensions: ['.js', '.jsx', '.json'],

@@ -72,8 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
     new MySwiperSolucoes();
     new MySwiperCases();
 
-      // Inicializa a classe
-        new AnalyticsLoader();
+    // Inicializa a classe
+    new AnalyticsLoader();
 
     updateBackgrounds();
     window.addEventListener("resize", updateBackgrounds);

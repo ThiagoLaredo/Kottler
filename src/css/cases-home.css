@@ -48,9 +48,9 @@
 }
 
 .swiper-slide.slide-case img {
-  width: 70%; /* Mantém alinhado com o texto */
+  width: 100%; /* Mantém alinhado com o texto */
   max-width: 100%;
-  height: 380px;
+  height: auto;
   object-fit: cover;
   z-index: 1;
 }
@@ -113,6 +113,19 @@
   transform-origin: center;
 }
 
+.swiper-slide.slide-case img {
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .swiper-slide.slide-case img {
+      width: 70%;
+      height: 380px; 
+  }
+}
 
 @media (max-width: 768px) {
 
