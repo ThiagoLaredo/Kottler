@@ -376,34 +376,51 @@
     <!-- Pop-up -->
     <div id="popup" class="popup">
       <div class="popup-content">
-          <span class="close-btn">&times;</span>
-          <div class="popup-image">
-            <h3>Marketing & Indústria</h3>
-            <p>Como se <strong>destacar</strong> e liderar as tendências do setor industrial</p>
-          </div>
-          <div class="popup-text">      
+        <span class="close-btn">&times;</span>
+        <div class="popup-image">
+          <h3>Marketing & Indústria</h3>
+          <p>Como se <strong>destacar</strong> e liderar as tendências do setor industrial</p>
+        </div>
+        <div class="popup-text">      
           <p>Tenha acesso a materiais ricos e conteúdos gratuitos mensalmente</p>              
           <p><strong>Assine agora nossa newsletter!</strong></p>
           <form id="downloadForm">
-              <label for="nome-popup" class="visually-hidden">Nome</label>
-              <input type="text" id="nome-popup" name="name" placeholder="Nome" required>
-
-              <label for="email-popup" class="visually-hidden">E-mail</label>
-              <input type="email" id="email-popup" name="email" placeholder="E-mail" required>
-
-              <!-- Campos ocultos exigidos pela RD Station -->
-              <input type="hidden" name="event_type" value="Ebook Baixado - Marketing e Indústria">
-              <input type="hidden" name="legal_basis" value="consent">
-              <input type="hidden" name="legal_basis_message" value="O usuário concordou em receber comunicações da empresa ao baixar o e-book.">
-
-              <button class="btn" type="submit">Quero garantir!</button>
-
-              <!-- Mensagem de agradecimento (inicialmente oculta) -->
-              <p id="ebookThankYouMessage" style="display: none; color: green; font-size: 14px; margin-top: 10px;">
-                  Obrigado! Seu e-book será baixado automaticamente.
-              </p>
+            <label for="nome-popup" class="visually-hidden">Nome</label>
+            <input type="text" id="nome-popup" name="name" placeholder="Nome" required>
+    
+            <label for="email-popup" class="visually-hidden">E-mail</label>
+            <input type="email" id="email-popup" name="email" placeholder="E-mail" required>
+    
+            <!-- Novos campos adicionados -->
+            <label for="telefone-popup" class="visually-hidden">Telefone</label>
+            <input type="tel" id="telefone-popup" name="phone" placeholder="Telefone (com DDD)" required>
+    
+            <label for="cargo-popup" class="visually-hidden">Cargo</label>
+            <input type="text" id="cargo-popup" name="job_title" placeholder="Seu cargo na empresa">
+    
+            <label for="funcionarios-popup" class="visually-hidden">Quantidade de Funcionários</label>
+            <select id="funcionarios-popup" name="employees_count">
+              <option value="" disabled selected>Quantidade de funcionários</option>
+              <option value="1-10">1-10</option>
+              <option value="11-50">11-50</option>
+              <option value="51-200">51-200</option>
+              <option value="201-500">201-500</option>
+              <option value="501-1000">501-1000</option>
+              <option value="1000+">Mais de 1000</option>
+            </select>
+    
+            <!-- Campos ocultos exigidos pela RD Station -->
+            <input type="hidden" name="event_type" value="Ebook Baixado - Marketing e Indústria">
+            <input type="hidden" name="legal_basis" value="consent">
+            <input type="hidden" name="legal_basis_message" value="O usuário concordou em receber comunicações da empresa ao baixar o e-book.">
+    
+            <button class="btn" type="submit">Quero garantir!</button>
+    
+            <p id="ebookThankYouMessage" style="display: none; color: green; font-size: 14px; margin-top: 10px;">
+              Obrigado! Seu e-book será baixado automaticamente.
+            </p>
           </form>
-          </div>
+        </div>
       </div>
     </div>
 
