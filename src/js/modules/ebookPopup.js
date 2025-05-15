@@ -4,8 +4,9 @@ export default class EbookPopup {
         this.thankYouMessage = document.getElementById('ebookThankYouMessage');
         this.popup = document.getElementById('popup');
         this.closeBtn = this.popup?.querySelector('.close-btn');
+        this.preloadPopupImage = new Image();
+        this.preloadPopupImage.src = '../img/popup/banner-ebook.webp';        
 
-        // Verifica se o usuário já baixou o e-book
         this.hasDownloaded = localStorage.getItem('ebook_downloaded') === 'true';
 
         if (this.form) {
@@ -19,39 +20,59 @@ export default class EbookPopup {
             return;
         }
     
-        // Obtém o caminho da URL e verifica se está na index
         const path = window.location.pathname;
         console.log('Caminho da página:', path);
     
-        // Verifica se o pop-up já foi exibido nesta sessão
         const hasShownPopupThisSession = sessionStorage.getItem('ebook_popup_shown');
     
-        // Se ainda não foi mostrado nesta sessão e está na index, exibe o pop-up
         if (!hasShownPopupThisSession && (path === '/' || path === '/index.html')) {
             console.log('Abrindo pop-up na index.');
             this.showPopup();
-    
-            // Marca que o pop-up já foi mostrado nesta sessão
             sessionStorage.setItem('ebook_popup_shown', 'true');
         } else {
             console.log('Pop-up já foi exibido nesta sessão ou não é a index.');
         }
     
-        // Fechar pop-up ao clicar no botão de fechar
         this.closeBtn?.addEventListener('click', () => this.hidePopup());
-    
-        // Submeter o formulário
         this.form.addEventListener('submit', (event) => this.handleFormSubmit(event));
+
+        // Inicializa máscara
+        this.initPhoneMask();
     }
-    
+
+    initPhoneMask() {
+        const phoneField = document.getElementById('telefone-popup');
+        if (phoneField) {
+            phoneField.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\D/g, '');
+                let formattedValue = '';
+                
+                if (value.length > 0) {
+                    formattedValue = `(${value.substring(0, 2)}`;
+                }
+                if (value.length > 2) {
+                    formattedValue += `) ${value.substring(2, 7)}`;
+                }
+                if (value.length > 7) {
+                    formattedValue += `-${value.substring(7, 11)}`;
+                }
+                
+                e.target.value = formattedValue;
+            });
+        }
+    }
+
     showPopup() {
-        // Carrega a imagem de fundo apenas quando o popup é aberto
         const popupImage = this.popup.querySelector('.popup-image');
-        popupImage.style.backgroundImage = "url('../img/popup/banner-ebook.webp')";
+    
+        if (!popupImage.style.backgroundImage) {
+            popupImage.style.backgroundImage = "url('/img/popup/banner-ebook.webp')";
+        }
+    
         this.popup.style.visibility = 'visible';
         this.popup.style.opacity = '1';
         this.popup.style.pointerEvents = 'auto';
-    }
+    }    
 
     hidePopup() {
         this.popup.style.visibility = 'hidden';
@@ -65,7 +86,13 @@ export default class EbookPopup {
         const formData = new FormData(this.form);
         formData.append('apikey', 'a936ac9d-2155-46dc-8ab2-0d46ae112c69');
 
-        // RD Station
+        // Adiciona máscara ao telefone antes de enviar (opcional)
+        const phoneInput = document.getElementById('telefone-popup');
+        if (phoneInput) {
+            formData.set('phone', this.formatPhoneNumber(phoneInput.value));
+        }
+
+        // Envio para RD Station
         fetch('http://localhost:3000/rdstation', {
             method: 'POST',
             headers: {
@@ -77,6 +104,9 @@ export default class EbookPopup {
                 payload: {
                     name: formData.get('name'),
                     email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    job_title: formData.get('job_title'),
+                    employees_count: formData.get('employees_count'),
                     legal_basis: 'CONSENT',
                     legal_basis_message: 'O usuário concordou em receber comunicações.',
                     conversion_identifier: 'DOWNLOAD_EBOOK'
@@ -86,9 +116,19 @@ export default class EbookPopup {
         .then(rdResponse => rdResponse.json())
         .then(rdData => {
             console.log('Success (RD Station - e-book):', rdData);
+            this.thankYouMessage.style.display = 'block';
+            localStorage.setItem('ebook_downloaded', 'true');
+            setTimeout(() => this.hidePopup(), 3000);
         })
         .catch(rdError => {
             console.error('Error (RD Station - e-book):', rdError);
         });
+    }
+
+    // Função auxiliar para formatar telefone (opcional)
+    formatPhoneNumber(phone) {
+        return phone.replace(/\D/g, '')
+                    .replace(/^(\d{2})(\d)/g, '($1) $2')
+                    .replace(/(\d)(\d{4})$/, '$1-$2');
     }
 }
